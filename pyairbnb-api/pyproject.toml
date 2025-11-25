@@ -1,0 +1,32 @@
+[project]
+
+version = '2.1.1'
+name="pyairbnb"
+description = 'Airbnb scraper in Python with FastAPI backend'
+authors = [
+  { name="John Balvin", email="johnchristian@hotmail.es" },
+]
+readme= "README.md"
+keywords=['airbnb', 'scraper', 'crawler','bot','reviews', 'api', 'fastapi']
+dependencies=[
+    'curl_cffi',
+    'bs4',
+    'requests',
+    # Backend dependencies
+    'fastapi>=0.104.1',
+    'uvicorn[standard]>=0.24.0',
+    'sqlalchemy>=2.0.23',
+    'alembic>=1.12.1',
+    'pymysql>=1.1.0',
+    'cryptography>=41.0.7',  # Required for PyMySQL
+    'pydantic>=2.5.0',
+    'pydantic-settings>=2.1.0',
+    'python-multipart>=0.0.6',  # For form data
+    'python-jose[cryptography]>=3.3.0',  # For JWT tokens
+    'passlib[bcrypt]>=1.7.4',  # For password hashing
+    'python-dotenv>=1.0.0',  # For environment variables
+]
+
+
+[project.urls]
+Homepage='https://github.com/johnbalvin/pyairbnb'

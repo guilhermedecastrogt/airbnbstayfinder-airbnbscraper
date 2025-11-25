@@ -1,0 +1,45 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client"
+  output   = "../app/generated/prisma"
+  engineType = "client"
+}
+
+datasource db {
+  provider = "mysql"
+}
+
+model AirbnbStay {
+  id String @id
+  title String
+  subTitle String
+  isFreeCancellation Boolean
+  price Float
+  priceWithoutDiscount Float?
+
+  rating Float?
+  ratingCount Int?
+
+  personCapacity Int?
+  hostName String?
+  hostId String?
+
+  images AirbnbStayImage[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model AirbnbStayImage {
+  id String @id
+
+  stayId String?
+  stay AirbnbStay? @relation(fields: [stayId], references: [id])
+
+  imageUrl String
+}
