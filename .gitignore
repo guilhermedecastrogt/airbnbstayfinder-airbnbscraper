@@ -1,0 +1,18 @@
+airbnbstayfinder/node_modules/
+airbnbstayfinder/.next/
+.venv/
+venv/
+env/
+pyairbnb-api/.venv/
+pyairbnb-api/venv/
+pyairbnb-api/env/
+
+
+*pyairbnb.egg-info
+*dist
+__pycache__
+
+# Pycharm
+.idea
+
+.venv
