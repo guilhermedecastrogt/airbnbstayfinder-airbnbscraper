@@ -1,26 +1,50 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+  --color-bg: #000000;
+  --color-bg-secondary: #101012;
+  --color-bg-secondary2: #686864;
+  --color-text: #e6e9f0;
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  --color-primary: #ff5a5f;
+  --color-secondary: #06b6d4;  /* Cyan */
+  --color-accent: #f59e0b;     /* Amber */
+  --color-muted: #64748b;      /* Slate */
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-bg-secondary-image: linear-gradient(180deg,rgba(26,26,22,1)0%,rgba(16,16,18,1)50%,rgba(51,28,28,1)100%);
+  --color-gradient: linear-gradient(180deg,rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.24) 100%);
+  --primary-gradient: linear-gradient(90deg,rgba(48, 48, 48, 1) 0%, rgba(255, 56, 92, 1) 49%, rgba(48, 48, 48, 1) 100%)
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-bg);
+  color: var(--color-text);
 }
+
+/* keep utilities and delete the duplicate body block that references --background/--foreground */
+.bg-primary { background-color: var(--color-primary); }
+.bg-secondary { background-color: var(--color-bg-secondary); }
+.bg-secondary-image { background-image: var(--color-bg-secondary-image); }
+.bg-secondary2 { background-color: var(--color-bg-secondary2); }
+.text-primary { color: var(--color-primary); }
+.text-gradient { background: var(--color-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+.border-primary-gradient {
+  border: 1px solid transparent;
+  border-image-source: var(--primary-gradient);
+  border-image-slice: 1;
+}
+
+.border-primary { border-color: var(--color-primary); }
+
+.text-secondary { color: var(--color-secondary); }
+
+.bg-accent { background-color: var(--color-accent); }
+.text-accent { color: var(--color-accent); }
+
+.text-muted { color: var(--color-muted); }
