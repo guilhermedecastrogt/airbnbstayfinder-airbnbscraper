@@ -9,7 +9,8 @@
   --color-primary: #ff5a5f;
   --color-secondary: #06b6d4;  /* Cyan */
   --color-accent: #f59e0b;     /* Amber */
-  --color-muted: #64748b;      /* Slate */
+  --color-muted: #64748b;
+  --color-border-primary: #252525;/* Slate */
 
   --color-bg-secondary-image: linear-gradient(180deg,rgba(26,26,22,1)0%,rgba(16,16,18,1)50%,rgba(51,28,28,1)100%);
   --color-gradient: linear-gradient(180deg,rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.24) 100%);
@@ -34,13 +35,15 @@ body {
   -webkit-text-fill-color: transparent;
 }
 
+.bg-border-primary { border-color: var(--color-border-primary); }
+
 .border-primary-gradient {
   border: 1px solid transparent;
   border-image-source: var(--primary-gradient);
   border-image-slice: 1;
 }
 
-.border-primary { border-color: var(--color-primary); }
+.border-primary { border-color: var(--color-border-primary); }
 
 .text-secondary { color: var(--color-secondary); }
 
