@@ -36,7 +36,7 @@ export default function RootLayout({
                     height={1024}
                     className="absolute -inset-x-0 -top-[250px] w-full z-0 min-w-full opacity-80"
                 />
-                <div className="flex flex-row p-8 w-full h-full gap-8 bg-black">
+                <div className="flex flex-row p-8 w-full h-full gap-8">
                     <div className="flex flex-col h-full w-[15%] p-8 z-1">
                         <DashboardNavbar />
                     </div>
@@ -44,7 +44,8 @@ export default function RootLayout({
                         {children}
                     </div>
                 </div>
-                <div className="bsolute z-3 -mt-290 lg:h-120 rounded-full blur-[5rem] bg-[radial-gradient(circle,rgba(255,90,95,0.5)0%,rgba(148,187,233,0)100%)]"></div>
+                <div className="bsolute z-3 -mt-250 lg:h-120 rounded-full blur-[5rem] bg-[radial-gradient(circle,rgba(255,90,95,0.3)0%,rgba(148,187,233,0)100%)]"></div>
+                <div className="bsolute z-3 mt-70 ml-200 lg:h-20 rounded-full blur-[5rem] bg-[radial-gradient(circle,rgba(255,90,95,0.5)0%,rgba(148,187,233,0)100%)]"></div>
             </body>
         </html>
     );
