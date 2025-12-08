@@ -43,6 +43,8 @@ body {
   border-image-slice: 1;
 }
 
+.text-icons { color: #5d5d5e }
+
 .border-primary { border-color: var(--color-border-primary); }
 
 .text-secondary { color: var(--color-secondary); }

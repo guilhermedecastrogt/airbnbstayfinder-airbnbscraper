@@ -3,8 +3,8 @@ import Image from "next/image"
 
 export function DashboardNavbar() {
     return (
-        <div className="flex flex-col gap-2 justify-center items-center bg-[linear-gradient(180deg,rgba(26,26,22,1)0%,rgba(16,16,18,1)70%,rgba(51,28,28,1)100%)] border border-primary text-[#5d5d5e] gap-6 py-15 rounded-[50px]">
-
+        <div className="flex flex-col gap-2 justify-center items-center bg-transparent backdrop-blur-[3px] border border-primary text-[#5d5d5e] gap-6 py-15 rounded-[50px]">
+            <div className="rounded-[50px] pointer-events-none absolute inset-x-0 bottom-0 h-1/2 bg-[linear-gradient(to_top,rgba(255,90,95,0.1),transparent)]" />
             <Image
                 src="/images/airbnb-tile.svg"
                 alt=""

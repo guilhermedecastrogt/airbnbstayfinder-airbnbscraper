@@ -68,14 +68,14 @@ async def search_by_airbnb_url(request: AirbnbSearchRequest):
             proxy_url=request.proxy_url,
             hash=dynamic_hash
         )
-        
+
         return AirbnbSearchResponse(
             success=True,
             count=len(results),
             data=results,
             message=f"Successfully extracted {len(results)} listings"
         )
-        
+
     except Exception as e:
         raise HTTPException(
             status_code=500,
@@ -85,26 +85,31 @@ async def search_by_airbnb_url(request: AirbnbSearchRequest):
 @app.post("/api/v1/search-by-id/", response_model=AirbnbSearchResponse)
 async def search_room_by_id(request: AirbnbGetRoomByIdRequest):
     try:
-        
-        data = pyairbnb.get_details(
+        raw_data: Dict[str, Any] = pyairbnb.get_details(
             room_id=request.stay_id,
             currency=request.currency,
             proxy_url=request.proxy_url,
             language=request.language,
-            adults=request.adults
+            adults=request.adults,
         )
+
+        cleaned_data = {
+            k: v
+            for k, v in raw_data.items()
+            if k not in {"calendar", "host_details"}
+        }
 
         return AirbnbSearchResponse(
             success=True,
             count=1,
-            data=[data],
-            message=f"Successfully extracted listing {request.stay_id}"
+            data=[cleaned_data],
+            message=f"Successfully extracted listing {request.stay_id}",
         )
-        
+
     except Exception as e:
         raise HTTPException(
             status_code=400,
-            detail=f"Invalid request parameters: {str(e)}"
+            detail=f"Invalid request parameters: {str(e)}",
         )
 
 
@@ -153,6 +158,18 @@ async def search_by_airbnb_url_get(
             status_code=400,
             detail=f"Invalid request parameters: {str(e)}"
         )
+
+
+
+def strip_unwanted_keys(results: List[dict[str, Any]]) -> List[dict[str, Any]]:
+    keys_to_remove = {"calendar", "host_details"}
+    cleaned: List[dict[str, Any]] = []
+    for item in results:
+        if isinstance(item, dict):
+            cleaned.append({k: v for k, v in item.items() if k not in keys_to_remove})
+        else:
+            cleaned.append(item)
+    return cleaned
 
 if __name__ == "__main__":
     uvicorn.run(
