@@ -1,0 +1,97 @@
+import { AirbnbStay } from "@/features/airbnbstay/domain/airbnbstay"
+import { AirbnbStayAiRepo, AirbnbStayHttpRepo } from "@/features/airbnbstay/repo/airbnbstay.repo"
+import { mapImages, mapRawToAiListing, mapToOutputStay, getFreeCancellation } from "@/features/airbnbstay/domain/airbnbstay.mapper"
+
+type TruncatedPayload = {
+    truncated: true
+    size: number
+    head: string
+}
+
+function safeStringify(input: unknown): string {
+    try {
+        return JSON.stringify(input)
+    } catch {
+        return ""
+    }
+}
+
+function pickSmall(input: unknown, maxChars: number): unknown {
+    const s = safeStringify(input)
+    if (!s) return input
+    if (s.length <= maxChars) return input
+    const out: TruncatedPayload = { truncated: true, size: s.length, head: s.slice(0, maxChars) }
+    return out
+}
+
+async function asyncPool<T, R>(
+    items: readonly T[],
+    limit: number,
+    fn: (item: T, index: number) => Promise<R>
+): Promise<R[]> {
+    const l = Math.max(1, Math.floor(limit))
+    const ret: Array<Promise<R>> = []
+    const executing = new Set<Promise<void>>()
+
+    for (let i = 0; i < items.length; i++) {
+        const p = Promise.resolve().then(() => fn(items[i], i))
+        ret.push(p)
+
+        if (items.length >= l) {
+            const e: Promise<void> = p.then(
+                () => {},
+                () => {}
+            )
+            executing.add(e)
+            e.then(
+                () => executing.delete(e),
+                () => executing.delete(e)
+            )
+            if (executing.size >= l) await Promise.race(executing)
+        }
+    }
+
+    return Promise.all(ret)
+}
+
+export async function getAirbnbStayByUrlService(
+    deps: { httpRepo: AirbnbStayHttpRepo; aiRepo: AirbnbStayAiRepo },
+    input: { url: string; currency: string; userPrompt: string }
+): Promise<AirbnbStay[]> {
+    const byUrl = await deps.httpRepo.searchByUrl({
+        url: input.url,
+        currency: input.currency,
+        language: "en"
+    })
+
+    const concurrency = 3
+
+    return asyncPool(byUrl.data, concurrency, async (item) => {
+        const images = mapImages(item)
+        const listing1 = mapRawToAiListing(item)
+
+        const byId = await deps.httpRepo.searchById({ stayId: item.room_id })
+        const listing2 = pickSmall(byId, 12000)
+
+        const ai = await deps.aiRepo.match({
+            userPrompt: input.userPrompt,
+            listing1,
+            listing2
+        })
+
+        return mapToOutputStay({
+            title: item.title,
+            subTitle: item.name,
+            isFreeCancellation: getFreeCancellation(item),
+            price: item.price.unit.amount,
+            priceDiscount: item.price.unit.discount,
+            rating: item.rating.value,
+            ratingCount: item.passportData.ratingCount,
+            hostName: item.passportData.name,
+            images,
+            isCompatible: ai.isCompatibleWithUserWants,
+            compatibilityScore: ai.compatibilityScore,
+            resume: ai.resume
+        })
+    })
+}
