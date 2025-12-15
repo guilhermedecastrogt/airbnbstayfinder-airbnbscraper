@@ -1,10 +1,10 @@
 export type AirbnbStay = {
-  id: string
+  id?: string
   title: string
   subTitle: string
   isFreeCancellation: boolean
   price: number
-  priceWithoutDiscount?: number
+  priceDiscount?: number
   rating?: number
   ratingCount?: number
   personCapacity?: number
@@ -13,6 +13,12 @@ export type AirbnbStay = {
   images: AirbnbStayImage[]
   createdAt?: Date
   updatedAt?: Date
+
+
+  // AI Response
+  isCompatible: boolean,
+  compatibilityScore: number,
+  resume: string,
 }
 
 export type AirbnbStayImage = {

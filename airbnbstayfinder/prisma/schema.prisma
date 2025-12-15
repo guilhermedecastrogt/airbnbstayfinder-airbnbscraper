@@ -5,8 +5,8 @@
 // Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
 
 generator client {
-  provider = "prisma-client"
-  output   = "../app/generated/prisma"
+  provider   = "prisma-client"
+  output     = "../app/generated/prisma"
   engineType = "client"
 }
 
@@ -15,31 +15,36 @@ datasource db {
 }
 
 model AirbnbStay {
-  id String @id
-  title String
-  subTitle String
-  isFreeCancellation Boolean
-  price Float
+  id                   String  @id @default(uuid(7))
+  title                String
+  subTitle             String
+  isFreeCancellation   Boolean
+  price                Float
   priceWithoutDiscount Float?
 
-  rating Float?
+  rating      Float?
   ratingCount Int?
 
   personCapacity Int?
-  hostName String?
-  hostId String?
+  hostName       String?
+  hostId         String?
 
   images AirbnbStayImage[]
+
+  // AI Response
+  isCompatible       Boolean
+  compatibilityScore Int
+  resume             String
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
 
 model AirbnbStayImage {
-  id String @id
+  id String @id @default(uuid(7))
 
   stayId String?
-  stay AirbnbStay? @relation(fields: [stayId], references: [id])
+  stay   AirbnbStay? @relation(fields: [stayId], references: [id])
 
   imageUrl String
 }
