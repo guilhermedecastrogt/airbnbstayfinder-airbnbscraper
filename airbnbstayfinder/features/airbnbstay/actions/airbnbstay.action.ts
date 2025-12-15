@@ -26,6 +26,7 @@ const prompt = `
       "isCompatibleWithUserWants": boolean,
       "compatibilityScore": number,
       "resume": string,
+      "reasons": string[]
     }
     
     Rules:
