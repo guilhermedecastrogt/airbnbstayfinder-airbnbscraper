@@ -1,87 +1,75 @@
-import { AirbnbStayAiRepo } from "@/features/airbnbstay/repo/airbnbstay.repo"
+import { AirbnbStayAiRepo, AirbnbMatchInput, AirbnbMatchOutput } from "@/features/airbnbstay/repo/airbnbstay.ai.repo"
 import { AiMatchSchema, extractFirstJsonObject } from "@/features/airbnbstay/domain/airbnbstay.ai"
+
+type OllamaChatResponse = { message?: { content?: string } }
+type OllamaGenerateResponse = { response?: string }
 
 function buildSystemPrompt() {
     return [
         "You are a strict Airbnb listing matcher and summarizer.",
-        "You will receive: (1) a user request, (2) a single Airbnb listing JSON, (3) extra listing JSON.",
-        "Return ONLY valid JSON matching:",
-        "{",
-        '  "isCompatibleWithUserWants": boolean,',
-        '  "compatibilityScore": number,',
-        '  "resume": string,',
-        '  "reasons": string[]',
-        "}",
-        "Rules:",
-        "- Do not add extra keys.",
-        "- Output must be valid JSON.",
-        "- compatibilityScore must be an integer from 0 to 100.",
-        "- resume must be 1-3 sentences and mention rating and ratingCount if available, bedroom shared, bathroom shared, and match status.",
-        "- reasons must be evidence-based."
+        "Return ONLY valid JSON with keys:",
+        "isCompatibleWithUserWants, compatibilityScore, resume, reasons.",
+        "Do not add extra keys.",
+        "compatibilityScore must be an integer from 0 to 100."
     ].join("\n")
 }
 
 function buildUserPrompt(userPrompt: string, listing1: unknown, listing2: unknown) {
     return [
-        "User request:",
-        userPrompt,
-        "",
-        "Listing JSON:",
-        JSON.stringify(listing1),
-        "",
-        "Listing JSON (by id):",
-        JSON.stringify(listing2)
-    ].join("\n")
+        `User request:\n${userPrompt}`,
+        `Listing JSON:\n${JSON.stringify(listing1)}`,
+        `Listing JSON (by id):\n${JSON.stringify(listing2)}`
+    ].join("\n\n")
 }
 
-async function callOllamaChat(ollamaUrl: string, system: string, user: string, options: any) {
-    const res = await fetch(ollamaUrl + "/api/chat", {
+async function callChat(baseUrl: string, model: string, system: string, user: string) {
+    const res = await fetch(baseUrl.replace(/\/+$/, "") + "/api/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-            model: "deepseek-r1:1.5b",
+            model,
             messages: [
                 { role: "system", content: system },
                 { role: "user", content: user }
             ],
             stream: false,
-            options
+            options: { temperature: 0.3, top_p: 0.95, num_predict: 96 }
         })
     })
-    const json = await res.json()
-    const out = typeof json?.message?.content === "string" ? json.message.content : ""
-    return out
+    if (!res.ok) throw new Error("ollama_chat_error " + res.status)
+    const json = (await res.json()) as OllamaChatResponse
+    return typeof json.message?.content === "string" ? json.message.content : ""
 }
 
-async function callOllamaGenerate(ollamaUrl: string, system: string, user: string, options: any) {
-    const res = await fetch(ollamaUrl + "/api/generate", {
+async function callGenerate(baseUrl: string, model: string, system: string, user: string) {
+    const res = await fetch(baseUrl.replace(/\/+$/, "") + "/api/generate", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-            model: "deepseek-r1:1.5b",
+            model,
             prompt: [system, user].join("\n\n"),
             stream: false,
-            options
+            options: { temperature: 0.3, top_p: 0.95, num_predict: 96 }
         })
     })
-    const json = await res.json()
-    const out = typeof json?.response === "string" ? json.response : ""
-    return out
+    if (!res.ok) throw new Error("ollama_generate_error " + res.status)
+    const json = (await res.json()) as OllamaGenerateResponse
+    return typeof json.response === "string" ? json.response : ""
 }
 
-export function makeOllamaAirbnbStayAiRepo(ollamaUrl: string): AirbnbStayAiRepo {
+export function makeOllamaAirbnbStayAiRepo(cfg: { baseUrl: string; defaultModel: string }): AirbnbStayAiRepo {
     const system = buildSystemPrompt()
-    const options = { temperature: 0.3, top_p: 0.95, num_predict: 96 }
 
     return {
-        async match(input) {
+        async match(input: AirbnbMatchInput): Promise<AirbnbMatchOutput> {
+            const model = input.model ?? cfg.defaultModel
             const user = buildUserPrompt(input.userPrompt, input.listing1, input.listing2)
 
             let raw = ""
             try {
-                raw = await callOllamaChat(ollamaUrl, system, user, options)
+                raw = await callChat(cfg.baseUrl, model, system, user)
             } catch {
-                raw = await callOllamaGenerate(ollamaUrl, system, user, options)
+                raw = await callGenerate(cfg.baseUrl, model, system, user)
             }
 
             const jsonText = extractFirstJsonObject(raw) ?? ""

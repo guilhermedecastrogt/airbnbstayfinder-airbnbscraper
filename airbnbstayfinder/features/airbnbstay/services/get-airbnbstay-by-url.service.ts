@@ -1,5 +1,7 @@
 import { AirbnbStay } from "@/features/airbnbstay/domain/airbnbstay"
-import { AirbnbStayAiRepo, AirbnbStayHttpRepo } from "@/features/airbnbstay/repo/airbnbstay.repo"
+import { AirbnbStayHttpRepo } from "@/features/airbnbstay/repo/airbnbstay.repo"
+import { AirbnbStayAiRepo } from "@/features/airbnbstay/repo/airbnbstay.ai.repo"
+
 import { mapImages, mapRawToAiListing, mapToOutputStay, getFreeCancellation } from "@/features/airbnbstay/domain/airbnbstay.mapper"
 
 type TruncatedPayload = {
@@ -56,7 +58,7 @@ async function asyncPool<T, R>(
 
 export async function getAirbnbStayByUrlService(
     deps: { httpRepo: AirbnbStayHttpRepo; aiRepo: AirbnbStayAiRepo },
-    input: { url: string; currency: string; userPrompt: string }
+    input: { url: string; currency: string; userPrompt: string; aiModel: string }
 ): Promise<AirbnbStay[]> {
     const byUrl = await deps.httpRepo.searchByUrl({
         url: input.url,
@@ -76,7 +78,8 @@ export async function getAirbnbStayByUrlService(
         const ai = await deps.aiRepo.match({
             userPrompt: input.userPrompt,
             listing1,
-            listing2
+            listing2,
+            model: input.aiModel
         })
 
         return mapToOutputStay({
