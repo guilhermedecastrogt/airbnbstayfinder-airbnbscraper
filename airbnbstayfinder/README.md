@@ -1,0 +1,1 @@
+cd '/Users/guilhermedecastro/Documents/pyairbnb-main/pyairbnb-api' ; source ../.venv/bin/activate && PYTHONPATH="$PWD/src" uvicorn api.api_server:app --reload --host 0.0.0.0 --port 8001

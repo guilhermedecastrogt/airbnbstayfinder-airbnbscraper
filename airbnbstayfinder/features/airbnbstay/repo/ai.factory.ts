@@ -7,6 +7,13 @@ export function makeAirbnbStayAiRepoFromEnv(env: NodeJS.ProcessEnv): AirbnbStayA
     const model = env.AI_MODEL ?? "deepseek-r1:1.5b"
 
     if (provider === "openai") {
+
+        console.log("openai")
+        console.log("openai")
+        console.log("openai")
+        console.log("openai")
+        console.log("openai")
+
         const apiKey = env.OPENAI_API_KEY ?? ""
         if (!apiKey) throw new Error("missing OPENAI_API_KEY")
         return makeOpenAiAirbnbStayAiRepo({

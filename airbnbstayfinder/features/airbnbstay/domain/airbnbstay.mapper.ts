@@ -1,5 +1,5 @@
 import { AirbnbStay, AirbnbStayImage } from "@/features/airbnbstay/domain/airbnbstay"
-import { RawAirbnbStay } from "@/features/airbnbstay/domain/airbnbstay.raw"
+import {RawAirbnbStay, SearchByIdResponse} from "@/features/airbnbstay/domain/airbnbstay.raw"
 
 export function getFreeCancellation(item: RawAirbnbStay) {
     const text = item.paymentMessages?.[0]?.text ?? ""
@@ -14,7 +14,7 @@ export function mapImages(item: RawAirbnbStay): AirbnbStayImage[] {
     }))
 }
 
-export function mapRawToAiListing(item: RawAirbnbStay) {
+export function mapRawToAiListingByURL(item: RawAirbnbStay) {
     return {
         room_id: item.room_id,
         host_name: item.passportData.name,
@@ -28,6 +28,148 @@ export function mapRawToAiListing(item: RawAirbnbStay) {
         discount: item.price.unit.discount,
         rating: item.rating.value,
         rating_acount: item.rating.reviewCount
+    }
+}
+
+export function mapRawToAiListingById(item: SearchByIdResponse) {
+    const first = item.data?.[0]
+
+    return {
+        success: item.success,
+        count: item.count,
+        message: item.message,
+        data: (item.data ?? []).map(d => ({
+            coordinates: {
+                latitude: d.coordinates.latitude,
+                longitude: d.coordinates.longitude
+            },
+            room_type: d.room_type,
+            is_super_host: d.is_super_host,
+            home_tier: d.home_tier,
+            person_capacity: d.person_capacity,
+            rating: {
+                accuracy: d.rating.accuracy,
+                checking: d.rating.checking,
+                cleanliness: d.rating.cleanliness,
+                communication: d.rating.communication,
+                location: d.rating.location,
+                value: d.rating.value,
+                guest_satisfaction: d.rating.guest_satisfaction,
+                review_count: d.rating.review_count
+            },
+            house_rules: {
+                aditional: d.house_rules.aditional,
+                general: (d.house_rules.general ?? []).map(g => ({
+                    title: g.title,
+                    values: (g.values ?? []).map(v => ({
+                        title: v.title,
+                        icon: v.icon
+                    }))
+                }))
+            },
+            host: {
+                id: d.host.id,
+                name: d.host.name
+            },
+            sub_description: {
+                title: d.sub_description.title,
+                items: [...(d.sub_description.items ?? [])]
+            },
+            amenities: (d.amenities ?? []).map(a => ({
+                title: a.title,
+                values: (a.values ?? []).map(v => ({
+                    title: v.title,
+                    subtitle: v.subtitle,
+                    icon: v.icon,
+                    available: v.available
+                }))
+            })),
+            co_hosts: d.co_hosts,
+            images: (d.images ?? []).map(img => ({
+                title: img.title,
+                url: img.url
+            })),
+            location_descriptions: d.location_descriptions,
+            highlights: (d.highlights ?? []).map(h => ({
+                title: h.title,
+                subtitle: h.subtitle,
+                icon: h.icon
+            })),
+            is_guest_favorite: d.is_guest_favorite,
+            description: d.description,
+            title: d.title,
+            language: d.language,
+            reviews: (d.reviews ?? []).map(r => ({
+                comments: r.comments
+            }))
+        })),
+        first: first
+            ? {
+                coordinates: {
+                    latitude: first.coordinates.latitude,
+                    longitude: first.coordinates.longitude
+                },
+                room_type: first.room_type,
+                is_super_host: first.is_super_host,
+                home_tier: first.home_tier,
+                person_capacity: first.person_capacity,
+                rating: {
+                    accuracy: first.rating.accuracy,
+                    checking: first.rating.checking,
+                    cleanliness: first.rating.cleanliness,
+                    communication: first.rating.communication,
+                    location: first.rating.location,
+                    value: first.rating.value,
+                    guest_satisfaction: first.rating.guest_satisfaction,
+                    review_count: first.rating.review_count
+                },
+                house_rules: {
+                    aditional: first.house_rules.aditional,
+                    general: (first.house_rules.general ?? []).map(g => ({
+                        title: g.title,
+                        values: (g.values ?? []).map(v => ({
+                            title: v.title,
+                            icon: v.icon
+                        }))
+                    }))
+                },
+                host: {
+                    id: first.host.id,
+                    name: first.host.name
+                },
+                sub_description: {
+                    title: first.sub_description.title,
+                    items: [...(first.sub_description.items ?? [])]
+                },
+                amenities: (first.amenities ?? []).map(a => ({
+                    title: a.title,
+                    values: (a.values ?? []).map(v => ({
+                        title: v.title,
+                        subtitle: v.subtitle,
+                        icon: v.icon,
+                        available: v.available
+                    }))
+                })),
+                co_hosts: first.co_hosts,
+                images: (first.images ?? []).map(img => ({
+                    title: img.title,
+                    url: img.url
+                })),
+                location_descriptions: first.location_descriptions,
+                highlights: (first.highlights ?? []).map(h => ({
+                    title: h.title,
+                    subtitle: h.subtitle,
+                    icon: h.icon
+                })),
+                is_guest_favorite: first.is_guest_favorite,
+                description: first.description,
+                title: first.title,
+                language: first.language,
+                reviews: (first.reviews ?? []).map(r => ({
+                    comments: r.comments
+                }))
+            }
+            : null
     }
 }
 

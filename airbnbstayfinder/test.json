@@ -1,0 +1,1345 @@
+{
+  "success": true,
+  "count": 1,
+  "message": "Successfully extracted listing 984577438904217927",
+  "data": [
+    {
+      "coordinates": {
+        "latitude": 53.34642443236279,
+        "longitude": -6.249382410501676
+      },
+      "room_type": "Private room",
+      "is_super_host": true,
+      "home_tier": 1,
+      "person_capacity": 1,
+      "rating": {
+        "accuracy": 4.71,
+        "checking": 4.86,
+        "cleanliness": 4.77,
+        "communication": 4.78,
+        "location": 4.83,
+        "value": 4.53,
+        "guest_satisfaction": 4.69,
+        "review_count": "118"
+      },
+      "house_rules": {
+        "aditional": "Only guest booked can enter the home",
+        "general": [
+          {
+            "title": "Checking in and out",
+            "values": [
+              {
+                "title": "Check-in: 3:00 PM - 12:00 AM",
+                "icon": "SYSTEM_CLOCK"
+              },
+              {
+                "title": "Checkout before 10:00 AM",
+                "icon": "SYSTEM_CLOCK"
+              }
+            ]
+          },
+          {
+            "title": "During your stay",
+            "values": [
+              {
+                "title": "1 guest maximum",
+                "icon": "SYSTEM_FAMILY"
+              },
+              {
+                "title": "No pets",
+                "icon": "SYSTEM_NO_PETS"
+              },
+              {
+                "title": "Quiet hours",
+                "icon": "SYSTEM_EVENING"
+              },
+              {
+                "title": "No parties or events",
+                "icon": "SYSTEM_NO_EVENTS"
+              },
+              {
+                "title": "No commercial photography",
+                "icon": "SYSTEM_NO_CAMERA"
+              },
+              {
+                "title": "No smoking",
+                "icon": "SYSTEM_SMOKING_NOT_ALLOWED"
+              }
+            ]
+          },
+          {
+            "title": "Before you leave",
+            "values": [
+              {
+                "title": "Throw trash away",
+                "icon": "SYSTEM_TRASH"
+              },
+              {
+                "title": "Return keys",
+                "icon": "SYSTEM_HOST_OWNERS"
+              }
+            ]
+          }
+        ]
+      },
+      "host": {
+        "id": "538013168",
+        "name": "Hosted by Dean"
+      },
+      "sub_description": {
+        "title": "Private room in home in Dublin 2, Ireland",
+        "items": [
+          "1 guest",
+          "1 bedroom",
+          "1 bed",
+          "1 shared bath"
+        ]
+      },
+      "amenities": [
+        {
+          "title": "Bathroom",
+          "values": [
+            {
+              "title": "Hair dryer",
+              "subtitle": "",
+              "icon": "SYSTEM_HAIRDRYER",
+              "available": true
+            },
+            {
+              "title": "Shampoo",
+              "subtitle": "",
+              "icon": "SYSTEM_SHAMPOO",
+              "available": true
+            },
+            {
+              "title": "Shower gel",
+              "subtitle": "",
+              "icon": "SYSTEM_SOAP",
+              "available": true
+            }
+          ]
+        },
+        {
+          "title": "Bedroom and laundry",
+          "values": [
+            {
+              "title": "Essentials",
+              "subtitle": "Towels, bed sheets, soap, and toilet paper",
+              "icon": "SYSTEM_TOILETRIES",
+              "available": true
+            },
+            {
+              "title": "Bed linens",
+              "subtitle": "",
+              "icon": "SYSTEM_BLANKETS",
+              "available": true
+            }
+          ]
+        },
+        {
+          "title": "Heating and cooling",
+          "values": [
+            {
+              "title": "Central heating",
+              "subtitle": "",
+              "icon": "SYSTEM_THERMOMETER",
+              "available": true
+            }
+          ]
+        },
+        {
+          "title": "Home safety",
+          "values": [
+            {
+              "title": "Exterior security cameras on property",
+              "subtitle": "Door bell cámara on the out side of the front door ",
+              "icon": "SYSTEM_SURVEILLANCE",
+              "available": true
+            },
+            {
+              "title": "Smoke alarm",
+              "subtitle": "",
+              "icon": "SYSTEM_DETECTOR_SMOKE",
+              "available": true
+            },
+            {
+              "title": "Carbon monoxide alarm",
+              "subtitle": "",
+              "icon": "SYSTEM_DETECTOR_CO",
+              "available": true
+            }
+          ]
+        },
+        {
+          "title": "Internet and office",
+          "values": [
+            {
+              "title": "Wifi",
+              "subtitle": "",
+              "icon": "SYSTEM_WI_FI",
+              "available": true
+            }
+          ]
+        },
+        {
+          "title": "Kitchen and dining",
+          "values": [
+            {
+              "title": "Hot water kettle",
+              "subtitle": "",
+              "icon": "SYSTEM_WATER_KETTLE",
+              "available": true
+            },
+            {
+              "title": "Toaster",
+              "subtitle": "",
+              "icon": "SYSTEM_TOASTER",
+              "available": true
+            }
+          ]
+        },
+        {
+          "title": "Services",
+          "values": [
+            {
+              "title": "Host greets you",
+              "subtitle": "",
+              "icon": "SYSTEM_HOST_OWNERS",
+              "available": true
+            }
+          ]
+        },
+        {
+          "title": "Not included",
+          "values": [
+            {
+              "title": "Kitchen",
+              "subtitle": "",
+              "icon": "SYSTEM_NO_KITCHEN",
+              "available": false
+            },
+            {
+              "title": "32 inch TV with Chromecast",
+              "subtitle": "",
+              "icon": "SYSTEM_NO_TV",
+              "available": false
+            },
+            {
+              "title": "Washer",
+              "subtitle": "",
+              "icon": "SYSTEM_NO_WASHER",
+              "available": false
+            },
+            {
+              "title": "Dryer",
+              "subtitle": "",
+              "icon": "SYSTEM_NO_DRYER",
+              "available": false
+            },
+            {
+              "title": "Air conditioning",
+              "subtitle": "",
+              "icon": "SYSTEM_NO_AIR_CONDITIONING",
+              "available": false
+            },
+            {
+              "title": "Hot water",
+              "subtitle": "",
+              "icon": "SYSTEM_NO_HOT_WATER",
+              "available": false
+            }
+          ]
+        }
+      ],
+      "co_hosts": [],
+      "images": [
+        {
+          "title": "Listing image 1",
+          "url": "https://a0.muscache.com/im/pictures/hosting/Hosting-984577438904217927/original/ae53ed30-3737-4ea2-9cdb-85ab3e95bb7d.jpeg"
+        },
+        {
+          "title": "Listing image 2",
+          "url": "https://a0.muscache.com/im/pictures/hosting/Hosting-984577438904217927/original/0f36c01f-517e-44de-a8d6-65e28a257856.jpeg"
+        },
+        {
+          "title": "Listing image 3",
+          "url": "https://a0.muscache.com/im/pictures/hosting/Hosting-984577438904217927/original/1e8bcac5-01c6-44d0-a422-2f25d6318413.jpeg"
+        },
+        {
+          "title": "Listing image 4",
+          "url": "https://a0.muscache.com/im/pictures/miso/Hosting-984577438904217927/original/5d730496-549c-4aa0-8c80-ef692ba1d8d7.jpeg"
+        },
+        {
+          "title": "Listing image 5",
+          "url": "https://a0.muscache.com/im/pictures/hosting/Hosting-984577438904217927/original/05d819bd-5807-4895-849c-40c0e056a81a.jpeg"
+        },
+        {
+          "title": "Listing image 6",
+          "url": "https://a0.muscache.com/im/pictures/hosting/Hosting-984577438904217927/original/3771aa8d-2fd4-4798-bcf5-187db3b99de6.jpeg"
+        },
+        {
+          "title": "Listing image 7",
+          "url": "https://a0.muscache.com/im/pictures/hosting/Hosting-984577438904217927/original/5e27bbce-d053-4e5a-b858-2d5e90ef08ca.jpeg"
+        },
+        {
+          "title": "Listing image 8",
+          "url": "https://a0.muscache.com/im/pictures/hosting/Hosting-984577438904217927/original/a658f28a-17ce-4dcd-8b0f-64e7fe3b2cbb.jpeg"
+        },
+        {
+          "title": "Listing image 9",
+          "url": "https://a0.muscache.com/im/pictures/hosting/Hosting-984577438904217927/original/0da009f9-a93d-4d4d-b5f4-ae7e31216225.jpeg"
+        },
+        {
+          "title": "Listing image 10",
+          "url": "https://a0.muscache.com/im/pictures/hosting/Hosting-984577438904217927/original/fe2b5fcb-ec16-48b8-9ea4-e8c2b5cca1ec.jpeg"
+        },
+        {
+          "title": "Listing image 11",
+          "url": "https://a0.muscache.com/im/pictures/hosting/Hosting-984577438904217927/original/349506ec-7e6f-4b52-a172-9bdd17da8ba6.jpeg"
+        }
+      ],
+      "location_descriptions": [],
+      "highlights": [
+        {
+          "title": "Walkable area",
+          "subtitle": "Guests say this area is easy to get around.",
+          "icon": "SYSTEM_LOCATION"
+        },
+        {
+          "title": "Dean is a Superhost",
+          "subtitle": "Superhosts are experienced, highly rated Hosts.",
+          "icon": "SYSTEM_SUPERHOST"
+        }
+      ],
+      "is_guest_favorite": false,
+      "description": "Private BEDROOM AND shared BATHROOM ACCESS ONLY !!<br /><br />This room accommodates maximum 1 person <br />-Only booked guests can enter our home <br />-Not suitable for kids or infants.<br />-Our home is located in Dublin 2 just of the river Liffey <br />-The house is ideally located within walking distance to everywhere within the city <br />-In the home is my partner and I and also our French bulldog <br />-No access to kitchen or living room <br /><br />We welcome guests into our home and expect respect toward the home whilst here<br /><br /><b>The space</b><br />No third party bookings<br /><br /><b>Guest access</b><br />Guests booked to stay have access to Private Bedroom and shared bathroom only , NO kitchen or another areas of the house<br /><br /><b>Other things to note</b><br />Only the person booked in the booking can enter the house- if this rule is broken the booking will be void and no refund provided<br /><br />This is for the safety of everyone in the house and we take this very serious<br /><br />No third party bookings !<br /><br />Quiet time from 10pm -8am",
+      "title": "Cozy single room central Dublin ,",
+      "language": "en",
+      "reviews": [
+        {
+          "comments": "I appreciate Dean & Andy (and their cute doggy) for hosting me! Their house is in a great walking distance to everything (10 minute walk to Book of Kells/Trinity College, 15 to temple bar and directly by the river). <br/>The room itself was cozy — very small but is exactly what’s listed/described on the website. The only downside is that the walls were very thin so if that bothers you (or you’re a light sleeper) it might not be the place to stay. Because of that I didn’t feel quite as comfortable moving around or coming in and out of the house later at night or in the mornings (just because you can really hear everything so you need to be super quiet). <br/>But it’s a pretty decent spot to stay as a solo traveler if you’re trying to be out and about a lot and need a close walking distance to downtown Dublin!"
+        },
+        {
+          "comments": "极佳的地理位置，Andy 和Dean很热情，还有一只可爱的狗狗。"
+        },
+        {
+          "comments": "Room was perfectly suited for my brief stay. I would happily book with him again."
+        },
+        {
+          "comments": "Consiglio la stanza a casa di Dean e Andy: un po’ piccola, ma perfetta per una persona, pulita, silenziosa – ho adorato il canto dei gabbiani al mattino – e soprattutto in un’ottima posizione. Il quartiere è tranquillo, vicino sia alla stazione che al centro città, ma anche alle fermate del bus per l’aeroporto. Dean e Andy sono cordiali e molto reattivi nelle risposte e se sarete fortunati, ad accogliervi ci sarà il loro adorabile cagnolino."
+        },
+        {
+          "comments": "Dean fue muy atento y el alojamiento cumplido con las expectativas. Todo muy limpio y tranquilo."
+        },
+        {
+          "comments": "Dean und Andy sind zwei überaus freundliche und hilfsbereite Gastgeber. Die Unterkunft liegt super zentral- Bus und Bahnstation in  unmittelbarer Nähe. <br/>Ein sehr bequemes Bett, sehr angenehm waren Toaster und Wasserkocher am Zimmer. <br/>Ein besonders süßer Mitbewohner war der Hund der beiden- schockverliebt!"
+        },
+        {
+          "comments": "Perfect quaint room for a single person to have a short stay. No frills but just what was needed."
+        },
+        {
+          "comments": "きちんとした方で、丁寧に対応していただけました。"
+        },
+        {
+          "comments": "Great stay, great location! Will stay again!"
+        },
+        {
+          "comments": "ダブリンの中心地に近いながらも夜は静かで部屋も綺麗でした。"
+        },
+        {
+          "comments": "Ottima posizione, comoda per muoversi a piedi. Alloggio in pieno corrispondente a quanto descritto. Molto utile il bollitore in camera! Consigliato senza dubbi"
+        },
+        {
+          "comments": "Dean was pleasant and the room/accomodation was nice. This was a great location near the centre (just about 5min from Trinity college). The room is a \"box room\" on the 1st floor facing the back of the house with a single bed and a shelving unit with kettle/toaster. It is plain, clean and it is very much \"what it says on the tin\". <br/>This is a room in an older house, and though the house itself has been nicely done up the room is still slightly barren and overlooks a slightly rougher looking back yard. I had what I needed for my overnight, no major complaints. The mattress was slightly hard (like hard foam?) and there was no blackout curtain. The bathroom was nice and clean. Thank you to Dean for the easy and pleasant check in."
+        },
+        {
+          "comments": "The single bedroom in Dean and Andy's house was very simple, clean and comfortable. The shared bathroom inc shower was clean and accessible. <br/>No additional facilities or amenities but this was made clear in the description.<br/>Excellent location in Dublin centre, near the river Liffey and all key attractions - perfect for a short stay solo visitor. <br/>Would happily return here."
+        },
+        {
+          "comments": "I had a wonderful time staying at Dean's place in Dublin! Both Dean and Andy were very helpful and friendly, and Chico is an absolute sweetheart. The location is fab, walking distance to so many things like EPIC Museum, some nice pubs, bakeries and more. The room itself was nice and clean, it had all the amenities I needed to feel comfortable during my stay! I've already recommended this space to some friends, and I'd most certainly want to stay here again next time I'm in the city. Thanks for your hospitality Dean, Andy & Chico :)"
+        },
+        {
+          "comments": "Everything was great, I will come back!"
+        },
+        {
+          "comments": "I wasn’t there for very long but for the short stay I was, I felt comfortable and safe in Dean’s home."
+        },
+        {
+          "comments": "The room has only one single bed. This is the only space you can move around in the entire house. The three adjacent rooms share one bathroom. Because it was too noisy, I couldn't sleep all night. The curtains are only made of a thin fabric. The TV doesn't work. The refrigerator and the kitchen can only be used by the landlord himself. What's even more terrifying is that a one-centimeter-long bug was found on the bedside table. At the same price, you could stay in a budget hotel. It's much worse than the single room in a youth hostel. Please choose carefully!"
+        },
+        {
+          "comments": "Nice room, not very big but enough for one person.<br/>Near to The Trinity College and 20 min walk to the city center.<br/>The communication with hosts was really easy and they asked all my question within 1h or less.<br/>30min ride (bus DublinExpress) from the airport plus 10 min walking.<br/>I recommend this room to everyone that is coming to Dublin"
+        },
+        {
+          "comments": "Mon séjour chez Dean et Andy s’est super bien passé ! Dean a été super gentil et très accueillant me proposant son aide si besoin. La chambre et la salle de bain sont très propres. <br/>J’ai passé un excellent séjour ! La maison est très accessible et bien située (à proximité des transports). De nombreuses activités sont accessibles à pied."
+        },
+        {
+          "comments": "The stay was exactly as described, it met all my needs for the few days I was there, easy to get to with public transit, and they have the cutest little dog!"
+        },
+        {
+          "comments": "Exactly as described. Great communication. Easy to find and check in. Very comfortable bed, spotless bathroom. Great stay. Will stay again. Thank you!"
+        },
+        {
+          "comments": "Good location and good communication from the host."
+        },
+        {
+          "comments": "not much to add. what you see is what you get. I would stay again"
+        },
+        {
+          "comments": "Brilliant, highly recommend, single bed is very comfy!"
+        },
+        {
+          "comments": "Un alojamiento era una habitación chica , muy bonita y cómoda, brindaban café, tostadora, una taza y toallas, estaba reluciente y cuidado. Tuve un inconveniente por qué no me había dado cuenta de que no se ofrecía heladera y eso complicó un poco mi estadía de 5 días. Pero todo excelente , ambos son unos increíbles host, atentos y siempre muy serviciales. Chico(el perro) se ganó todas las miradas ❤️. Gracias chicos"
+        },
+        {
+          "comments": "Dean was great, very responsive, helped me when i asked right away, would definitely come back when i get the chance, his dog was also very friendly and professional, thank you dean!"
+        },
+        {
+          "comments": "Dean and Andy host a lovely place<br/>to stay in Dublin. It’s easy to get there by bus from the airport. The room and bathroom are very clean. Dean is very welcoming and with a cutest dog!"
+        },
+        {
+          "comments": "Great place to stay as a solo traveler. The location is very walkable to the downtown of Dublin. Was never more then a 20 minute walk from tour pick up locations or great resturants and pubs. Dean and his partner are also very friendly. <br/>Would recommend."
+        },
+        {
+          "comments": "Clean and safe"
+        },
+        {
+          "comments": "Hosts were so welcoming, and I squealed at the site of their adorable dog, who I’d love to see more of but he was kept away from guests. (The house does accommodate another bnb guest room and you share toilet.) <br/>The single room is clean, great ventilation unlike many other places, no AC like most places in Ireland. I came during a hot summer day and the windows were a great help. Looks like heating is available. Bed is comfy and shower is spacious. I’d definitely stay again because of the location and hosts were so helpful. Dean saved me €30-40 by letting me use a charger for my phone because I forgot mine! He made me feel as if I could reach out for any request. They have cameras which I appreciate for safety reasons and I had keys to my quarters at all times. This was by far a nicer option than another bnb I stayed by the airport which was in shambles. They kept it up nicely. They were a delight!"
+        },
+        {
+          "comments": "Good for short stay"
+        },
+        {
+          "comments": "Had a great stay, place is clean and central to the city center!"
+        },
+        {
+          "comments": "It was a nice room, everything was clean and the location is great!"
+        },
+        {
+          "comments": "Simple space, comfortable and clean place to crash for the night."
+        },
+        {
+          "comments": "I had a great stay. Dean was always responsive to any question, and really helped to make my stay very enjoyable. It’s a great location and central to everything in Dublin. Highly recommended!"
+        },
+        {
+          "comments": "Dean was a great host!<br/>Please was clean and tidy and the dog is adorable!"
+        },
+        {
+          "comments": "Perfect stay.<br/>The room is simple but everything you need is there.<br/>Great communication, flexibility and attention.<br/>Don't hesitate!"
+        },
+        {
+          "comments": "Dean and Andy are super nice host! Their place is nice and clean and reflects accurately of the photos. <br/>They have a lovely dog. He is very well behaving and would not disturb at all<br/>The location is super connected so very easy to visit Dublin around. Would definitely recommend and would definitely come back!"
+        },
+        {
+          "comments": "It was perfect"
+        },
+        {
+          "comments": "Dean and Andy were very kind. I enjoyed my stay there. Thank you"
+        },
+        {
+          "comments": "Will definitely recommend Dean’s place. It’s perfectly walkable to absolutely top attractions in Dublin.<br/>Everything you need clean safe also it’s only seven minutes walking distance from the main coach station<br/>Super friendly host will definitely book again on my work trip back to Dublin. Is a communication clean safe space and definitely recommend for women travelling alone."
+        },
+        {
+          "comments": "good"
+        },
+        {
+          "comments": "First time in doubling, I couldn’t find a more perfect place for myself. Quiet , clean, respectful,kind,positive vibes <br/>Thank you very much I will never be a hotel guest as long as there are people like Dean,Andy and Tito to host"
+        },
+        {
+          "comments": "Can’t speak highly enough of the host and the place, everything perfect. Thanks Guys"
+        },
+        {
+          "comments": "Very welcoming and helpful. I really enjoyed my stay at their flat. Great location close to all the amenities."
+        },
+        {
+          "comments": "Would definitely come back, amazing location and Dean was great!"
+        },
+        {
+          "comments": "Petite chambre sympa, proche de tout à Dublin. Dean est super sympa et arrangeant !"
+        },
+        {
+          "comments": "Super emplacement facile d'accès je recommande"
+        },
+        {
+          "comments": "All good,very clean place and convenient location!"
+        },
+        {
+          "comments": "Nice single room to spend the night, clean and comfy!"
+        },
+        {
+          "comments": "Very convenient location and Dean was so friendly."
+        },
+        {
+          "comments": "Dean and Andy were very helpful! I needed an affordable, clean, and quiet place to stay for a quick night and they surpassed expectations! Thank you both!"
+        },
+        {
+          "comments": "central location, easy to get everywhere, easy transport links for buses to airport. good price for 1 bedroom, mattress a bit uncomfortable but not a problem"
+        },
+        {
+          "comments": "Dean was an excellent host.  He was rather communicative and welcoming, which made the check-in smooth and easy. Extremely satisfied."
+        },
+        {
+          "comments": "I had a lovely stay. The room was quiet, clean and cosy. The home is super central to everything, walking distance, Luas tram, bus or Dart. Every direction you walk, there is so much to do. The hosts were both so kind, welcoming and lovely. 100% recommend. Thank you both ☺️ 10/10"
+        },
+        {
+          "comments": "Always a please to come back"
+        },
+        {
+          "comments": "Everything was perfect! A central and quiet location, very close to Trinity College University and other central locations you can visit!"
+        },
+        {
+          "comments": "Dean was a great host. He greeted me when I arrived and showed me the room and the bathroom. During the stay he also checked if I need something. <br/>The location is great because it's just walking distance from the city center and some tourist attractions."
+        },
+        {
+          "comments": "Dean’s place is perfect! <br/>The hosts are lovely, friendly people. The room is spotless and in an incredibly good location - and their dog is adorable!<br/>I hope I have a reason to return to Dublin (I’ll find one) and when I do I won’t look for anywhere else… I would love to stay here again<br/>Thank you so much 😊"
+        },
+        {
+          "comments": "Very comfortably located in the city centre of Dublin, clean and absolutely worth it if you want to visit the Emerald Isle! The room is exactly as shown in the photos."
+        },
+        {
+          "comments": "The place was very nicely located in the center of Dublin. Easy access to everything. It was really quiet and clean. Dean was proactive, in order to best organized my stay and very responsive once I reached out.<br/>Highly recommend for solo travellers!"
+        },
+        {
+          "comments": "Very cosy place to stay close to city centre. Nice hosting, easy access to public transportation. Thank you D&A"
+        },
+        {
+          "comments": "Merci encore pour votre logement très bien placé en plein milieu de la ville. <br/>Bonne continuation !"
+        },
+        {
+          "comments": "A perfect place if you’re looking for affordable accommodation in central Dublin. Location is great. Room was small and comfortable (as advertised, I just needed a room for one). Great value. I highly recommend."
+        },
+        {
+          "comments": "A really pleasant stay, the room and the bathroom were extremely clean, the areas around very safe and calm everything was close by. Hopefully I’ll come back soon I loved Dublin and a nice place to stay is important for a good trip."
+        },
+        {
+          "comments": "Excellent location for cheap price, impressed with quality of bathroom"
+        },
+        {
+          "comments": "Brilliant little spot within walking distance of the CBD and Docklands for business and City Centre for fun.  Great little spot, surprisingly quiet for how central it is.  Very responsive and pleasant host.<br/>I'm a business traveller for 1-2 nights in Dublin, perfect for a busy traveller who just needs somewhere to get their head down.  Will definitely stay again at this gem."
+        },
+        {
+          "comments": "I had a great time! It is in walking distance to everything you need and the perfect space to reast and recharge after a day exploring Dublin. <br/>Dean was very nice and responsive to all my questions and left clear instructions. Being greeted by Chico the dog was a plus that made me feel welcome right away!<br/>I would definitely stay there again!"
+        },
+        {
+          "comments": "Dean was very friendly and responsive. When I arrived, he had clear instructions to the stay and helped to take my luggage upstairs. The location was super great, walk distance to attractions but not dirty or noisy. As there is a bar nearby, I didn’t hear loud noises during my stay from Tuesday to Saturday. Dean’s cute dog was also quiet. Although a little small, the room was cozy and had a window, facing private spaces which was super great. The bathroom was clean and big. Highly recommend!"
+        },
+        {
+          "comments": "The french bouledogue is worth the stay"
+        },
+        {
+          "comments": "Straightforward, clean and small bedroom with shared bathroom. Walkable from city center and located in quiet neighborhood. It’s a good room if you need an affordable place just to sleep, but not spend time in. Positives are host is very easy to communicate with and responsive. There is  a tea kettle in the bedroom which was a nice touch.  Overall, clean no thrills bedroom."
+        },
+        {
+          "comments": "They chose the cheapest possible bed with not enough slats to cover the area under the mattress. I did not notice it when sleeping but when i sat at the end of the bed on the second morning to put on my socks, the mattress was completed unsupported and I ended up falling backwards onto the floor inside the base. I got up and checked it and only about 70% of the mattress was supported by slats and the slats that were there were only held by basic plastic tie wraps. I had a few bruises but nothing serious luckily.  It could have gotten a bad injury. I reported this to the hosts and they responded with extreme hostility making discriminatory insults, false accusations and demanding the whole bed be replaced (even though only the plastic tie wraps were broken). Do not stay in this place because if there is any small disagreement, you will have to deal with extreme hostility. Airbnb has given them a warning as they violated the terms and conditions of operation (not enough punishment IMO)"
+        },
+        {
+          "comments": "Accueil parfait. Dean est très réactif.<br/>Bonne situation. Chambre à l'arrière et au calme."
+        },
+        {
+          "comments": "Absolutely awesome location for a true Irish experience away from Temple bar."
+        },
+        {
+          "comments": "El alojamiento está situado en un barrio tranquilo, a 10 minutos del centro,  por lo que es cómodo para caminar por la ciudad. La habitación, aunque es pequeña, es cómoda y el baño estuvo constantemente limpio a pesar de ser compartido.  Dean, Andy y su perrito son encantadores."
+        },
+        {
+          "comments": "I had a very nice staying at Dean's place. The check-in was quite flexible, since I had a delayed in my flight I could arrive late in the night. The space was very clean, organize and calm. Good location close to the city center. I do recommend! 😄"
+        },
+        {
+          "comments": "This was a perfect location to get to transportation and the center of town.  The host was right there when I arrived and very friendly."
+        },
+        {
+          "comments": "Very Nice and confortable Space"
+        },
+        {
+          "comments": "The place was in a quiet but central area, clean, and the hosts extremely nice and responsive. It's a basic room but does its job :) Had a water kettle etc as well. Would definitely stay there again! <br/>If you're sensitive to light best to bring a sleeping mask as the curtains don't really block light, and if you're sensitive to noise, bring some earplugs - the area is very calm but the walls are quite thin (nothing the hosts can do anything about)."
+        },
+        {
+          "comments": "This was a perfect place to stay, easy walking distance to Trinity College. Dean was a great host and I slept very well. Would definitely recommend!"
+        },
+        {
+          "comments": "Dean was super friendly and accommodating from the start! I was in Dublin for a concert and this was super convenient - very easy to get to & from on multiple forms of public transportation - and was able to check in early to rest & freshen up straight off a transatlantic flight. Quiet, clean, just what I needed for a quick overnight stay."
+        },
+        {
+          "comments": "My stay was great! Clean, cozy place with a kind and helpful host!"
+        },
+        {
+          "comments": "Quiet neighborhood. Close to center. The hosts are really kind. 100% recommended"
+        },
+        {
+          "comments": "The location is an absolute win. Extremely close to Connolly and Pearse stations, as well as a bus stop around the corner. Loads of restaurants and pubs to walk to as well!<br/>The shower was great, bedroom perfect for resting my head, and the hosts were a pleasure to deal with whenever I spoke with them. It is safe to say i had a lovely stay!"
+        },
+        {
+          "comments": "best ⭐⭐⭐⭐⭐"
+        },
+        {
+          "comments": "They were lovely! Definitely a nice place for price and location. I wouldn’t spend too much time lingering around the room, but it was perfect for a place to crash. You most likely want to be out in the city anyways so it’s wonderful!"
+        },
+        {
+          "comments": "This place was amazing !   Even though the bathroom was shared, it was extremely clean at all times.<br/>This was such a great location as it was far enough away from the touristy places that it was quiet, but close enough that you could walk to all those tourist places if you so desired. I would definitely stay here again.   Dean answered all my questions and was a great host. Highly recommend."
+        },
+        {
+          "comments": "Great communication with Dean & Andy! Thanks!"
+        },
+        {
+          "comments": "Emplacement ideal,accessible a pied,pas loin du centre ville.Hôte très reactif,chambre et salle de bain très propre"
+        },
+        {
+          "comments": "Great location"
+        },
+        {
+          "comments": "Parfait"
+        },
+        {
+          "comments": "Conveniently close to Trinity College Business School. The bathroom is shared between few rooms. I had no problems and it was always clean and furnished. Room was small but absolutely fine."
+        },
+        {
+          "comments": "Chambre parfaite pour un très court séjour. Logement proche des transports en commun et du centre ville. Quartier paisible. Hôte attentionné et réactif."
+        },
+        {
+          "comments": "The location is great, the hosts are really friendly and receptive and provided everything they said they would! <br/>It was unclear to me that the bathroom would be shared, but it turned out not to be a problem. I even had more privacy than I had expected!"
+        },
+        {
+          "comments": "Dean był bardzo miłym i bezproblemowym gospodarzem. Odpowiednia baza wypadowa do zwiedzania miasta."
+        },
+        {
+          "comments": "Dean was great. Super helpful and place was super clean. Perfect spot to get around town too. I was able to lock my room too. Shared bathroom but never had an issue using it when I needed it. Chico was cool friendly pup too"
+        },
+        {
+          "comments": "Great great location! Even my Dubliner friend was surprised"
+        },
+        {
+          "comments": "Stayed for 2 nights and their place was really nice.<br/>Close to the central area but still 10-15mins away by walk so where accommodation was located in is very quiet at night.<br/>Also, this is just my fault so didn't minus any stars, but the size of the room is really small especially when you are traveling with the suitcase.<br/>If you are a backpacker with the small-middle size luggage, this is the perfect place to stay.<br/>P.S. I loved the cute dog who was friendly and frequently came to my room to say \"hi\" haha"
+        },
+        {
+          "comments": "Dean's house is in a great location, close to the city center. The room and bathroom were clean, the bed was comfortable. Dean was welcoming. I had a great time in Dublin at his place."
+        },
+        {
+          "comments": "Simple space. Near lots in walking distance. What you need for a short stay in a city"
+        },
+        {
+          "comments": "Dean war sehr nett, die Unterkunft war super-zentral.<br/>Leider war es nicht so sauber und ich durfte die Küche nicht nutzen, nicht mal für eine Tasse Tee. Das wäre wirklich gut gewesen."
+        },
+        {
+          "comments": "Great quick place to stay and Dead is super friendly!! Cute dog"
+        },
+        {
+          "comments": "Basic room, clean and comfortable. Host responded quickly which I really appreciated! recommend"
+        },
+        {
+          "comments": "I spent two nights at Dean's place. It's a good location for exploring the city."
+        },
+        {
+          "comments": "Dean was very helpful and friendly.  His place is really convenient as right in the middle of town."
+        },
+        {
+          "comments": "Die Unterkunft war gut vom Zentrum aus auch zu Fuß zu erreichen"
+        },
+        {
+          "comments": "Very simple but nice place to stay. Hard to beat the location!"
+        },
+        {
+          "comments": "Dean hat mich begrüßt und alles gezeigt und erklärt, was notwendig war. Das Zimmer ist sauber und ruhig gelegen. Das geteilte Badezimmer ebenso sauber und direkt am Zimmer gelegen. Von Deans Wohnung aus kann Dublin sehr gut zu Fuß erkundet werden. Die Liffey ist direkt um die Ecke, Trinity College oder Templer Bar in zehn Minuten Fußweg erreichbar. Ich habe mich sicher gefühlt und würde jederzeit wieder bei Dean das Zimmer buchen."
+        },
+        {
+          "comments": "Easy and awesome stay!"
+        },
+        {
+          "comments": "Dean is a good host and the place is well located. Everything went pretty smooth and he tries to make you feelcomfortable."
+        },
+        {
+          "comments": "Dean puso todas las facilidades para la llegada y la salida. Atento, explicó cómo llegar a la zona centro de la ciudad y el funcionamiento de todas las instalaciones de la casa. Habitación cálida y confortable, sumado a un baño cómodo y amplio en la puerta de enfrente."
+        },
+        {
+          "comments": "Un'ottima opzione per passare qualche giorno a Dublino... Davvero molto semplice da trovare"
+        },
+        {
+          "comments": "Great host and great spot to stay"
+        },
+        {
+          "comments": "Dean a toujours répondu rapidement à mes questions. Logement simple , à proximité du centre de Dublin."
+        },
+        {
+          "comments": "Recommend it<br/>Small room, but warm (important for these cold days), clean, very quiet and very well located. Host very nice and proactive"
+        },
+        {
+          "comments": "its accessible and close to supermarkets"
+        },
+        {
+          "comments": "位置就在三一学院旁，服务很不错，我需要喝热水，给我提供了热水壶和水杯"
+        },
+        {
+          "comments": "Dean’s place is an affordable and conveniently located private room option if you are having a short stay or city trip. Flexible and friendly host that let me in at 1am as I was arriving with a late evening flight. Will return next time I am in town by myself."
+        }
+      ]
+    }
+  ],
+  "first": {
+    "coordinates": {
+      "latitude": 53.34642443236279,
+      "longitude": -6.249382410501676
+    },
+    "room_type": "Private room",
+    "is_super_host": true,
+    "home_tier": 1,
+    "person_capacity": 1,
+    "rating": {
+      "accuracy": 4.71,
+      "checking": 4.86,
+      "cleanliness": 4.77,
+      "communication": 4.78,
+      "location": 4.83,
+      "value": 4.53,
+      "guest_satisfaction": 4.69,
+      "review_count": "118"
+    },
+    "house_rules": {
+      "aditional": "Only guest booked can enter the home",
+      "general": [
+        {
+          "title": "Checking in and out",
+          "values": [
+            {
+              "title": "Check-in: 3:00 PM - 12:00 AM",
+              "icon": "SYSTEM_CLOCK"
+            },
+            {
+              "title": "Checkout before 10:00 AM",
+              "icon": "SYSTEM_CLOCK"
+            }
+          ]
+        },
+        {
+          "title": "During your stay",
+          "values": [
+            {
+              "title": "1 guest maximum",
+              "icon": "SYSTEM_FAMILY"
+            },
+            {
+              "title": "No pets",
+              "icon": "SYSTEM_NO_PETS"
+            },
+            {
+              "title": "Quiet hours",
+              "icon": "SYSTEM_EVENING"
+            },
+            {
+              "title": "No parties or events",
+              "icon": "SYSTEM_NO_EVENTS"
+            },
+            {
+              "title": "No commercial photography",
+              "icon": "SYSTEM_NO_CAMERA"
+            },
+            {
+              "title": "No smoking",
+              "icon": "SYSTEM_SMOKING_NOT_ALLOWED"
+            }
+          ]
+        },
+        {
+          "title": "Before you leave",
+          "values": [
+            {
+              "title": "Throw trash away",
+              "icon": "SYSTEM_TRASH"
+            },
+            {
+              "title": "Return keys",
+              "icon": "SYSTEM_HOST_OWNERS"
+            }
+          ]
+        }
+      ]
+    },
+    "host": {
+      "id": "538013168",
+      "name": "Hosted by Dean"
+    },
+    "sub_description": {
+      "title": "Private room in home in Dublin 2, Ireland",
+      "items": [
+        "1 guest",
+        "1 bedroom",
+        "1 bed",
+        "1 shared bath"
+      ]
+    },
+    "amenities": [
+      {
+        "title": "Bathroom",
+        "values": [
+          {
+            "title": "Hair dryer",
+            "subtitle": "",
+            "icon": "SYSTEM_HAIRDRYER",
+            "available": true
+          },
+          {
+            "title": "Shampoo",
+            "subtitle": "",
+            "icon": "SYSTEM_SHAMPOO",
+            "available": true
+          },
+          {
+            "title": "Shower gel",
+            "subtitle": "",
+            "icon": "SYSTEM_SOAP",
+            "available": true
+          }
+        ]
+      },
+      {
+        "title": "Bedroom and laundry",
+        "values": [
+          {
+            "title": "Essentials",
+            "subtitle": "Towels, bed sheets, soap, and toilet paper",
+            "icon": "SYSTEM_TOILETRIES",
+            "available": true
+          },
+          {
+            "title": "Bed linens",
+            "subtitle": "",
+            "icon": "SYSTEM_BLANKETS",
+            "available": true
+          }
+        ]
+      },
+      {
+        "title": "Heating and cooling",
+        "values": [
+          {
+            "title": "Central heating",
+            "subtitle": "",
+            "icon": "SYSTEM_THERMOMETER",
+            "available": true
+          }
+        ]
+      },
+      {
+        "title": "Home safety",
+        "values": [
+          {
+            "title": "Exterior security cameras on property",
+            "subtitle": "Door bell cámara on the out side of the front door ",
+            "icon": "SYSTEM_SURVEILLANCE",
+            "available": true
+          },
+          {
+            "title": "Smoke alarm",
+            "subtitle": "",
+            "icon": "SYSTEM_DETECTOR_SMOKE",
+            "available": true
+          },
+          {
+            "title": "Carbon monoxide alarm",
+            "subtitle": "",
+            "icon": "SYSTEM_DETECTOR_CO",
+            "available": true
+          }
+        ]
+      },
+      {
+        "title": "Internet and office",
+        "values": [
+          {
+            "title": "Wifi",
+            "subtitle": "",
+            "icon": "SYSTEM_WI_FI",
+            "available": true
+          }
+        ]
+      },
+      {
+        "title": "Kitchen and dining",
+        "values": [
+          {
+            "title": "Hot water kettle",
+            "subtitle": "",
+            "icon": "SYSTEM_WATER_KETTLE",
+            "available": true
+          },
+          {
+            "title": "Toaster",
+            "subtitle": "",
+            "icon": "SYSTEM_TOASTER",
+            "available": true
+          }
+        ]
+      },
+      {
+        "title": "Services",
+        "values": [
+          {
+            "title": "Host greets you",
+            "subtitle": "",
+            "icon": "SYSTEM_HOST_OWNERS",
+            "available": true
+          }
+        ]
+      },
+      {
+        "title": "Not included",
+        "values": [
+          {
+            "title": "Kitchen",
+            "subtitle": "",
+            "icon": "SYSTEM_NO_KITCHEN",
+            "available": false
+          },
+          {
+            "title": "32 inch TV with Chromecast",
+            "subtitle": "",
+            "icon": "SYSTEM_NO_TV",
+            "available": false
+          },
+          {
+            "title": "Washer",
+            "subtitle": "",
+            "icon": "SYSTEM_NO_WASHER",
+            "available": false
+          },
+          {
+            "title": "Dryer",
+            "subtitle": "",
+            "icon": "SYSTEM_NO_DRYER",
+            "available": false
+          },
+          {
+            "title": "Air conditioning",
+            "subtitle": "",
+            "icon": "SYSTEM_NO_AIR_CONDITIONING",
+            "available": false
+          },
+          {
+            "title": "Hot water",
+            "subtitle": "",
+            "icon": "SYSTEM_NO_HOT_WATER",
+            "available": false
+          }
+        ]
+      }
+    ],
+    "co_hosts": [],
+    "images": [
+      {
+        "title": "Listing image 1",
+        "url": "https://a0.muscache.com/im/pictures/hosting/Hosting-984577438904217927/original/ae53ed30-3737-4ea2-9cdb-85ab3e95bb7d.jpeg"
+      },
+      {
+        "title": "Listing image 2",
+        "url": "https://a0.muscache.com/im/pictures/hosting/Hosting-984577438904217927/original/0f36c01f-517e-44de-a8d6-65e28a257856.jpeg"
+      },
+      {
+        "title": "Listing image 3",
+        "url": "https://a0.muscache.com/im/pictures/hosting/Hosting-984577438904217927/original/1e8bcac5-01c6-44d0-a422-2f25d6318413.jpeg"
+      },
+      {
+        "title": "Listing image 4",
+        "url": "https://a0.muscache.com/im/pictures/miso/Hosting-984577438904217927/original/5d730496-549c-4aa0-8c80-ef692ba1d8d7.jpeg"
+      },
+      {
+        "title": "Listing image 5",
+        "url": "https://a0.muscache.com/im/pictures/hosting/Hosting-984577438904217927/original/05d819bd-5807-4895-849c-40c0e056a81a.jpeg"
+      },
+      {
+        "title": "Listing image 6",
+        "url": "https://a0.muscache.com/im/pictures/hosting/Hosting-984577438904217927/original/3771aa8d-2fd4-4798-bcf5-187db3b99de6.jpeg"
+      },
+      {
+        "title": "Listing image 7",
+        "url": "https://a0.muscache.com/im/pictures/hosting/Hosting-984577438904217927/original/5e27bbce-d053-4e5a-b858-2d5e90ef08ca.jpeg"
+      },
+      {
+        "title": "Listing image 8",
+        "url": "https://a0.muscache.com/im/pictures/hosting/Hosting-984577438904217927/original/a658f28a-17ce-4dcd-8b0f-64e7fe3b2cbb.jpeg"
+      },
+      {
+        "title": "Listing image 9",
+        "url": "https://a0.muscache.com/im/pictures/hosting/Hosting-984577438904217927/original/0da009f9-a93d-4d4d-b5f4-ae7e31216225.jpeg"
+      },
+      {
+        "title": "Listing image 10",
+        "url": "https://a0.muscache.com/im/pictures/hosting/Hosting-984577438904217927/original/fe2b5fcb-ec16-48b8-9ea4-e8c2b5cca1ec.jpeg"
+      },
+      {
+        "title": "Listing image 11",
+        "url": "https://a0.muscache.com/im/pictures/hosting/Hosting-984577438904217927/original/349506ec-7e6f-4b52-a172-9bdd17da8ba6.jpeg"
+      }
+    ],
+    "location_descriptions": [],
+    "highlights": [
+      {
+        "title": "Walkable area",
+        "subtitle": "Guests say this area is easy to get around.",
+        "icon": "SYSTEM_LOCATION"
+      },
+      {
+        "title": "Dean is a Superhost",
+        "subtitle": "Superhosts are experienced, highly rated Hosts.",
+        "icon": "SYSTEM_SUPERHOST"
+      }
+    ],
+    "is_guest_favorite": false,
+    "description": "Private BEDROOM AND shared BATHROOM ACCESS ONLY !!<br /><br />This room accommodates maximum 1 person <br />-Only booked guests can enter our home <br />-Not suitable for kids or infants.<br />-Our home is located in Dublin 2 just of the river Liffey <br />-The house is ideally located within walking distance to everywhere within the city <br />-In the home is my partner and I and also our French bulldog <br />-No access to kitchen or living room <br /><br />We welcome guests into our home and expect respect toward the home whilst here<br /><br /><b>The space</b><br />No third party bookings<br /><br /><b>Guest access</b><br />Guests booked to stay have access to Private Bedroom and shared bathroom only , NO kitchen or another areas of the house<br /><br /><b>Other things to note</b><br />Only the person booked in the booking can enter the house- if this rule is broken the booking will be void and no refund provided<br /><br />This is for the safety of everyone in the house and we take this very serious<br /><br />No third party bookings !<br /><br />Quiet time from 10pm -8am",
+    "title": "Cozy single room central Dublin ,",
+    "language": "en",
+    "reviews": [
+      {
+        "comments": "I appreciate Dean & Andy (and their cute doggy) for hosting me! Their house is in a great walking distance to everything (10 minute walk to Book of Kells/Trinity College, 15 to temple bar and directly by the river). <br/>The room itself was cozy — very small but is exactly what’s listed/described on the website. The only downside is that the walls were very thin so if that bothers you (or you’re a light sleeper) it might not be the place to stay. Because of that I didn’t feel quite as comfortable moving around or coming in and out of the house later at night or in the mornings (just because you can really hear everything so you need to be super quiet). <br/>But it’s a pretty decent spot to stay as a solo traveler if you’re trying to be out and about a lot and need a close walking distance to downtown Dublin!"
+      },
+      {
+        "comments": "极佳的地理位置，Andy 和Dean很热情，还有一只可爱的狗狗。"
+      },
+      {
+        "comments": "Room was perfectly suited for my brief stay. I would happily book with him again."
+      },
+      {
+        "comments": "Consiglio la stanza a casa di Dean e Andy: un po’ piccola, ma perfetta per una persona, pulita, silenziosa – ho adorato il canto dei gabbiani al mattino – e soprattutto in un’ottima posizione. Il quartiere è tranquillo, vicino sia alla stazione che al centro città, ma anche alle fermate del bus per l’aeroporto. Dean e Andy sono cordiali e molto reattivi nelle risposte e se sarete fortunati, ad accogliervi ci sarà il loro adorabile cagnolino."
+      },
+      {
+        "comments": "Dean fue muy atento y el alojamiento cumplido con las expectativas. Todo muy limpio y tranquilo."
+      },
+      {
+        "comments": "Dean und Andy sind zwei überaus freundliche und hilfsbereite Gastgeber. Die Unterkunft liegt super zentral- Bus und Bahnstation in  unmittelbarer Nähe. <br/>Ein sehr bequemes Bett, sehr angenehm waren Toaster und Wasserkocher am Zimmer. <br/>Ein besonders süßer Mitbewohner war der Hund der beiden- schockverliebt!"
+      },
+      {
+        "comments": "Perfect quaint room for a single person to have a short stay. No frills but just what was needed."
+      },
+      {
+        "comments": "きちんとした方で、丁寧に対応していただけました。"
+      },
+      {
+        "comments": "Great stay, great location! Will stay again!"
+      },
+      {
+        "comments": "ダブリンの中心地に近いながらも夜は静かで部屋も綺麗でした。"
+      },
+      {
+        "comments": "Ottima posizione, comoda per muoversi a piedi. Alloggio in pieno corrispondente a quanto descritto. Molto utile il bollitore in camera! Consigliato senza dubbi"
+      },
+      {
+        "comments": "Dean was pleasant and the room/accomodation was nice. This was a great location near the centre (just about 5min from Trinity college). The room is a \"box room\" on the 1st floor facing the back of the house with a single bed and a shelving unit with kettle/toaster. It is plain, clean and it is very much \"what it says on the tin\". <br/>This is a room in an older house, and though the house itself has been nicely done up the room is still slightly barren and overlooks a slightly rougher looking back yard. I had what I needed for my overnight, no major complaints. The mattress was slightly hard (like hard foam?) and there was no blackout curtain. The bathroom was nice and clean. Thank you to Dean for the easy and pleasant check in."
+      },
+      {
+        "comments": "The single bedroom in Dean and Andy's house was very simple, clean and comfortable. The shared bathroom inc shower was clean and accessible. <br/>No additional facilities or amenities but this was made clear in the description.<br/>Excellent location in Dublin centre, near the river Liffey and all key attractions - perfect for a short stay solo visitor. <br/>Would happily return here."
+      },
+      {
+        "comments": "I had a wonderful time staying at Dean's place in Dublin! Both Dean and Andy were very helpful and friendly, and Chico is an absolute sweetheart. The location is fab, walking distance to so many things like EPIC Museum, some nice pubs, bakeries and more. The room itself was nice and clean, it had all the amenities I needed to feel comfortable during my stay! I've already recommended this space to some friends, and I'd most certainly want to stay here again next time I'm in the city. Thanks for your hospitality Dean, Andy & Chico :)"
+      },
+      {
+        "comments": "Everything was great, I will come back!"
+      },
+      {
+        "comments": "I wasn’t there for very long but for the short stay I was, I felt comfortable and safe in Dean’s home."
+      },
+      {
+        "comments": "The room has only one single bed. This is the only space you can move around in the entire house. The three adjacent rooms share one bathroom. Because it was too noisy, I couldn't sleep all night. The curtains are only made of a thin fabric. The TV doesn't work. The refrigerator and the kitchen can only be used by the landlord himself. What's even more terrifying is that a one-centimeter-long bug was found on the bedside table. At the same price, you could stay in a budget hotel. It's much worse than the single room in a youth hostel. Please choose carefully!"
+      },
+      {
+        "comments": "Nice room, not very big but enough for one person.<br/>Near to The Trinity College and 20 min walk to the city center.<br/>The communication with hosts was really easy and they asked all my question within 1h or less.<br/>30min ride (bus DublinExpress) from the airport plus 10 min walking.<br/>I recommend this room to everyone that is coming to Dublin"
+      },
+      {
+        "comments": "Mon séjour chez Dean et Andy s’est super bien passé ! Dean a été super gentil et très accueillant me proposant son aide si besoin. La chambre et la salle de bain sont très propres. <br/>J’ai passé un excellent séjour ! La maison est très accessible et bien située (à proximité des transports). De nombreuses activités sont accessibles à pied."
+      },
+      {
+        "comments": "The stay was exactly as described, it met all my needs for the few days I was there, easy to get to with public transit, and they have the cutest little dog!"
+      },
+      {
+        "comments": "Exactly as described. Great communication. Easy to find and check in. Very comfortable bed, spotless bathroom. Great stay. Will stay again. Thank you!"
+      },
+      {
+        "comments": "Good location and good communication from the host."
+      },
+      {
+        "comments": "not much to add. what you see is what you get. I would stay again"
+      },
+      {
+        "comments": "Brilliant, highly recommend, single bed is very comfy!"
+      },
+      {
+        "comments": "Un alojamiento era una habitación chica , muy bonita y cómoda, brindaban café, tostadora, una taza y toallas, estaba reluciente y cuidado. Tuve un inconveniente por qué no me había dado cuenta de que no se ofrecía heladera y eso complicó un poco mi estadía de 5 días. Pero todo excelente , ambos son unos increíbles host, atentos y siempre muy serviciales. Chico(el perro) se ganó todas las miradas ❤️. Gracias chicos"
+      },
+      {
+        "comments": "Dean was great, very responsive, helped me when i asked right away, would definitely come back when i get the chance, his dog was also very friendly and professional, thank you dean!"
+      },
+      {
+        "comments": "Dean and Andy host a lovely place<br/>to stay in Dublin. It’s easy to get there by bus from the airport. The room and bathroom are very clean. Dean is very welcoming and with a cutest dog!"
+      },
+      {
+        "comments": "Great place to stay as a solo traveler. The location is very walkable to the downtown of Dublin. Was never more then a 20 minute walk from tour pick up locations or great resturants and pubs. Dean and his partner are also very friendly. <br/>Would recommend."
+      },
+      {
+        "comments": "Clean and safe"
+      },
+      {
+        "comments": "Hosts were so welcoming, and I squealed at the site of their adorable dog, who I’d love to see more of but he was kept away from guests. (The house does accommodate another bnb guest room and you share toilet.) <br/>The single room is clean, great ventilation unlike many other places, no AC like most places in Ireland. I came during a hot summer day and the windows were a great help. Looks like heating is available. Bed is comfy and shower is spacious. I’d definitely stay again because of the location and hosts were so helpful. Dean saved me €30-40 by letting me use a charger for my phone because I forgot mine! He made me feel as if I could reach out for any request. They have cameras which I appreciate for safety reasons and I had keys to my quarters at all times. This was by far a nicer option than another bnb I stayed by the airport which was in shambles. They kept it up nicely. They were a delight!"
+      },
+      {
+        "comments": "Good for short stay"
+      },
+      {
+        "comments": "Had a great stay, place is clean and central to the city center!"
+      },
+      {
+        "comments": "It was a nice room, everything was clean and the location is great!"
+      },
+      {
+        "comments": "Simple space, comfortable and clean place to crash for the night."
+      },
+      {
+        "comments": "I had a great stay. Dean was always responsive to any question, and really helped to make my stay very enjoyable. It’s a great location and central to everything in Dublin. Highly recommended!"
+      },
+      {
+        "comments": "Dean was a great host!<br/>Please was clean and tidy and the dog is adorable!"
+      },
+      {
+        "comments": "Perfect stay.<br/>The room is simple but everything you need is there.<br/>Great communication, flexibility and attention.<br/>Don't hesitate!"
+      },
+      {
+        "comments": "Dean and Andy are super nice host! Their place is nice and clean and reflects accurately of the photos. <br/>They have a lovely dog. He is very well behaving and would not disturb at all<br/>The location is super connected so very easy to visit Dublin around. Would definitely recommend and would definitely come back!"
+      },
+      {
+        "comments": "It was perfect"
+      },
+      {
+        "comments": "Dean and Andy were very kind. I enjoyed my stay there. Thank you"
+      },
+      {
+        "comments": "Will definitely recommend Dean’s place. It’s perfectly walkable to absolutely top attractions in Dublin.<br/>Everything you need clean safe also it’s only seven minutes walking distance from the main coach station<br/>Super friendly host will definitely book again on my work trip back to Dublin. Is a communication clean safe space and definitely recommend for women travelling alone."
+      },
+      {
+        "comments": "good"
+      },
+      {
+        "comments": "First time in doubling, I couldn’t find a more perfect place for myself. Quiet , clean, respectful,kind,positive vibes <br/>Thank you very much I will never be a hotel guest as long as there are people like Dean,Andy and Tito to host"
+      },
+      {
+        "comments": "Can’t speak highly enough of the host and the place, everything perfect. Thanks Guys"
+      },
+      {
+        "comments": "Very welcoming and helpful. I really enjoyed my stay at their flat. Great location close to all the amenities."
+      },
+      {
+        "comments": "Would definitely come back, amazing location and Dean was great!"
+      },
+      {
+        "comments": "Petite chambre sympa, proche de tout à Dublin. Dean est super sympa et arrangeant !"
+      },
+      {
+        "comments": "Super emplacement facile d'accès je recommande"
+      },
+      {
+        "comments": "All good,very clean place and convenient location!"
+      },
+      {
+        "comments": "Nice single room to spend the night, clean and comfy!"
+      },
+      {
+        "comments": "Very convenient location and Dean was so friendly."
+      },
+      {
+        "comments": "Dean and Andy were very helpful! I needed an affordable, clean, and quiet place to stay for a quick night and they surpassed expectations! Thank you both!"
+      },
+      {
+        "comments": "central location, easy to get everywhere, easy transport links for buses to airport. good price for 1 bedroom, mattress a bit uncomfortable but not a problem"
+      },
+      {
+        "comments": "Dean was an excellent host.  He was rather communicative and welcoming, which made the check-in smooth and easy. Extremely satisfied."
+      },
+      {
+        "comments": "I had a lovely stay. The room was quiet, clean and cosy. The home is super central to everything, walking distance, Luas tram, bus or Dart. Every direction you walk, there is so much to do. The hosts were both so kind, welcoming and lovely. 100% recommend. Thank you both ☺️ 10/10"
+      },
+      {
+        "comments": "Always a please to come back"
+      },
+      {
+        "comments": "Everything was perfect! A central and quiet location, very close to Trinity College University and other central locations you can visit!"
+      },
+      {
+        "comments": "Dean was a great host. He greeted me when I arrived and showed me the room and the bathroom. During the stay he also checked if I need something. <br/>The location is great because it's just walking distance from the city center and some tourist attractions."
+      },
+      {
+        "comments": "Dean’s place is perfect! <br/>The hosts are lovely, friendly people. The room is spotless and in an incredibly good location - and their dog is adorable!<br/>I hope I have a reason to return to Dublin (I’ll find one) and when I do I won’t look for anywhere else… I would love to stay here again<br/>Thank you so much 😊"
+      },
+      {
+        "comments": "Very comfortably located in the city centre of Dublin, clean and absolutely worth it if you want to visit the Emerald Isle! The room is exactly as shown in the photos."
+      },
+      {
+        "comments": "The place was very nicely located in the center of Dublin. Easy access to everything. It was really quiet and clean. Dean was proactive, in order to best organized my stay and very responsive once I reached out.<br/>Highly recommend for solo travellers!"
+      },
+      {
+        "comments": "Very cosy place to stay close to city centre. Nice hosting, easy access to public transportation. Thank you D&A"
+      },
+      {
+        "comments": "Merci encore pour votre logement très bien placé en plein milieu de la ville. <br/>Bonne continuation !"
+      },
+      {
+        "comments": "A perfect place if you’re looking for affordable accommodation in central Dublin. Location is great. Room was small and comfortable (as advertised, I just needed a room for one). Great value. I highly recommend."
+      },
+      {
+        "comments": "A really pleasant stay, the room and the bathroom were extremely clean, the areas around very safe and calm everything was close by. Hopefully I’ll come back soon I loved Dublin and a nice place to stay is important for a good trip."
+      },
+      {
+        "comments": "Excellent location for cheap price, impressed with quality of bathroom"
+      },
+      {
+        "comments": "Brilliant little spot within walking distance of the CBD and Docklands for business and City Centre for fun.  Great little spot, surprisingly quiet for how central it is.  Very responsive and pleasant host.<br/>I'm a business traveller for 1-2 nights in Dublin, perfect for a busy traveller who just needs somewhere to get their head down.  Will definitely stay again at this gem."
+      },
+      {
+        "comments": "I had a great time! It is in walking distance to everything you need and the perfect space to reast and recharge after a day exploring Dublin. <br/>Dean was very nice and responsive to all my questions and left clear instructions. Being greeted by Chico the dog was a plus that made me feel welcome right away!<br/>I would definitely stay there again!"
+      },
+      {
+        "comments": "Dean was very friendly and responsive. When I arrived, he had clear instructions to the stay and helped to take my luggage upstairs. The location was super great, walk distance to attractions but not dirty or noisy. As there is a bar nearby, I didn’t hear loud noises during my stay from Tuesday to Saturday. Dean’s cute dog was also quiet. Although a little small, the room was cozy and had a window, facing private spaces which was super great. The bathroom was clean and big. Highly recommend!"
+      },
+      {
+        "comments": "The french bouledogue is worth the stay"
+      },
+      {
+        "comments": "Straightforward, clean and small bedroom with shared bathroom. Walkable from city center and located in quiet neighborhood. It’s a good room if you need an affordable place just to sleep, but not spend time in. Positives are host is very easy to communicate with and responsive. There is  a tea kettle in the bedroom which was a nice touch.  Overall, clean no thrills bedroom."
+      },
+      {
+        "comments": "They chose the cheapest possible bed with not enough slats to cover the area under the mattress. I did not notice it when sleeping but when i sat at the end of the bed on the second morning to put on my socks, the mattress was completed unsupported and I ended up falling backwards onto the floor inside the base. I got up and checked it and only about 70% of the mattress was supported by slats and the slats that were there were only held by basic plastic tie wraps. I had a few bruises but nothing serious luckily.  It could have gotten a bad injury. I reported this to the hosts and they responded with extreme hostility making discriminatory insults, false accusations and demanding the whole bed be replaced (even though only the plastic tie wraps were broken). Do not stay in this place because if there is any small disagreement, you will have to deal with extreme hostility. Airbnb has given them a warning as they violated the terms and conditions of operation (not enough punishment IMO)"
+      },
+      {
+        "comments": "Accueil parfait. Dean est très réactif.<br/>Bonne situation. Chambre à l'arrière et au calme."
+      },
+      {
+        "comments": "Absolutely awesome location for a true Irish experience away from Temple bar."
+      },
+      {
+        "comments": "El alojamiento está situado en un barrio tranquilo, a 10 minutos del centro,  por lo que es cómodo para caminar por la ciudad. La habitación, aunque es pequeña, es cómoda y el baño estuvo constantemente limpio a pesar de ser compartido.  Dean, Andy y su perrito son encantadores."
+      },
+      {
+        "comments": "I had a very nice staying at Dean's place. The check-in was quite flexible, since I had a delayed in my flight I could arrive late in the night. The space was very clean, organize and calm. Good location close to the city center. I do recommend! 😄"
+      },
+      {
+        "comments": "This was a perfect location to get to transportation and the center of town.  The host was right there when I arrived and very friendly."
+      },
+      {
+        "comments": "Very Nice and confortable Space"
+      },
+      {
+        "comments": "The place was in a quiet but central area, clean, and the hosts extremely nice and responsive. It's a basic room but does its job :) Had a water kettle etc as well. Would definitely stay there again! <br/>If you're sensitive to light best to bring a sleeping mask as the curtains don't really block light, and if you're sensitive to noise, bring some earplugs - the area is very calm but the walls are quite thin (nothing the hosts can do anything about)."
+      },
+      {
+        "comments": "This was a perfect place to stay, easy walking distance to Trinity College. Dean was a great host and I slept very well. Would definitely recommend!"
+      },
+      {
+        "comments": "Dean was super friendly and accommodating from the start! I was in Dublin for a concert and this was super convenient - very easy to get to & from on multiple forms of public transportation - and was able to check in early to rest & freshen up straight off a transatlantic flight. Quiet, clean, just what I needed for a quick overnight stay."
+      },
+      {
+        "comments": "My stay was great! Clean, cozy place with a kind and helpful host!"
+      },
+      {
+        "comments": "Quiet neighborhood. Close to center. The hosts are really kind. 100% recommended"
+      },
+      {
+        "comments": "The location is an absolute win. Extremely close to Connolly and Pearse stations, as well as a bus stop around the corner. Loads of restaurants and pubs to walk to as well!<br/>The shower was great, bedroom perfect for resting my head, and the hosts were a pleasure to deal with whenever I spoke with them. It is safe to say i had a lovely stay!"
+      },
+      {
+        "comments": "best ⭐⭐⭐⭐⭐"
+      },
+      {
+        "comments": "They were lovely! Definitely a nice place for price and location. I wouldn’t spend too much time lingering around the room, but it was perfect for a place to crash. You most likely want to be out in the city anyways so it’s wonderful!"
+      },
+      {
+        "comments": "This place was amazing !   Even though the bathroom was shared, it was extremely clean at all times.<br/>This was such a great location as it was far enough away from the touristy places that it was quiet, but close enough that you could walk to all those tourist places if you so desired. I would definitely stay here again.   Dean answered all my questions and was a great host. Highly recommend."
+      },
+      {
+        "comments": "Great communication with Dean & Andy! Thanks!"
+      },
+      {
+        "comments": "Emplacement ideal,accessible a pied,pas loin du centre ville.Hôte très reactif,chambre et salle de bain très propre"
+      },
+      {
+        "comments": "Great location"
+      },
+      {
+        "comments": "Parfait"
+      },
+      {
+        "comments": "Conveniently close to Trinity College Business School. The bathroom is shared between few rooms. I had no problems and it was always clean and furnished. Room was small but absolutely fine."
+      },
+      {
+        "comments": "Chambre parfaite pour un très court séjour. Logement proche des transports en commun et du centre ville. Quartier paisible. Hôte attentionné et réactif."
+      },
+      {
+        "comments": "The location is great, the hosts are really friendly and receptive and provided everything they said they would! <br/>It was unclear to me that the bathroom would be shared, but it turned out not to be a problem. I even had more privacy than I had expected!"
+      },
+      {
+        "comments": "Dean był bardzo miłym i bezproblemowym gospodarzem. Odpowiednia baza wypadowa do zwiedzania miasta."
+      },
+      {
+        "comments": "Dean was great. Super helpful and place was super clean. Perfect spot to get around town too. I was able to lock my room too. Shared bathroom but never had an issue using it when I needed it. Chico was cool friendly pup too"
+      },
+      {
+        "comments": "Great great location! Even my Dubliner friend was surprised"
+      },
+      {
+        "comments": "Stayed for 2 nights and their place was really nice.<br/>Close to the central area but still 10-15mins away by walk so where accommodation was located in is very quiet at night.<br/>Also, this is just my fault so didn't minus any stars, but the size of the room is really small especially when you are traveling with the suitcase.<br/>If you are a backpacker with the small-middle size luggage, this is the perfect place to stay.<br/>P.S. I loved the cute dog who was friendly and frequently came to my room to say \"hi\" haha"
+      },
+      {
+        "comments": "Dean's house is in a great location, close to the city center. The room and bathroom were clean, the bed was comfortable. Dean was welcoming. I had a great time in Dublin at his place."
+      },
+      {
+        "comments": "Simple space. Near lots in walking distance. What you need for a short stay in a city"
+      },
+      {
+        "comments": "Dean war sehr nett, die Unterkunft war super-zentral.<br/>Leider war es nicht so sauber und ich durfte die Küche nicht nutzen, nicht mal für eine Tasse Tee. Das wäre wirklich gut gewesen."
+      },
+      {
+        "comments": "Great quick place to stay and Dead is super friendly!! Cute dog"
+      },
+      {
+        "comments": "Basic room, clean and comfortable. Host responded quickly which I really appreciated! recommend"
+      },
+      {
+        "comments": "I spent two nights at Dean's place. It's a good location for exploring the city."
+      },
+      {
+        "comments": "Dean was very helpful and friendly.  His place is really convenient as right in the middle of town."
+      },
+      {
+        "comments": "Die Unterkunft war gut vom Zentrum aus auch zu Fuß zu erreichen"
+      },
+      {
+        "comments": "Very simple but nice place to stay. Hard to beat the location!"
+      },
+      {
+        "comments": "Dean hat mich begrüßt und alles gezeigt und erklärt, was notwendig war. Das Zimmer ist sauber und ruhig gelegen. Das geteilte Badezimmer ebenso sauber und direkt am Zimmer gelegen. Von Deans Wohnung aus kann Dublin sehr gut zu Fuß erkundet werden. Die Liffey ist direkt um die Ecke, Trinity College oder Templer Bar in zehn Minuten Fußweg erreichbar. Ich habe mich sicher gefühlt und würde jederzeit wieder bei Dean das Zimmer buchen."
+      },
+      {
+        "comments": "Easy and awesome stay!"
+      },
+      {
+        "comments": "Dean is a good host and the place is well located. Everything went pretty smooth and he tries to make you feelcomfortable."
+      },
+      {
+        "comments": "Dean puso todas las facilidades para la llegada y la salida. Atento, explicó cómo llegar a la zona centro de la ciudad y el funcionamiento de todas las instalaciones de la casa. Habitación cálida y confortable, sumado a un baño cómodo y amplio en la puerta de enfrente."
+      },
+      {
+        "comments": "Un'ottima opzione per passare qualche giorno a Dublino... Davvero molto semplice da trovare"
+      },
+      {
+        "comments": "Great host and great spot to stay"
+      },
+      {
+        "comments": "Dean a toujours répondu rapidement à mes questions. Logement simple , à proximité du centre de Dublin."
+      },
+      {
+        "comments": "Recommend it<br/>Small room, but warm (important for these cold days), clean, very quiet and very well located. Host very nice and proactive"
+      },
+      {
+        "comments": "its accessible and close to supermarkets"
+      },
+      {
+        "comments": "位置就在三一学院旁，服务很不错，我需要喝热水，给我提供了热水壶和水杯"
+      },
+      {
+        "comments": "Dean’s place is an affordable and conveniently located private room option if you are having a short stay or city trip. Flexible and friendly host that let me in at 1am as I was arriving with a late evening flight. Will return next time I am in town by myself."
+      }
+    ]
+  }
+}

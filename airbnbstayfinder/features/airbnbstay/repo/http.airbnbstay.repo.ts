@@ -1,10 +1,18 @@
 import { AirbnbStayHttpRepo } from "@/features/airbnbstay/repo/airbnbstay.repo"
-import { SearchByUrlResponse } from "@/features/airbnbstay/domain/airbnbstay.raw"
+import { SearchByIdResponse, SearchByUrlResponse } from "@/features/airbnbstay/domain/airbnbstay.raw"
+
+function coerceJsonIntFieldToString(text: string, field: string): string {
+    const re = new RegExp(`"${field}"\\s*:\\s*(\\d+)`, "g")
+    return text.replace(re, `"${field}":"$1"`)
+}
 
 async function fetchJson<T>(url: string, init: RequestInit): Promise<T> {
     const res = await fetch(url, init)
-    if (!res.ok) throw new Error("Request failed: " + res.status)
-    return (await res.json()) as T
+    const text = await res.text()
+    if (!res.ok) throw new Error("Request failed: " + res.status + " " + text)
+
+    const fixed = coerceJsonIntFieldToString(text, "room_id")
+    return JSON.parse(fixed) as T
 }
 
 export function makeHttpAirbnbStayRepo(baseUrl: string): AirbnbStayHttpRepo {
@@ -21,7 +29,7 @@ export function makeHttpAirbnbStayRepo(baseUrl: string): AirbnbStayHttpRepo {
             })
         },
         async searchById(input) {
-            return fetchJson<unknown>(baseUrl + "/api/v1/search-by-id", {
+            return fetchJson<SearchByIdResponse>(baseUrl + "/api/v1/search-by-id", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ stay_id: input.stayId })

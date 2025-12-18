@@ -2,7 +2,14 @@ import { AirbnbStay } from "@/features/airbnbstay/domain/airbnbstay"
 import { AirbnbStayHttpRepo } from "@/features/airbnbstay/repo/airbnbstay.repo"
 import { AirbnbStayAiRepo } from "@/features/airbnbstay/repo/airbnbstay.ai.repo"
 
-import { mapImages, mapRawToAiListing, mapToOutputStay, getFreeCancellation } from "@/features/airbnbstay/domain/airbnbstay.mapper"
+import {
+    mapImages,
+    mapToOutputStay,
+    getFreeCancellation,
+    mapRawToAiListingByURL, mapRawToAiListingById
+} from "@/features/airbnbstay/domain/airbnbstay.mapper"
+import {SearchByIdResponse} from "@/features/airbnbstay/domain/airbnbstay.raw";
+const fs = require("fs")
 
 type TruncatedPayload = {
     truncated: true
@@ -70,10 +77,13 @@ export async function getAirbnbStayByUrlService(
 
     return asyncPool(byUrl.data, concurrency, async (item) => {
         const images = mapImages(item)
-        const listing1 = mapRawToAiListing(item)
+        const listing1 = mapRawToAiListingByURL(item)
 
-        const byId = await deps.httpRepo.searchById({ stayId: item.room_id })
-        const listing2 = pickSmall(byId, 12000)
+        const byId: SearchByIdResponse = await deps.httpRepo.searchById({ stayId: item.room_id })
+        const mapById = mapRawToAiListingById(byId)
+        const listing2 = pickSmall(mapById, 100000)
+
+        fs.writeFileSync("./test.json", JSON.stringify(mapById, null, 2))
 
         const ai = await deps.aiRepo.match({
             userPrompt: input.userPrompt,

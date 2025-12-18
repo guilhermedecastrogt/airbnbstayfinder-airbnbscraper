@@ -1,5 +1,5 @@
 import { AirbnbStay } from "../domain/airbnbstay"
-import { RawAirbnbStay, SearchByUrlResponse } from "@/features/airbnbstay/domain/airbnbstay.raw"
+import { RawAirbnbStay, SearchByIdResponse, SearchByUrlResponse } from "@/features/airbnbstay/domain/airbnbstay.raw"
 
 export interface AirbnbStayRepo {
   findAll(): Promise<AirbnbStay[]>
@@ -9,5 +9,5 @@ export interface AirbnbStayRepo {
 
 export type AirbnbStayHttpRepo = {
   searchByUrl(input: { url: string; currency: string; language: string }): Promise<SearchByUrlResponse>
-  searchById(input: { stayId: number }): Promise<unknown>
+  searchById(input: { stayId: string }): Promise<SearchByIdResponse>
 }
