@@ -5,7 +5,6 @@ import { makeHttpAirbnbStayRepo } from "@/features/airbnbstay/repo/http/http.air
 import { makeAirbnbStayAiRepoFromEnv } from "@/features/airbnbstay/repo/ai/ai.factory"
 import { FindByUrlAction } from "@/features/airbnbstay/domain/airbnbstay.ia.raw";
 import { AirbnbStay } from "@/features/airbnbstay/domain/airbnbstay";
-import {airbnbStayRepo} from "@/features/airbnbstay/repo/prisma.airbnbstay.repo";
 
 export async function findAirbnbStayByUrl(findByUrlAction: FindByUrlAction) {
     if(!findByUrlAction) return []
