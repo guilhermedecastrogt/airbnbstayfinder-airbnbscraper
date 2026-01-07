@@ -1,4 +1,4 @@
-import { AirbnbStayAiRepo, AirbnbMatchInput, AirbnbMatchOutput } from "@/features/airbnbstay/repo/airbnbstay.ai.repo"
+import { AirbnbStayAiRepo, AirbnbMatchInput, AirbnbMatchOutput } from "@/features/airbnbstay/repo/ai/airbnbstay.ai.repo"
 
 type OpenAIOutputTextItem = { type: "output_text"; text: string }
 type OpenAIContentItem = OpenAIOutputTextItem | { type: string }
@@ -46,7 +46,7 @@ export function makeOpenAiAirbnbStayAiRepo(cfg: {
     baseUrl?: string
     defaultModel: string
 }): AirbnbStayAiRepo {
-    const baseUrl = (cfg.baseUrl ?? "https://aapi.openai.com/v1").replace(/\/+$/, "")
+    const baseUrl = (cfg.baseUrl ?? "https://api.openai.com/v1").replace(/\/+$/, "")
 
     return {
         async match(input: AirbnbMatchInput): Promise<AirbnbMatchOutput> {

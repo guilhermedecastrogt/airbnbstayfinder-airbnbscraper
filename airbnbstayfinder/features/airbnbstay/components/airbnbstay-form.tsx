@@ -1,12 +1,12 @@
 import Button from "../../../components/ui/button"
-import {findAirbnbStayByUrl} from "@/features/airbnbstay/actions/airbnbstay.action";
+import { findAirbnbStayByUrlFromFormData } from "@/features/airbnbstay/actions/find-airbnbstay-by-url.action";
 
 export function AirbnbStayForm() {
     return (
         <section className="flex flex-col w-full h-[700px] items-center justify-center">
             <div className="flex flex-col border border-primary w-[94%] p-10 rounded-[50px] bg-transparent backdrop-blur-[2.5px] gap-6">
                 <h1 className="text-3xl font-bold text-gradient"> Insert airbnb link with filters </h1>
-                <form className="flex flex-col gap-10 w-full">
+                <form action={ findAirbnbStayByUrlFromFormData } className="flex flex-col gap-10 w-full">
                     <div className="flex flex-col gap-5">
                         <div className="flex flex-cow border border-primary rounded-[50px] w-[30%] p-3 items-center ">
                             <select

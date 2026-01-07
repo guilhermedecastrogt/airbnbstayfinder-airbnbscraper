@@ -1,4 +1,4 @@
-import { AirbnbStayAiRepo, AirbnbMatchInput, AirbnbMatchOutput } from "@/features/airbnbstay/repo/airbnbstay.ai.repo"
+import { AirbnbStayAiRepo, AirbnbMatchInput, AirbnbMatchOutput } from "@/features/airbnbstay/repo/ai/airbnbstay.ai.repo"
 import { AiMatchSchema, extractFirstJsonObject } from "@/features/airbnbstay/domain/airbnbstay.ai"
 
 type OllamaChatResponse = { message?: { content?: string } }

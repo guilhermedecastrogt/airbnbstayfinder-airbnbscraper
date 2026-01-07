@@ -32,8 +32,6 @@ export function mapRawToAiListingByURL(item: RawAirbnbStay) {
 }
 
 export function mapRawToAiListingById(item: SearchByIdResponse) {
-    const first = item.data?.[0]
-
     return {
         success: item.success,
         count: item.count,
@@ -103,73 +101,6 @@ export function mapRawToAiListingById(item: SearchByIdResponse) {
                 comments: r.comments
             }))
         })),
-        first: first
-            ? {
-                coordinates: {
-                    latitude: first.coordinates.latitude,
-                    longitude: first.coordinates.longitude
-                },
-                room_type: first.room_type,
-                is_super_host: first.is_super_host,
-                home_tier: first.home_tier,
-                person_capacity: first.person_capacity,
-                rating: {
-                    accuracy: first.rating.accuracy,
-                    checking: first.rating.checking,
-                    cleanliness: first.rating.cleanliness,
-                    communication: first.rating.communication,
-                    location: first.rating.location,
-                    value: first.rating.value,
-                    guest_satisfaction: first.rating.guest_satisfaction,
-                    review_count: first.rating.review_count
-                },
-                house_rules: {
-                    aditional: first.house_rules.aditional,
-                    general: (first.house_rules.general ?? []).map(g => ({
-                        title: g.title,
-                        values: (g.values ?? []).map(v => ({
-                            title: v.title,
-                            icon: v.icon
-                        }))
-                    }))
-                },
-                host: {
-                    id: first.host.id,
-                    name: first.host.name
-                },
-                sub_description: {
-                    title: first.sub_description.title,
-                    items: [...(first.sub_description.items ?? [])]
-                },
-                amenities: (first.amenities ?? []).map(a => ({
-                    title: a.title,
-                    values: (a.values ?? []).map(v => ({
-                        title: v.title,
-                        subtitle: v.subtitle,
-                        icon: v.icon,
-                        available: v.available
-                    }))
-                })),
-                co_hosts: first.co_hosts,
-                images: (first.images ?? []).map(img => ({
-                    title: img.title,
-                    url: img.url
-                })),
-                location_descriptions: first.location_descriptions,
-                highlights: (first.highlights ?? []).map(h => ({
-                    title: h.title,
-                    subtitle: h.subtitle,
-                    icon: h.icon
-                })),
-                is_guest_favorite: first.is_guest_favorite,
-                description: first.description,
-                title: first.title,
-                language: first.language,
-                reviews: (first.reviews ?? []).map(r => ({
-                    comments: r.comments
-                }))
-            }
-            : null
     }
 }
 

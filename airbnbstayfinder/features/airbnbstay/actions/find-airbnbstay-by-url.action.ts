@@ -1,9 +1,11 @@
 "use server"
 
 import { getAirbnbStayByUrlService } from "@/features/airbnbstay/services/get-airbnbstay-by-url.service"
-import { makeHttpAirbnbStayRepo } from "@/features/airbnbstay/repo/http.airbnbstay.repo"
-import { makeAirbnbStayAiRepoFromEnv } from "@/features/airbnbstay/repo/ai.factory"
+import { makeHttpAirbnbStayRepo } from "@/features/airbnbstay/repo/http/http.airbnbstay.repo"
+import { makeAirbnbStayAiRepoFromEnv } from "@/features/airbnbstay/repo/ai/ai.factory"
 import { FindByUrlAction } from "@/features/airbnbstay/domain/airbnbstay.ia.raw";
+import { AirbnbStay } from "@/features/airbnbstay/domain/airbnbstay";
+import {airbnbStayRepo} from "@/features/airbnbstay/repo/prisma.airbnbstay.repo";
 
 export async function findAirbnbStayByUrl(findByUrlAction: FindByUrlAction) {
     if(!findByUrlAction) return []
@@ -15,7 +17,7 @@ export async function findAirbnbStayByUrl(findByUrlAction: FindByUrlAction) {
     const httpRepo = makeHttpAirbnbStayRepo(httpBaseUrl)
     const aiRepo = makeAirbnbStayAiRepoFromEnv(process.env)
 
-    return getAirbnbStayByUrlService(
+    const airbnbStayList: AirbnbStay[] = await getAirbnbStayByUrlService(
         { httpRepo, aiRepo },
         { url, currency, userPrompt, aiModel }
     )

@@ -1,6 +1,6 @@
 import { AirbnbStay } from "@/features/airbnbstay/domain/airbnbstay"
 import { AirbnbStayHttpRepo } from "@/features/airbnbstay/repo/airbnbstay.repo"
-import { AirbnbStayAiRepo } from "@/features/airbnbstay/repo/airbnbstay.ai.repo"
+import { AirbnbStayAiRepo } from "@/features/airbnbstay/repo/ai/airbnbstay.ai.repo"
 
 import {
     mapImages,
@@ -9,7 +9,8 @@ import {
     mapRawToAiListingByURL, mapRawToAiListingById
 } from "@/features/airbnbstay/domain/airbnbstay.mapper"
 import {SearchByIdResponse} from "@/features/airbnbstay/domain/airbnbstay.raw";
-const fs = require("fs")
+import {VerifyAirbnbstayExistsService} from "@/features/airbnbstay/services/verify-airbnbstay-exists.service";
+//const fs = require("fs")
 
 type TruncatedPayload = {
     truncated: true
@@ -75,15 +76,18 @@ export async function getAirbnbStayByUrlService(
 
     const concurrency = 3
 
-    return asyncPool(byUrl.data, concurrency, async (item) => {
+    const out = await asyncPool(byUrl.data, concurrency, async (item) => {
+        const roomId = String(item.room_id)
+
+        const exists = await VerifyAirbnbstayExistsService(roomId)
+        if (exists) return null
+
         const images = mapImages(item)
         const listing1 = mapRawToAiListingByURL(item)
 
-        const byId: SearchByIdResponse = await deps.httpRepo.searchById({ stayId: item.room_id })
+        const byId: SearchByIdResponse = await deps.httpRepo.searchById({ stayId: roomId })
         const mapById = mapRawToAiListingById(byId)
         const listing2 = pickSmall(mapById, 100000)
-
-        fs.writeFileSync("./test.json", JSON.stringify(mapById, null, 2))
 
         const ai = await deps.aiRepo.match({
             userPrompt: input.userPrompt,
@@ -107,4 +111,6 @@ export async function getAirbnbStayByUrlService(
             resume: ai.resume
         })
     })
+
+    return out.filter((x): x is AirbnbStay => x !== null)
 }

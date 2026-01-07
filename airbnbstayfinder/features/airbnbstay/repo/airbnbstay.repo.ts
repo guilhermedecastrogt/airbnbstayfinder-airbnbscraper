@@ -3,6 +3,7 @@ import { RawAirbnbStay, SearchByIdResponse, SearchByUrlResponse } from "@/featur
 
 export interface AirbnbStayRepo {
   findAll(): Promise<AirbnbStay[]>
+  findOne(id: string): Promise<AirbnbStay>
   create(airbnbstay: AirbnbStay): Promise<AirbnbStay>
   delete(id: string): Promise<void>
 }

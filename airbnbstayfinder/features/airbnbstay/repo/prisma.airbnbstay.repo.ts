@@ -7,6 +7,9 @@ class PrismaAirbnbStayRepo implements AirbnbStayRepo {
   async findAll(): Promise<AirbnbStay[]> {
     return prisma.airbnbStay.findMany({ orderBy: { createdAt: "desc" } })
   }
+  async findOne(id: string): Promise<AirbnbStay> {
+    return prisma.airbnbStay.find({ where: { room_id: id}})
+  }
   async create(airbnbstay: AirbnbStay): Promise<AirbnbStay> {
     return prisma.airbnbStay.create({ data: airbnbstay })
   }

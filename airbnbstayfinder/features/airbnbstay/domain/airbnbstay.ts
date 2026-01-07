@@ -1,4 +1,5 @@
 export type AirbnbStay = {
+  // Airbnb Features
   id?: string
   title: string
   subTitle: string
@@ -19,6 +20,9 @@ export type AirbnbStay = {
   isCompatible: boolean,
   compatibilityScore: number,
   resume: string,
+
+  // User Features
+  interest?: boolean
 }
 
 export type AirbnbStayImage = {
