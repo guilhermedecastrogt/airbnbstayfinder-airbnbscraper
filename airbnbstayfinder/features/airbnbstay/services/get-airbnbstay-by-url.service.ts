@@ -1,5 +1,5 @@
 import { AirbnbStay } from "@/features/airbnbstay/domain/airbnbstay"
-import { AirbnbStayHttpRepo } from "@/features/airbnbstay/repo/airbnbstay.repo"
+import {AirbnbStayHttpRepo, AirbnbStayRepo} from "@/features/airbnbstay/repo/airbnbstay.repo"
 import { AirbnbStayAiRepo } from "@/features/airbnbstay/repo/ai/airbnbstay.ai.repo"
 
 import {
@@ -10,6 +10,7 @@ import {
 } from "@/features/airbnbstay/domain/airbnbstay.mapper"
 import {SearchByIdResponse} from "@/features/airbnbstay/domain/airbnbstay.raw";
 import {VerifyAirbnbstayExistsService} from "@/features/airbnbstay/services/verify-airbnbstay-exists.service";
+import {airbnbStayRepo} from "@/features/airbnbstay/repo/prisma.airbnbstay.repo";
 //const fs = require("fs")
 
 type TruncatedPayload = {
@@ -95,6 +96,24 @@ export async function getAirbnbStayByUrlService(
             listing2,
             model: input.aiModel
         })
+
+        const airbnbstay: AirbnbStay = {
+            title: item.title,
+            subTitle: item.name,
+            isFreeCancellation: getFreeCancellation(item),
+            price: item.price.unit.amount,
+            priceDiscount: item.price.unit.discount,
+            rating: item.rating.value,
+            ratingCount: item.passportData.ratingCount,
+            hostName: item.passportData.name,
+            images,
+            isCompatible: ai.isCompatibleWithUserWants,
+            compatibilityScore: ai.compatibilityScore,
+            resume: ai.resume,
+            interest: null
+        }
+
+        await airbnbStayRepo.create(airbnbstay)
 
         return mapToOutputStay({
             title: item.title,

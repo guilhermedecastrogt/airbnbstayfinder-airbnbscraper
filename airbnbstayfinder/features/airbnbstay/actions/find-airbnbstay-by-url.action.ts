@@ -3,37 +3,31 @@
 import { getAirbnbStayByUrlService } from "@/features/airbnbstay/services/get-airbnbstay-by-url.service"
 import { makeHttpAirbnbStayRepo } from "@/features/airbnbstay/repo/http/http.airbnbstay.repo"
 import { makeAirbnbStayAiRepoFromEnv } from "@/features/airbnbstay/repo/ai/ai.factory"
-import { FindByUrlAction } from "@/features/airbnbstay/domain/airbnbstay.ia.raw";
-import { AirbnbStay } from "@/features/airbnbstay/domain/airbnbstay";
+import { FindByUrlAction } from "@/features/airbnbstay/domain/airbnbstay.ia.raw"
+import { AirbnbStay } from "@/features/airbnbstay/domain/airbnbstay"
 
-export async function findAirbnbStayByUrl(findByUrlAction: FindByUrlAction) {
-    if(!findByUrlAction) return []
-
+export async function findAirbnbStayByUrl(findByUrlAction: FindByUrlAction): Promise<AirbnbStay[]> {
     const { url, currency, userPrompt, aiModel } = findByUrlAction
 
     const httpBaseUrl = process.env.AIRBNB_HTTP_BASE_URL ?? "http://localhost:8001"
-
     const httpRepo = makeHttpAirbnbStayRepo(httpBaseUrl)
     const aiRepo = makeAirbnbStayAiRepoFromEnv(process.env)
 
-    const airbnbStayList: AirbnbStay[] = await getAirbnbStayByUrlService(
+    const airbnbStayList = await getAirbnbStayByUrlService(
         { httpRepo, aiRepo },
         { url, currency, userPrompt, aiModel }
     )
+
+    return airbnbStayList
 }
 
-export async function findAirbnbStayByUrlFromFormData(formData: FormData) {
-    const url = formData.get("url")?.toString() ?? ""
-    const currency = formData.get("currency")?.toString() ?? ""
-    const userPrompt = formData.get("userPrompt")?.toString() ?? ""
-    const aiModel = formData.get("aiModel")?.toString() ?? ""
+export async function findAirbnbStayByUrlFromFormData(formData: FormData): Promise<void> {
+    const url = String(formData.get("url") ?? "")
+    const currency = String(formData.get("currency") ?? "")
+    const userPrompt = String(formData.get("userPrompt") ?? "")
+    const aiModel = String(formData.get("aiModel") ?? "")
 
-    if (!url || !currency || !userPrompt || !aiModel) return []
+    if (!url || !currency || !userPrompt || !aiModel) return
 
-    return findAirbnbStayByUrl({
-        url,
-        currency,
-        userPrompt,
-        aiModel,
-    } satisfies FindByUrlAction)
+    await findAirbnbStayByUrl({ url, currency, userPrompt, aiModel } satisfies FindByUrlAction)
 }

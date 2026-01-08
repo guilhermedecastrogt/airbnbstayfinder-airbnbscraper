@@ -1,6 +1,6 @@
 export type AirbnbStay = {
   // Airbnb Features
-  id?: string
+  room_id?: string
   title: string
   subTitle: string
   isFreeCancellation: boolean
@@ -10,7 +10,6 @@ export type AirbnbStay = {
   ratingCount?: number
   personCapacity?: number
   hostName?: string
-  hostId?: string
   images: AirbnbStayImage[]
   createdAt?: Date
   updatedAt?: Date
@@ -22,7 +21,7 @@ export type AirbnbStay = {
   resume: string,
 
   // User Features
-  interest?: boolean
+  interest: boolean | null
 }
 
 export type AirbnbStayImage = {

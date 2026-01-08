@@ -15,7 +15,7 @@ datasource db {
 }
 
 model AirbnbStay {
-  id                   String  @id @default(uuid(7))
+  room_id              String
   title                String
   subTitle             String
   isFreeCancellation   Boolean
@@ -35,6 +35,8 @@ model AirbnbStay {
   isCompatible       Boolean
   compatibilityScore Int
   resume             String
+
+  interest Boolean?
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
