@@ -1,7 +1,7 @@
-import AirbnbStayForm from "@/features/airbnbstay/components/airbnbstay-form";
+import GetAirbnbStay from "@/features/airbnbstay/components/get-airbnbstay";
 
 export default function DashboardPage() {
     return (
-        <AirbnbStayForm/>
+        <GetAirbnbStay/>
     )
 }

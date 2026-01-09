@@ -5,7 +5,7 @@ import { AirbnbStay } from "@/features/airbnbstay/domain/airbnbstay"
 
 type Props = {
     stays: AirbnbStay[]
-    onSetInterest: (input: { room_id: string; interest: boolean }) => Promise<void> | void
+    onSetInterest: (room_id: string, interest: boolean) => Promise<void> | void
 }
 
 export default function NullInterestAirbnbStayGridForm({ stays, onSetInterest }: Props) {
@@ -16,7 +16,7 @@ export default function NullInterestAirbnbStayGridForm({ stays, onSetInterest }:
         if (busyId) return
         setBusyId(room_id)
         try {
-            await onSetInterest({ room_id, interest })
+            await onSetInterest(room_id, interest)
         } finally {
             setBusyId("")
         }
@@ -46,8 +46,8 @@ export default function NullInterestAirbnbStayGridForm({ stays, onSetInterest }:
                 {items.map((stay) => (
                     <div key={stay.room_id} className="border border-primary/25 rounded-3xl overflow-hidden">
                         <div className="aspect-[16/10] bg-black/20">
-                            {stay.images?.[0]?.url ? (
-                                <img src={stay.images[0].url} alt={stay.title} className="w-full h-full object-cover" />
+                            {stay.images?.[0]?.imageUrl ? (
+                                <img src={stay.images[0].imageUrl} alt={stay.title} className="w-full h-full object-cover" />
                             ) : null}
                         </div>
 

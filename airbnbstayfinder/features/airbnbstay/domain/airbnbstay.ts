@@ -1,6 +1,6 @@
 export type AirbnbStay = {
   // Airbnb Features
-  room_id?: string
+  room_id: string
   title: string
   subTitle: string
   isFreeCancellation: boolean

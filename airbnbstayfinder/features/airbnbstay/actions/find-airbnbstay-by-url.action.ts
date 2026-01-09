@@ -17,7 +17,6 @@ export async function findAirbnbStayByUrl(findByUrlAction: FindByUrlAction): Pro
         { httpRepo, aiRepo },
         { url, currency, userPrompt, aiModel }
     )
-
     return airbnbStayList
 }
 
