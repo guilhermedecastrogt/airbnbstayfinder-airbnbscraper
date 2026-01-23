@@ -1,6 +1,6 @@
-import { makeOllamaAirbnbStayAiRepo } from "@/features/airbnbstay/repo/ollama.airbnbstay.ai.repo"
-import { makeOpenAiAirbnbStayAiRepo } from "@/features/airbnbstay/repo/openai.airbnbstay.ai.repo"
-import { AirbnbStayAiRepo } from "@/features/airbnbstay/repo/airbnbstay.ai.repo"
+import { makeOllamaAirbnbStayAiRepo } from "@/features/airbnbstay/repo/ai/ollama.airbnbstay.ai.repo"
+import { makeOpenAiAirbnbStayAiRepo } from "@/features/airbnbstay/repo/ai/openai.airbnbstay.ai.repo"
+import { AirbnbStayAiRepo } from "@/features/airbnbstay/repo/ai/airbnbstay.ai.repo"
 
 export function makeAirbnbStayAiRepoFromEnv(env: NodeJS.ProcessEnv): AirbnbStayAiRepo {
     const provider = (env.AI_PROVIDER ?? "ollama").toLowerCase()

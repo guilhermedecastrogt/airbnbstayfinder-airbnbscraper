@@ -105,6 +105,7 @@ export function mapRawToAiListingById(item: SearchByIdResponse) {
 }
 
 export function mapToOutputStay(base: {
+    room_id: string
     title: string
     subTitle: string
     isFreeCancellation: boolean
@@ -117,6 +118,7 @@ export function mapToOutputStay(base: {
     isCompatible: boolean
     compatibilityScore: number
     resume: string
+    interest: boolean | null
 }): AirbnbStay {
     return base
 }

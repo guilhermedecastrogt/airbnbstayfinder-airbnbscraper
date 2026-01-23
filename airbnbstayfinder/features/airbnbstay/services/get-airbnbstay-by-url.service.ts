@@ -98,6 +98,7 @@ export async function getAirbnbStayByUrlService(
         })
 
         const airbnbstay: AirbnbStay = {
+            room_id: roomId,
             title: item.title,
             subTitle: item.name,
             isFreeCancellation: getFreeCancellation(item),
@@ -116,6 +117,7 @@ export async function getAirbnbStayByUrlService(
         await airbnbStayRepo.create(airbnbstay)
 
         return mapToOutputStay({
+            room_id: roomId,
             title: item.title,
             subTitle: item.name,
             isFreeCancellation: getFreeCancellation(item),
@@ -127,7 +129,8 @@ export async function getAirbnbStayByUrlService(
             images,
             isCompatible: ai.isCompatibleWithUserWants,
             compatibilityScore: ai.compatibilityScore,
-            resume: ai.resume
+            resume: ai.resume,
+            interest: null
         })
     })
 

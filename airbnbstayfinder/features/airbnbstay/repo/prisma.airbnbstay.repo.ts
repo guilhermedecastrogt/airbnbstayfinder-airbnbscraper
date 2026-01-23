@@ -8,7 +8,7 @@ class PrismaAirbnbStayRepo implements AirbnbStayRepo {
     return prisma.airbnbStay.findMany({ orderBy: { createdAt: "desc" } })
   }
   async findOne(id: string): Promise<AirbnbStay> {
-    return prisma.airbnbStay.find({ where: { room_id: id}})
+    return prisma.airbnbStay.findUnique({ where: { room_id: id } })
   }
   async create(airbnbstay: AirbnbStay): Promise<AirbnbStay> {
     return prisma.airbnbStay.create({ data: airbnbstay })
@@ -21,6 +21,14 @@ class PrismaAirbnbStayRepo implements AirbnbStayRepo {
       where: { room_id: room_id },
       data: { interest: interest },
     })
+  }
+  async findPending(): Promise<AirbnbStay[]> {
+    const stays = await prisma.airbnbStay.findMany({
+      where: { interest: null },
+      orderBy: { createdAt: "desc" },
+      include: { images: true }
+    })
+    return stays as unknown as AirbnbStay[]
   }
 }
 

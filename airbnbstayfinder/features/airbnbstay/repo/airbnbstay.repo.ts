@@ -7,6 +7,7 @@ export interface AirbnbStayRepo {
   create(airbnbstay: AirbnbStay): Promise<AirbnbStay>
   delete(id: string): Promise<void>
   setInterest(room_id: string, interest: boolean): Promise<void>
+  findPending(): Promise<AirbnbStay[]>
 }
 
 export type AirbnbStayHttpRepo = {

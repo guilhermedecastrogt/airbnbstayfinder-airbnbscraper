@@ -23,11 +23,12 @@ export function AirbnbStayForm() {
                             </select>
                         </div>
                         <textarea
-                            name="prompt"
+                            name="userPrompt"
                             placeholder="Write what do you want, the magic is here! <3"
                             className="border border-primary rounded-[50px] h-40 pt-7 px-5 focus:outline-none focus:ring-0 py-3 w-full leading-normal"
                         />
                     </div>
+                    <input type="hidden" name="aiModel" value="deepseek-r1:1.5b" />
                     <div className="flex gap-5 flex-row">
                         <input type="text" name="url" placeholder="Past airbnb link with filters" className="border border-primary rounded-[50px] focus:outline-none focus:ring-0 px-5 py-2 w-[82%]" />
                         <div className="flex flex-cow border border-primary rounded-[50px] w-[8%] justify-center items-center ">

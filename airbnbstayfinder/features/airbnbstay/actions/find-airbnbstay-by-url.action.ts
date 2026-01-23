@@ -5,6 +5,7 @@ import { makeHttpAirbnbStayRepo } from "@/features/airbnbstay/repo/http/http.air
 import { makeAirbnbStayAiRepoFromEnv } from "@/features/airbnbstay/repo/ai/ai.factory"
 import { FindByUrlAction } from "@/features/airbnbstay/domain/airbnbstay.ia.raw"
 import { AirbnbStay } from "@/features/airbnbstay/domain/airbnbstay"
+import { revalidatePath } from "next/cache"
 
 export async function findAirbnbStayByUrl(findByUrlAction: FindByUrlAction): Promise<AirbnbStay[]> {
     const { url, currency, userPrompt, aiModel } = findByUrlAction
@@ -29,4 +30,5 @@ export async function findAirbnbStayByUrlFromFormData(formData: FormData): Promi
     if (!url || !currency || !userPrompt || !aiModel) return
 
     await findAirbnbStayByUrl({ url, currency, userPrompt, aiModel } satisfies FindByUrlAction)
+    revalidatePath("/dashboard")
 }

@@ -9,7 +9,7 @@ type Props = {
 }
 
 export default function NullInterestAirbnbStayGridForm({ stays, onSetInterest }: Props) {
-    const items = useMemo(() => stays.filter((s) => s.interest === null), [stays])
+    const items = useMemo(() => (stays || []).filter((s) => s.interest === null), [stays])
     const [busyId, setBusyId] = useState<string>("")
 
     async function setInterest(room_id: string, interest: boolean) {
