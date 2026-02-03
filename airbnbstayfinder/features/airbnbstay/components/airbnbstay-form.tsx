@@ -2,6 +2,7 @@
 
 import { findAirbnbStayByUrlFromFormData } from "@/features/airbnbstay/actions/find-airbnbstay-by-url.action"
 import { useTrip } from "@/components/trip-provider"
+import TripSelector from "@/features/trip/components/trip-selector"
 import { useState, useTransition } from "react"
 
 const currencies = [
@@ -93,17 +94,8 @@ export default function AirbnbStayForm() {
                                         </svg>
                                         Trip
                                     </label>
-                                    <select
-                                        name="tripId"
-                                        defaultValue={selectedTrip?.id}
-                                        className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/30 transition-all cursor-pointer"
-                                    >
-                                        {trips.map((trip) => (
-                                            <option key={trip.id} value={trip.id} className="bg-black text-white">
-                                                {trip.name}
-                                            </option>
-                                        ))}
-                                    </select>
+                                    <TripSelector />
+                                    <input type="hidden" name="tripId" value={selectedTrip?.id || ""} />
                                 </div>
                             </div>
                         </div>

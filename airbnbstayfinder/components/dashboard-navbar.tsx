@@ -43,7 +43,7 @@ export default function DashboardNavbar() {
         <div className="flex flex-col h-full">
             <div className="mb-8">
                 <Link href="/" className="flex flex-col items-center gap-2 group">
-                    <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-primary to-orange-500 flex items-center justify-center shadow-lg shadow-primary/30 transition-transform group-hover:scale-105">
+                    <div className="w-12 h-12 rounded-2xl bg-primary flex items-center justify-center shadow-lg shadow-primary/30 transition-transform group-hover:scale-105">
                         <span className="text-white font-bold text-xl">A</span>
                     </div>
                     <span className="text-xs text-white/40 group-hover:text-white/60 transition-colors">Home</span>
