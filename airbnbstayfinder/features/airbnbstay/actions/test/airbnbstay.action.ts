@@ -62,7 +62,7 @@ type RawAirbnbStay = {
     },
     paymentMessages?: {
         text?: string, //if "Free cancellation" => freeCancelation = true
-    } [],
+    }[],
     name: string; // airbnb name
     title: string; // airbnb title
     price: {
@@ -78,7 +78,7 @@ type RawAirbnbStay = {
     }
     images: {
         url: string
-    } []
+    }[]
 }
 
 type SearchByUrlResponse = {
@@ -87,7 +87,7 @@ type SearchByUrlResponse = {
     data: RawAirbnbStay[]
 }
 
-export async function findAirbnbStayByUrl (formData: FormData) {
+export async function findAirbnbStayByUrl(formData: FormData) {
     const url = formData.get("url")?.toString()
     const currency = formData.get("currency")?.toString()
     const userPrompt = formData.get("userPrompt")?.toString()
@@ -95,14 +95,14 @@ export async function findAirbnbStayByUrl (formData: FormData) {
     const airbnbStayList = await getAirbnbStayByUrl(url, currency, userPrompt)
 }
 
-export async function getAirbnbStayByUrl (url: string, currency: string, userPrompt: string): Promise<AirbnbStay[]> {
+export async function getAirbnbStayByUrl(url: string, currency: string, userPrompt: string): Promise<AirbnbStay[]> {
     //const userPrompt = "I wanna a apartment, can be with a shared bathroom, the bedroom cant be shared, and need there is double bed"
     const response = await fetch("http://localhost:8001/api/v1/search-by-url", {
         method: "POST",
         headers: {
             'Content-Type': 'application/json',
         },
-        body: JSON.stringify({url: url, currency: currency, lenguage: "en"})
+        body: JSON.stringify({ url: url, currency: currency, lenguage: "en" })
     })
 
     if (!response.ok) {
@@ -141,7 +141,7 @@ export async function getAirbnbStayByUrl (url: string, currency: string, userPro
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({stay_id: item.room_id})
+            body: JSON.stringify({ stay_id: item.room_id })
         })
 
         const byIdJson = await responseById.json()
@@ -204,6 +204,7 @@ export async function getAirbnbStayByUrl (url: string, currency: string, userPro
         }
 
         return {
+            room_id: String(airbnbByUrl.room_id),
             title: airbnbByUrl.title,
             subTitle: airbnbByUrl.name,
             isFreeCancellation: airbnbByUrl.free_cancelation,
@@ -213,10 +214,10 @@ export async function getAirbnbStayByUrl (url: string, currency: string, userPro
             ratingCount: airbnbByUrl.rating_count,
             hostName: airbnbByUrl.host_name,
             images: airbnbByUrl.images,
-            //AI response
             isCompatible: dataFromAI.isCompatible,
             compatibilityScore: dataFromAI.compatibilityScore,
             resume: dataFromAI.resume,
+            interest: null
         }
     }))
 

@@ -2,6 +2,8 @@
 
 import { useMemo, useState } from "react"
 import { AirbnbStay } from "@/features/airbnbstay/domain/airbnbstay"
+import AirbnbStayCard from "./airbnbstay-card"
+import { HiInbox } from "react-icons/hi"
 
 type Props = {
     stays: AirbnbStay[]
@@ -24,73 +26,35 @@ export default function NullInterestAirbnbStayGridForm({ stays, onSetInterest }:
 
     if (items.length === 0) {
         return (
-            <div className="border border-primary/25 rounded-3xl p-6">
-                <h3 className="text-base font-semibold">No pending reviews</h3>
-                <p className="text-sm opacity-80 mt-1">All stays have been marked.</p>
+            <div className="flex flex-col items-center justify-center py-20 border border-primary/25 rounded-3xl bg-secondary/20 backdrop-blur-sm">
+                <HiInbox size={48} className="text-primary/40 mb-4" />
+                <h3 className="text-xl font-semibold text-white/90">All done!</h3>
+                <p className="text-sm text-white/50 mt-2">No pending reviews. Search for more stays above.</p>
             </div>
         )
     }
 
     return (
         <section className="w-full">
-            <div className="flex items-start justify-between gap-4 mb-4">
+            <div className="flex items-center justify-between gap-4 mb-6">
                 <div className="flex flex-col gap-1">
-                    <h2 className="text-lg font-semibold">Pending stays</h2>
-                    <p className="text-sm opacity-80">
-                        Unreviewed: <span className="font-semibold">{items.length}</span>
+                    <h2 className="text-2xl font-bold text-gradient">Pending Review</h2>
+                    <p className="text-sm text-white/60">
+                        Unreviewed: <span className="font-semibold text-amber-400">{items.length}</span>
                     </p>
                 </div>
             </div>
 
-            <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="grid gap-5 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
                 {items.map((stay) => (
-                    <div key={stay.room_id} className="border border-primary/25 rounded-3xl overflow-hidden">
-                        <div className="aspect-[16/10] bg-black/20">
-                            {stay.images?.[0]?.imageUrl ? (
-                                <img src={stay.images[0].imageUrl} alt={stay.title} className="w-full h-full object-cover" />
-                            ) : null}
-                        </div>
-
-                        <div className="p-5 flex flex-col gap-3">
-                            <div className="flex items-start justify-between gap-3">
-                                <h3 className="font-semibold leading-snug line-clamp-2">{stay.title}</h3>
-                                {typeof stay.rating === "number" ? (
-                                    <span className="text-sm opacity-80">{stay.rating.toFixed(2)}</span>
-                                ) : null}
-                            </div>
-
-                            <div className="text-sm opacity-80 line-clamp-2">{stay.subTitle}</div>
-
-                            <div className="flex items-center justify-between gap-3">
-                                <div className="text-sm opacity-80">
-                                    {stay.personCapacity ? `${stay.personCapacity} guests` : ""}
-                                </div>
-                                <div className="text-sm font-semibold">
-                                    {stay.priceDiscount ?? stay.price}
-                                </div>
-                            </div>
-
-                            <div className="flex gap-3 pt-2">
-                                <button
-                                    type="button"
-                                    disabled={!!busyId}
-                                    onClick={() => setInterest(stay.room_id, false)}
-                                    className="flex-1 border border-primary/35 rounded-2xl px-4 py-2 text-sm disabled:opacity-50"
-                                >
-                                    {busyId === stay.room_id ? "Saving..." : "Not interested"}
-                                </button>
-
-                                <button
-                                    type="button"
-                                    disabled={!!busyId}
-                                    onClick={() => setInterest(stay.room_id, true)}
-                                    className="flex-1 border border-primary/60 rounded-2xl px-4 py-2 text-sm font-semibold disabled:opacity-50"
-                                >
-                                    {busyId === stay.room_id ? "Saving..." : "Interested"}
-                                </button>
-                            </div>
-                        </div>
-                    </div>
+                    <AirbnbStayCard
+                        key={stay.room_id}
+                        stay={stay}
+                        variant="pending"
+                        busy={busyId === stay.room_id}
+                        onInterested={() => setInterest(stay.room_id, true)}
+                        onNotInterested={() => setInterest(stay.room_id, false)}
+                    />
                 ))}
             </div>
         </section>

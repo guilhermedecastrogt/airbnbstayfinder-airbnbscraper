@@ -1,0 +1,44 @@
+"use client"
+
+import { AirbnbStay } from "@/features/airbnbstay/domain/airbnbstay"
+import AirbnbStayCard from "./airbnbstay-card"
+import { HiHeart } from "react-icons/hi"
+
+type Props = {
+    stays: AirbnbStay[]
+}
+
+export default function InterestedAirbnbStayGrid({ stays }: Props) {
+    if (stays.length === 0) {
+        return (
+            <div className="flex flex-col items-center justify-center py-20 border border-primary/25 rounded-3xl bg-secondary/20 backdrop-blur-sm">
+                <HiHeart size={48} className="text-primary/40 mb-4" />
+                <h3 className="text-xl font-semibold text-white/90">No interested stays yet</h3>
+                <p className="text-sm text-white/50 mt-2">Mark stays as interested to see them here</p>
+            </div>
+        )
+    }
+
+    return (
+        <section className="w-full">
+            <div className="flex items-center justify-between gap-4 mb-6">
+                <div className="flex flex-col gap-1">
+                    <h2 className="text-2xl font-bold text-gradient">Interested Stays</h2>
+                    <p className="text-sm text-white/60">
+                        Your favorites: <span className="font-semibold text-primary">{stays.length}</span>
+                    </p>
+                </div>
+            </div>
+
+            <div className="grid gap-5 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+                {stays.map((stay) => (
+                    <AirbnbStayCard
+                        key={stay.room_id}
+                        stay={stay}
+                        variant="interested"
+                    />
+                ))}
+            </div>
+        </section>
+    )
+}

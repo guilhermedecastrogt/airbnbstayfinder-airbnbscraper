@@ -35,7 +35,7 @@ model AirbnbStay {
   // AI Response
   isCompatible       Boolean
   compatibilityScore Int
-  resume             String
+  resume             String @db.Text
 
   interest Boolean?
 

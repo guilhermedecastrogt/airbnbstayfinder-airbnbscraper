@@ -5,13 +5,33 @@ import { AirbnbStayRepo } from "@/features/airbnbstay/repo/airbnbstay.repo";
 
 class PrismaAirbnbStayRepo implements AirbnbStayRepo {
   async findAll(): Promise<AirbnbStay[]> {
-    return prisma.airbnbStay.findMany({ orderBy: { createdAt: "desc" } })
+    const stays = await prisma.airbnbStay.findMany({
+      orderBy: { createdAt: "desc" },
+      include: { images: true }
+    })
+    return stays as unknown as AirbnbStay[]
   }
   async findOne(id: string): Promise<AirbnbStay> {
-    return prisma.airbnbStay.findUnique({ where: { room_id: id } })
+    const stay = await prisma.airbnbStay.findUnique({
+      where: { room_id: id },
+      include: { images: true }
+    })
+    return stay as unknown as AirbnbStay
   }
   async create(airbnbstay: AirbnbStay): Promise<AirbnbStay> {
-    return prisma.airbnbStay.create({ data: airbnbstay })
+    const { images, priceDiscount, ...data } = airbnbstay
+
+    const created = await prisma.airbnbStay.create({
+      data: {
+        ...data,
+        priceWithoutDiscount: priceDiscount ?? null,
+        images: images?.length
+          ? { create: images.map(({ imageUrl }) => ({ imageUrl })) }
+          : undefined
+      },
+      include: { images: true }
+    })
+    return created as unknown as AirbnbStay
   }
   async delete(id: string): Promise<void> {
     await prisma.airbnbStay.delete({ where: { id } })
@@ -25,6 +45,22 @@ class PrismaAirbnbStayRepo implements AirbnbStayRepo {
   async findPending(): Promise<AirbnbStay[]> {
     const stays = await prisma.airbnbStay.findMany({
       where: { interest: null },
+      orderBy: { createdAt: "desc" },
+      include: { images: true }
+    })
+    return stays as unknown as AirbnbStay[]
+  }
+  async findInterested(): Promise<AirbnbStay[]> {
+    const stays = await prisma.airbnbStay.findMany({
+      where: { interest: true },
+      orderBy: { createdAt: "desc" },
+      include: { images: true }
+    })
+    return stays as unknown as AirbnbStay[]
+  }
+  async findNotInterested(): Promise<AirbnbStay[]> {
+    const stays = await prisma.airbnbStay.findMany({
+      where: { interest: false },
       orderBy: { createdAt: "desc" },
       include: { images: true }
     })
