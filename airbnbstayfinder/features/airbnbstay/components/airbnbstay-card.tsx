@@ -26,10 +26,10 @@ export default function AirbnbStayCard({ stay, variant, busy, onInterested, onNo
 
     return (
         <div className={`group relative rounded-2xl border overflow-hidden transition-all duration-300 ${variant === "interested"
-                ? "border-green-500/30 bg-green-500/5"
-                : variant === "rejected"
-                    ? "border-red-500/20 bg-red-500/5 opacity-60"
-                    : "border-white/10 bg-white/5 hover:border-white/20 hover:bg-white/10"
+            ? "border-green-500/30 bg-green-500/5"
+            : variant === "rejected"
+                ? "border-red-500/20 bg-red-500/5 opacity-60"
+                : "border-white/10 bg-white/5 hover:border-white/20 hover:bg-white/10"
             }`}>
             <div className="relative h-48 overflow-hidden">
                 {stay.images?.[0]?.imageUrl ? (

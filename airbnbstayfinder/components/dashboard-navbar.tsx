@@ -12,7 +12,7 @@ const navItems = [
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
         ),
-        color: "yellow",
+        color: "primary",
     },
     {
         href: "/dashboard/interested",
@@ -53,21 +53,39 @@ export default function DashboardNavbar() {
             <div className="flex flex-col gap-2">
                 {navItems.map((item) => {
                     const isActive = pathname === item.href
-                    const colorClasses = {
-                        yellow: isActive ? "bg-yellow-500/20 text-yellow-400 border-yellow-500/30" : "text-white/50 hover:text-yellow-400 hover:bg-yellow-500/10",
-                        green: isActive ? "bg-green-500/20 text-green-400 border-green-500/30" : "text-white/50 hover:text-green-400 hover:bg-green-500/10",
-                        red: isActive ? "bg-red-500/20 text-red-400 border-red-500/30" : "text-white/50 hover:text-red-400 hover:bg-red-500/10",
+
+                    let activeClasses = ""
+                    let iconColor = "currentColor"
+
+                    if (isActive) {
+                        if (item.color === "primary") {
+                            activeClasses = "bg-primary/10 text-primary border-primary/20"
+                            iconColor = "text-primary"
+                        }
+                        else if (item.color === "green") {
+                            activeClasses = "bg-primary/5 text-white border-primary/10"
+                            iconColor = "text-green-400"
+                        }
+                        else if (item.color === "red") {
+                            activeClasses = "bg-primary/5 text-white border-primary/10"
+                            iconColor = "text-red-400"
+                        }
+                    } else {
+                        activeClasses = "text-white/50 hover:text-white hover:bg-white/5 border-transparent"
                     }
 
                     return (
                         <Link
                             key={item.href}
                             href={item.href}
-                            className={`flex flex-col items-center gap-1.5 p-3 rounded-2xl border transition-all duration-300 ${isActive ? colorClasses[item.color as keyof typeof colorClasses] + " border" : colorClasses[item.color as keyof typeof colorClasses] + " border-transparent"
-                                }`}
+                            className={`flex flex-col items-center gap-1.5 p-3 rounded-2xl border transition-all duration-300 ${activeClasses}`}
                         >
-                            {item.icon}
-                            <span className="text-[10px] font-medium">{item.label}</span>
+                            <div className={isActive && item.color !== 'primary' ? iconColor : ''}>
+                                {item.icon}
+                            </div>
+                            <span className={`text-[10px] font-medium ${isActive && item.color !== 'primary' ? iconColor : ''}`}>
+                                {item.label}
+                            </span>
                         </Link>
                     )
                 })}

@@ -33,7 +33,7 @@ export default function AirbnbStayForm() {
 
                 <form action={handleSubmit} className="relative z-10 p-6">
                     <div className="flex items-center gap-3 mb-6">
-                        <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-orange-500 flex items-center justify-center">
+                        <div className="w-10 h-10 rounded-xl bg-primary flex items-center justify-center">
                             <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                             </svg>
@@ -145,7 +145,7 @@ export default function AirbnbStayForm() {
                             <button
                                 type="submit"
                                 disabled={isPending}
-                                className="flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-primary to-orange-500 text-white font-semibold shadow-lg shadow-primary/30 hover:shadow-primary/40 hover:scale-105 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 cursor-pointer"
+                                className="flex items-center gap-2 px-6 py-3 rounded-xl bg-primary text-white font-semibold shadow-lg shadow-primary/30 hover:shadow-primary/40 hover:scale-105 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 cursor-pointer"
                             >
                                 {isPending ? (
                                     <>
