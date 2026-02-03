@@ -45,7 +45,7 @@ export default function NotInterestedAirbnbStayGrid({ stays }: Props) {
                         <AirbnbStayCard
                             key={stay.room_id}
                             stay={stay}
-                            variant="not-interested"
+                            variant="rejected"
                         />
                     ))}
                 </div>

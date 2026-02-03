@@ -13,9 +13,9 @@
   --color-muted: #6c757d;
   --color-border-primary: #dee2e6;
 
-  --color-bg-secondary-image: linear-gradient(180deg,rgba(248,249,250,1)0%,rgba(233,236,239,1)50%,rgba(255,240,240,1)100%);
-  --color-gradient: linear-gradient(180deg,rgba(26, 26, 46, 1) 0%, rgba(26, 26, 46, 0.6) 100%);
-  --primary-gradient: linear-gradient(90deg,rgba(222, 226, 230, 1) 0%, rgba(255, 56, 92, 1) 49%, rgba(222, 226, 230, 1) 100%);
+  --color-bg-secondary-image: linear-gradient(180deg, rgba(248, 249, 250, 1)0%, rgba(233, 236, 239, 1)50%, rgba(255, 240, 240, 1)100%);
+  --color-gradient: linear-gradient(180deg, rgba(26, 26, 46, 1) 0%, rgba(26, 26, 46, 0.6) 100%);
+  --primary-gradient: linear-gradient(90deg, rgba(222, 226, 230, 1) 0%, rgba(255, 56, 92, 1) 49%, rgba(222, 226, 230, 1) 100%);
 
   --color-card-bg: rgba(255, 255, 255, 0.8);
   --color-overlay: rgba(0, 0, 0, 0.5);
@@ -34,9 +34,9 @@
   --color-muted: #64748b;
   --color-border-primary: #252525;
 
-  --color-bg-secondary-image: linear-gradient(180deg,rgba(26,26,22,1)0%,rgba(16,16,18,1)50%,rgba(51,28,28,1)100%);
-  --color-gradient: linear-gradient(180deg,rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.24) 100%);
-  --primary-gradient: linear-gradient(90deg,rgba(48, 48, 48, 1) 0%, rgba(255, 56, 92, 1) 49%, rgba(48, 48, 48, 1) 100%);
+  --color-bg-secondary-image: linear-gradient(180deg, rgba(26, 26, 22, 1)0%, rgba(16, 16, 18, 1)50%, rgba(51, 28, 28, 1)100%);
+  --color-gradient: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.24) 100%);
+  --primary-gradient: linear-gradient(90deg, rgba(48, 48, 48, 1) 0%, rgba(255, 56, 92, 1) 49%, rgba(48, 48, 48, 1) 100%);
 
   --color-card-bg: rgba(16, 16, 18, 0.8);
   --color-overlay: rgba(0, 0, 0, 0.7);
@@ -48,24 +48,61 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.bg-primary { background-color: var(--color-primary); }
-.bg-secondary { background-color: var(--color-bg-secondary); }
-.bg-secondary-image { background-image: var(--color-bg-secondary-image); }
-.bg-secondary2 { background-color: var(--color-bg-secondary2); }
-.bg-card { background-color: var(--color-card-bg); }
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
 
-.text-primary { color: var(--color-primary); }
-.text-secondary-color { color: var(--color-text-secondary); }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.5s ease-out;
+}
+
+.bg-primary {
+  background-color: var(--color-primary);
+}
+
+.bg-secondary {
+  background-color: var(--color-bg-secondary);
+}
+
+.bg-secondary-image {
+  background-image: var(--color-bg-secondary-image);
+}
+
+.bg-secondary2 {
+  background-color: var(--color-bg-secondary2);
+}
+
+.bg-card {
+  background-color: var(--color-card-bg);
+}
+
+.text-primary {
+  color: var(--color-primary);
+}
+
+.text-secondary-color {
+  color: var(--color-text-secondary);
+}
 
 .text-gradient {
-  background: var(--color-gradient);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.24) 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
   -webkit-text-fill-color: transparent;
 }
 
-.bg-border-primary { border-color: var(--color-border-primary); }
+.bg-border-primary {
+  border-color: var(--color-border-primary);
+}
 
 .border-primary-gradient {
   border: 1px solid transparent;
@@ -73,13 +110,26 @@ body {
   border-image-slice: 1;
 }
 
-.text-icons { color: var(--color-muted); }
+.text-icons {
+  color: var(--color-muted);
+}
 
-.border-primary { border-color: var(--color-border-primary); }
+.border-primary {
+  border-color: var(--color-border-primary);
+}
 
-.text-secondary { color: var(--color-secondary); }
+.text-secondary {
+  color: var(--color-secondary);
+}
 
-.bg-accent { background-color: var(--color-accent); }
-.text-accent { color: var(--color-accent); }
+.bg-accent {
+  background-color: var(--color-accent);
+}
 
-.text-muted { color: var(--color-muted); }
+.text-accent {
+  color: var(--color-accent);
+}
+
+.text-muted {
+  color: var(--color-muted);
+}
