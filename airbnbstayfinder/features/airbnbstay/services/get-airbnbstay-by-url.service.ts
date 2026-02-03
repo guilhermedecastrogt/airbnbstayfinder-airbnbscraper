@@ -1,5 +1,5 @@
 import { AirbnbStay } from "@/features/airbnbstay/domain/airbnbstay"
-import {AirbnbStayHttpRepo, AirbnbStayRepo} from "@/features/airbnbstay/repo/airbnbstay.repo"
+import { AirbnbStayHttpRepo, AirbnbStayRepo } from "@/features/airbnbstay/repo/airbnbstay.repo"
 import { AirbnbStayAiRepo } from "@/features/airbnbstay/repo/ai/airbnbstay.ai.repo"
 
 import {
@@ -8,9 +8,9 @@ import {
     getFreeCancellation,
     mapRawToAiListingByURL, mapRawToAiListingById
 } from "@/features/airbnbstay/domain/airbnbstay.mapper"
-import {SearchByIdResponse} from "@/features/airbnbstay/domain/airbnbstay.raw";
-import {VerifyAirbnbstayExistsService} from "@/features/airbnbstay/services/verify-airbnbstay-exists.service";
-import {airbnbStayRepo} from "@/features/airbnbstay/repo/prisma.airbnbstay.repo";
+import { SearchByIdResponse } from "@/features/airbnbstay/domain/airbnbstay.raw";
+import { VerifyAirbnbstayExistsService } from "@/features/airbnbstay/services/verify-airbnbstay-exists.service";
+import { airbnbStayRepo } from "@/features/airbnbstay/repo/prisma.airbnbstay.repo";
 //const fs = require("fs")
 
 type TruncatedPayload = {
@@ -50,8 +50,8 @@ async function asyncPool<T, R>(
 
         if (items.length >= l) {
             const e: Promise<void> = p.then(
-                () => {},
-                () => {}
+                () => { },
+                () => { }
             )
             executing.add(e)
             e.then(
@@ -67,7 +67,7 @@ async function asyncPool<T, R>(
 
 export async function getAirbnbStayByUrlService(
     deps: { httpRepo: AirbnbStayHttpRepo; aiRepo: AirbnbStayAiRepo },
-    input: { url: string; currency: string; userPrompt: string; aiModel: string }
+    input: { url: string; currency: string; userPrompt: string; aiModel: string; tripId: string }
 ): Promise<AirbnbStay[]> {
     const byUrl = await deps.httpRepo.searchByUrl({
         url: input.url,
@@ -111,7 +111,8 @@ export async function getAirbnbStayByUrlService(
             isCompatible: ai.isCompatibleWithUserWants,
             compatibilityScore: ai.compatibilityScore,
             resume: ai.resume,
-            interest: null
+            interest: null,
+            tripId: input.tripId
         }
 
         await airbnbStayRepo.create(airbnbstay)

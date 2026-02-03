@@ -1,5 +1,4 @@
 export type AirbnbStay = {
-  // Airbnb Features
   room_id: string
   title: string
   subTitle: string
@@ -14,14 +13,12 @@ export type AirbnbStay = {
   createdAt?: Date
   updatedAt?: Date
 
+  isCompatible: boolean
+  compatibilityScore: number
+  resume: string
 
-  // AI Response
-  isCompatible: boolean,
-  compatibilityScore: number,
-  resume: string,
-
-  // User Features
   interest: boolean | null
+  tripId?: string
 }
 
 export type AirbnbStayImage = {

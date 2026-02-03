@@ -4,7 +4,6 @@ import Link from "next/link"
 import { usePathname } from "next/navigation"
 import Image from "next/image"
 import { HiHome, HiHeart, HiXCircle } from "react-icons/hi"
-import ThemeToggle from "@/components/theme-toggle"
 
 const navItems = [
     { href: "/dashboard", icon: HiHome, label: "Pending" },
@@ -16,7 +15,7 @@ export function DashboardNavbar() {
     const pathname = usePathname()
 
     return (
-        <nav className="flex flex-col gap-2 justify-between items-center bg-[var(--color-card-bg)] backdrop-blur-md border border-[var(--color-border-primary)] py-8 rounded-[50px] relative overflow-hidden h-full min-h-[500px]">
+        <nav className="flex flex-col gap-2 justify-between items-center bg-[var(--color-card-bg)] backdrop-blur-md border border-[var(--color-border-primary)] py-8 rounded-[50px] relative overflow-hidden min-h-[500px]">
             <div className="rounded-[50px] pointer-events-none absolute inset-x-0 bottom-0 h-1/2 bg-[linear-gradient(to_top,rgba(255,90,95,0.08),transparent)]" />
 
             <div className="flex flex-col items-center gap-6">
@@ -36,8 +35,8 @@ export function DashboardNavbar() {
                                 key={item.href}
                                 href={item.href}
                                 className={`relative flex items-center justify-center w-12 h-12 rounded-2xl transition-all duration-300 group ${isActive
-                                        ? "bg-primary/20 text-primary"
-                                        : "text-[var(--color-muted)] hover:text-[var(--color-text)] hover:bg-[var(--color-bg-secondary)]"
+                                    ? "bg-primary/20 text-primary"
+                                    : "text-[var(--color-muted)] hover:text-[var(--color-text)] hover:bg-[var(--color-bg-secondary)]"
                                     }`}
                             >
                                 <item.icon
@@ -54,10 +53,6 @@ export function DashboardNavbar() {
                         )
                     })}
                 </div>
-            </div>
-
-            <div className="flex flex-col items-center">
-                <ThemeToggle />
             </div>
         </nav>
     )

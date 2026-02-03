@@ -1,6 +1,7 @@
 export type FindByUrlAction = {
-    url: string,
-    currency: string,
-    userPrompt: string,
-    aiModel: string,
+    url: string
+    currency: string
+    userPrompt: string
+    aiModel: string
+    tripId: string
 }

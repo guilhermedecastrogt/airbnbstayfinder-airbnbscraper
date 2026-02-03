@@ -19,12 +19,13 @@ class PrismaAirbnbStayRepo implements AirbnbStayRepo {
     return stay as unknown as AirbnbStay
   }
   async create(airbnbstay: AirbnbStay): Promise<AirbnbStay> {
-    const { images, priceDiscount, ...data } = airbnbstay
+    const { images, priceDiscount, tripId, ...data } = airbnbstay
 
     const created = await prisma.airbnbStay.create({
       data: {
         ...data,
         priceWithoutDiscount: priceDiscount ?? null,
+        tripId: tripId ?? null,
         images: images?.length
           ? { create: images.map(({ imageUrl }) => ({ imageUrl })) }
           : undefined
@@ -42,25 +43,25 @@ class PrismaAirbnbStayRepo implements AirbnbStayRepo {
       data: { interest: interest },
     })
   }
-  async findPending(): Promise<AirbnbStay[]> {
+  async findPending(tripId?: string): Promise<AirbnbStay[]> {
     const stays = await prisma.airbnbStay.findMany({
-      where: { interest: null },
+      where: { interest: null, ...(tripId ? { tripId } : {}) },
       orderBy: { createdAt: "desc" },
       include: { images: true }
     })
     return stays as unknown as AirbnbStay[]
   }
-  async findInterested(): Promise<AirbnbStay[]> {
+  async findInterested(tripId?: string): Promise<AirbnbStay[]> {
     const stays = await prisma.airbnbStay.findMany({
-      where: { interest: true },
+      where: { interest: true, ...(tripId ? { tripId } : {}) },
       orderBy: { createdAt: "desc" },
       include: { images: true }
     })
     return stays as unknown as AirbnbStay[]
   }
-  async findNotInterested(): Promise<AirbnbStay[]> {
+  async findNotInterested(tripId?: string): Promise<AirbnbStay[]> {
     const stays = await prisma.airbnbStay.findMany({
-      where: { interest: false },
+      where: { interest: false, ...(tripId ? { tripId } : {}) },
       orderBy: { createdAt: "desc" },
       include: { images: true }
     })

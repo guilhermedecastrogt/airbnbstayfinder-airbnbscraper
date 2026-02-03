@@ -8,7 +8,7 @@ import { AirbnbStay } from "@/features/airbnbstay/domain/airbnbstay"
 import { revalidatePath } from "next/cache"
 
 export async function findAirbnbStayByUrl(findByUrlAction: FindByUrlAction): Promise<AirbnbStay[]> {
-    const { url, currency, userPrompt, aiModel } = findByUrlAction
+    const { url, currency, userPrompt, aiModel, tripId } = findByUrlAction
 
     const httpBaseUrl = process.env.AIRBNB_HTTP_BASE_URL ?? "http://localhost:8001"
     const httpRepo = makeHttpAirbnbStayRepo(httpBaseUrl)
@@ -16,7 +16,7 @@ export async function findAirbnbStayByUrl(findByUrlAction: FindByUrlAction): Pro
 
     const airbnbStayList = await getAirbnbStayByUrlService(
         { httpRepo, aiRepo },
-        { url, currency, userPrompt, aiModel }
+        { url, currency, userPrompt, aiModel, tripId }
     )
     return airbnbStayList
 }
@@ -26,9 +26,10 @@ export async function findAirbnbStayByUrlFromFormData(formData: FormData): Promi
     const currency = String(formData.get("currency") ?? "")
     const userPrompt = String(formData.get("userPrompt") ?? "")
     const aiModel = String(formData.get("aiModel") ?? "")
+    const tripId = String(formData.get("tripId") ?? "")
 
-    if (!url || !currency || !userPrompt || !aiModel) return
+    if (!url || !currency || !userPrompt || !aiModel || !tripId) return
 
-    await findAirbnbStayByUrl({ url, currency, userPrompt, aiModel } satisfies FindByUrlAction)
+    await findAirbnbStayByUrl({ url, currency, userPrompt, aiModel, tripId } satisfies FindByUrlAction)
     revalidatePath("/dashboard")
 }
