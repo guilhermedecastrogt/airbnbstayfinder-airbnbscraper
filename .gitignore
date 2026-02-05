@@ -18,3 +18,9 @@ __pycache__
 .idea
 
 .venv
+
+# airbnbstayfinder-scrapper
+airbnbstayfinder-scrapper/**/bin/
+airbnbstayfinder-scrapper/**/obj/
+*.user
+*.suo

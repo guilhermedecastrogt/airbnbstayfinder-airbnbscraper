@@ -37,7 +37,7 @@ export function Hero() {
                             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.1]">
                                 <span className="text-gradient">Find the perfect</span>
                                 <br />
-                                <span className="text-white">Airbnb stay</span>
+                                <span className="text-primary">Airbnb stay</span>
                                 <br />
                                 <span className="text-gradient">with AI</span>
                             </h1>
@@ -119,8 +119,8 @@ export function Hero() {
                                         <div
                                             key={i}
                                             className={`relative p-4 rounded-2xl border transition-all duration-300 ${stay.interested
-                                                    ? 'bg-gradient-to-r from-primary/10 to-transparent border-primary/30'
-                                                    : 'bg-white/5 border-white/10'
+                                                ? 'bg-gradient-to-r from-primary/10 to-transparent border-primary/30'
+                                                : 'bg-white/5 border-white/10'
                                                 }`}
                                         >
                                             <div className="flex items-start justify-between">
@@ -149,8 +149,8 @@ export function Hero() {
                                             <div className="mt-3 h-1 rounded-full bg-white/10 overflow-hidden">
                                                 <div
                                                     className={`h-full rounded-full transition-all ${stay.score >= 80 ? 'bg-gradient-to-r from-primary to-orange-500' :
-                                                            stay.score >= 50 ? 'bg-gradient-to-r from-yellow-500 to-orange-500' :
-                                                                'bg-white/20'
+                                                        stay.score >= 50 ? 'bg-gradient-to-r from-yellow-500 to-orange-500' :
+                                                            'bg-white/20'
                                                         }`}
                                                     style={{ width: `${stay.score}%` }}
                                                 />

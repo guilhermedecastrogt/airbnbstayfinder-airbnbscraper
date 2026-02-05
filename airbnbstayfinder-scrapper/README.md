@@ -1,15 +1,15 @@
-# AirbnbStayFinder Scraper
+# AirbnbStayFinder Scrapper
 
 .NET 9 Minimal API for extracting Airbnb listing information, built with Clean Architecture.
 
 ## Quick Start
 
 ```bash
-cd airbnbstayfinder-scraper
-dotnet run --project src/AirbnbScraper.Api
+cd airbnbstayfinder-scrapper
+dotnet run --project src/AirbnbScrapper.Api --urls "http://localhost:8002"
 ```
 
-The API will start at `http://localhost:5000` (or `https://localhost:5001`).
+The API will start at `http://localhost:8002`.
 
 ## API Endpoints
 
@@ -19,13 +19,12 @@ The API will start at `http://localhost:5000` (or `https://localhost:5001`).
 | `/health` | GET | Health check |
 | `/api/v1/search-by-url` | POST | Search listings by Airbnb URL |
 | `/api/v1/search-by-id` | POST | Get listing details by room ID |
-| `/swagger` | GET | Swagger UI |
 
 ## Usage Examples
 
 ### Search by URL
 ```bash
-curl -X POST http://localhost:5000/api/v1/search-by-url \
+curl -X POST http://localhost:8002/api/v1/search-by-url \
   -H "Content-Type: application/json" \
   -d '{
     "url": "https://www.airbnb.com/s/Tokyo/homes?checkin=2024-03-01&checkout=2024-03-07",
@@ -36,10 +35,10 @@ curl -X POST http://localhost:5000/api/v1/search-by-url \
 
 ### Search by ID
 ```bash
-curl -X POST http://localhost:5000/api/v1/search-by-id \
+curl -X POST http://localhost:8002/api/v1/search-by-id \
   -H "Content-Type: application/json" \
   -d '{
-    "stayId": "12345678",
+    "stayId": "14823673",
     "currency": "USD",
     "language": "en",
     "adults": 2
@@ -50,10 +49,10 @@ curl -X POST http://localhost:5000/api/v1/search-by-id \
 
 ```
 src/
-├── AirbnbScraper.Api/             # Minimal API endpoints
-├── AirbnbScraper.Application/     # Use cases and interfaces
-├── AirbnbScraper.Domain/          # Entities and value objects
-└── AirbnbScraper.Infrastructure/  # HTTP client, scraping logic
+├── AirbnbScrapper.Api/             # Minimal API endpoints
+├── AirbnbScrapper.Application/     # Use cases and interfaces
+├── AirbnbScrapper.Domain/          # Entities and value objects
+└── AirbnbScrapper.Infrastructure/  # HTTP client, scraping logic
 ```
 
 ## Development
@@ -63,7 +62,7 @@ src/
 dotnet build
 
 # Run with hot reload
-dotnet watch --project src/AirbnbScraper.Api
+dotnet watch --project src/AirbnbScrapper.Api
 
 # Run tests
 dotnet test

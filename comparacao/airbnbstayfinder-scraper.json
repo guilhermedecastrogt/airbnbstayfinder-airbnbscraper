@@ -1,0 +1,367 @@
+{
+    "success": true,
+    "count": 1,
+    "data": [
+        {
+            "roomId": "14823673",
+            "title": "Big room, 10 min from the Spire",
+            "name": "Big room, 10 min from the Spire",
+            "description": "double bed in the principal bedroom of the house, the bunk bed in the pictures has been removed, access to kitchen, patio and washing machine<br /><br /><b>The space</b><br />It's a small house with two bedrooms, both with airbnb guests, most of the time.<br /><br /><b>Other things to note</b><br />There is other guests in the house, so you have to be respectful about noise and privacy.",
+            "language": "en",
+            "price": {
+                "amount": 0,
+                "discountAmount": null,
+                "currency": "USD",
+                "priceString": null
+            },
+            "rating": {
+                "accuracy": 4.66,
+                "checkin": 4.69,
+                "cleanliness": 4.37,
+                "communication": 4.67,
+                "location": 4.59,
+                "value": 4.41,
+                "guestSatisfaction": 4.51,
+                "reviewCount": 0
+            },
+            "host": {
+                "id": "49285632",
+                "name": "Hosted by Teresa",
+                "profilePictureUrl": null,
+                "isSuperhost": false,
+                "joinedOn": "",
+                "description": ""
+            },
+            "coHosts": [],
+            "images": [
+                {
+                    "url": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTQ4MjM2NzM%3D/original/b8923646-5239-467e-a4df-66acf3bffdf7.jpeg",
+                    "caption": "Living room image 1",
+                    "width": null,
+                    "height": null
+                },
+                {
+                    "url": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTQ4MjM2NzM%3D/original/e074b5f6-1352-4721-a321-03fc30b56592.jpeg",
+                    "caption": "Living room image 2",
+                    "width": null,
+                    "height": null
+                },
+                {
+                    "url": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTQ4MjM2NzM%3D/original/08272571-6fc8-4518-9caa-38e6a67b1615.jpeg",
+                    "caption": "Living room image 3",
+                    "width": null,
+                    "height": null
+                },
+                {
+                    "url": "https://a0.muscache.com/im/pictures/af2b678c-4fb8-4347-b70f-b8af34d7cb97.jpg",
+                    "caption": "Living room image 4",
+                    "width": null,
+                    "height": null
+                },
+                {
+                    "url": "https://a0.muscache.com/im/pictures/558a04d2-aed3-4e96-91b0-122f6842e525.jpg",
+                    "caption": "Shared full kitchen image 1",
+                    "width": null,
+                    "height": null
+                },
+                {
+                    "url": "https://a0.muscache.com/im/pictures/6f55331b-7c4f-4f43-ab0f-803d6161ac26.jpg",
+                    "caption": "Shared full kitchen image 2",
+                    "width": null,
+                    "height": null
+                },
+                {
+                    "url": "https://a0.muscache.com/im/pictures/8689cb7c-96a1-4bc1-86cc-aae35a147a79.jpg",
+                    "caption": "Shared full kitchen image 3",
+                    "width": null,
+                    "height": null
+                },
+                {
+                    "url": "https://a0.muscache.com/im/pictures/ea329b24-7e52-476b-9ed4-6c10e5178c35.jpg",
+                    "caption": "Shared full kitchen image 4",
+                    "width": null,
+                    "height": null
+                },
+                {
+                    "url": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTQ4MjM2NzM%3D/original/50ed2c77-e920-4f5a-8eb5-57cfb2429a9b.jpeg",
+                    "caption": "Bedroom image 1",
+                    "width": null,
+                    "height": null
+                },
+                {
+                    "url": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTQ4MjM2NzM%3D/original/7a73ffe2-09cc-4e7c-88b9-13722f2d9e7f.jpeg",
+                    "caption": "Bedroom image 2",
+                    "width": null,
+                    "height": null
+                },
+                {
+                    "url": "https://a0.muscache.com/im/pictures/210a30fa-b697-4115-8557-402e4dee1b4c.jpg",
+                    "caption": "Shared full bathroom image 1",
+                    "width": null,
+                    "height": null
+                },
+                {
+                    "url": "https://a0.muscache.com/im/pictures/ca8be45e-861c-4ceb-8f00-4686e82f038e.jpg",
+                    "caption": "Shared exterior image 1",
+                    "width": null,
+                    "height": null
+                },
+                {
+                    "url": "https://a0.muscache.com/im/pictures/99b41033-f8ae-4d07-b2dd-7711e8651ef2.jpg",
+                    "caption": "Shared exterior image 2",
+                    "width": null,
+                    "height": null
+                }
+            ],
+            "isFreeCancellation": false,
+            "propertyType": "Private room",
+            "coordinates": {
+                "latitude": 53.35669,
+                "longitude": -6.26686
+            },
+            "homeTier": 1,
+            "personCapacity": 2,
+            "isGuestFavorite": false,
+            "subDescription": {
+                "title": "Room in Phibsborough, Ireland",
+                "items": [
+                    "1 double bed",
+                    "Shared bathroom"
+                ]
+            },
+            "houseRules": {
+                "additional": "",
+                "general": [
+                    {
+                        "title": "Checking in and out",
+                        "values": [
+                            {
+                                "title": "Check-in after 5:00 PM",
+                                "icon": "SYSTEM_CLOCK"
+                            },
+                            {
+                                "title": "Checkout before 10:00 AM",
+                                "icon": "SYSTEM_CLOCK"
+                            },
+                            {
+                                "title": "Self check-in with lockbox",
+                                "icon": "SYSTEM_CHECK_IN"
+                            }
+                        ]
+                    },
+                    {
+                        "title": "During your stay",
+                        "values": [
+                            {
+                                "title": "2 guests maximum",
+                                "icon": "SYSTEM_FAMILY"
+                            },
+                            {
+                                "title": "Pets allowed",
+                                "icon": "SYSTEM_PETS"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "amenities": [
+                {
+                    "title": "Bathroom",
+                    "values": [
+                        {
+                            "title": "Hot water",
+                            "subtitle": "",
+                            "icon": "SYSTEM_HOT_WATER",
+                            "available": true
+                        }
+                    ]
+                },
+                {
+                    "title": "Bedroom and laundry",
+                    "values": [
+                        {
+                            "title": "Washer",
+                            "subtitle": "",
+                            "icon": "SYSTEM_WASHER",
+                            "available": true
+                        },
+                        {
+                            "title": "Dryer",
+                            "subtitle": "",
+                            "icon": "SYSTEM_DRYER",
+                            "available": true
+                        },
+                        {
+                            "title": "Essentials",
+                            "subtitle": "Towels, bed sheets, soap, and toilet paper",
+                            "icon": "SYSTEM_TOILETRIES",
+                            "available": true
+                        }
+                    ]
+                },
+                {
+                    "title": "Entertainment",
+                    "values": [
+                        {
+                            "title": "TV",
+                            "subtitle": "",
+                            "icon": "SYSTEM_TV",
+                            "available": true
+                        }
+                    ]
+                },
+                {
+                    "title": "Heating and cooling",
+                    "values": [
+                        {
+                            "title": "Heating",
+                            "subtitle": "",
+                            "icon": "SYSTEM_THERMOMETER",
+                            "available": true
+                        }
+                    ]
+                },
+                {
+                    "title": "Privacy and safety",
+                    "values": [
+                        {
+                            "title": "Lock on bedroom door",
+                            "subtitle": "",
+                            "icon": "SYSTEM_LOCK_ON_DOOR",
+                            "available": true
+                        },
+                        {
+                            "title": "Smoke alarm",
+                            "subtitle": "",
+                            "icon": "SYSTEM_DETECTOR_SMOKE",
+                            "available": true
+                        }
+                    ]
+                },
+                {
+                    "title": "Internet and office",
+                    "values": [
+                        {
+                            "title": "Wifi",
+                            "subtitle": "",
+                            "icon": "SYSTEM_WI_FI",
+                            "available": true
+                        }
+                    ]
+                },
+                {
+                    "title": "Kitchen and dining",
+                    "values": [
+                        {
+                            "title": "Kitchen",
+                            "subtitle": "Space where guests can cook their own meals",
+                            "icon": "SYSTEM_COOKING_BASICS",
+                            "available": true
+                        },
+                        {
+                            "title": "Refrigerator",
+                            "subtitle": "",
+                            "icon": "SYSTEM_REFRIGERATOR",
+                            "available": true
+                        },
+                        {
+                            "title": "Cooking basics",
+                            "subtitle": "Pots and pans, oil, salt and pepper",
+                            "icon": "SYSTEM_COOKING_BASICS",
+                            "available": true
+                        },
+                        {
+                            "title": "Dishes and silverware",
+                            "subtitle": "Bowls, chopsticks, plates, cups, etc.",
+                            "icon": "SYSTEM_DISHES_AND_SILVERWARE",
+                            "available": true
+                        }
+                    ]
+                },
+                {
+                    "title": "Outdoor",
+                    "values": [
+                        {
+                            "title": "Backyard",
+                            "subtitle": "An open space on the property usually covered in grass",
+                            "icon": "SYSTEM_FLOWER",
+                            "available": true
+                        }
+                    ]
+                },
+                {
+                    "title": "Parking and facilities",
+                    "values": [
+                        {
+                            "title": "Paid parking off premises",
+                            "subtitle": "",
+                            "icon": "SYSTEM_MAPS_CAR_RENTAL",
+                            "available": true
+                        }
+                    ]
+                },
+                {
+                    "title": "Services",
+                    "values": [
+                        {
+                            "title": "Pets allowed",
+                            "subtitle": "Assistance animals are always allowed",
+                            "icon": "SYSTEM_PETS",
+                            "available": true
+                        },
+                        {
+                            "title": "Self check-in",
+                            "subtitle": "",
+                            "icon": "SYSTEM_KEY",
+                            "available": true
+                        },
+                        {
+                            "title": "Lockbox",
+                            "subtitle": "",
+                            "icon": "SYSTEM_SAFE",
+                            "available": true
+                        }
+                    ]
+                },
+                {
+                    "title": "Not included",
+                    "values": [
+                        {
+                            "title": "Air conditioning",
+                            "subtitle": "",
+                            "icon": "SYSTEM_NO_AIR_CONDITIONING",
+                            "available": false
+                        },
+                        {
+                            "title": "Carbon monoxide alarm",
+                            "subtitle": "This place may not have a carbon monoxide detector. Reach out to the host with any questions.",
+                            "icon": "SYSTEM_NO_DETECTOR_CO2",
+                            "available": false
+                        }
+                    ]
+                }
+            ],
+            "locationDescriptions": [],
+            "highlights": [
+                {
+                    "title": "Self check-in",
+                    "subtitle": "Check yourself in with the lockbox.",
+                    "icon": "SYSTEM_CHECK_IN"
+                },
+                {
+                    "title": "Furry friends welcome",
+                    "subtitle": "Bring your pets along for the stay.",
+                    "icon": "SYSTEM_PETS"
+                },
+                {
+                    "title": "Room in a home",
+                    "subtitle": "Your own room in a home, plus access to shared spaces.",
+                    "icon": "SYSTEM_PRIVATE_BEDROOM"
+                }
+            ],
+            "reviews": []
+        }
+    ],
+    "message": "Successfully extracted listing 14823673",
+    "error": null
+}

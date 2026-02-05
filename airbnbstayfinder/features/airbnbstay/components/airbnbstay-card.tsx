@@ -112,7 +112,7 @@ export default function AirbnbStayCard({ stay, variant, busy, onInterested, onNo
                             <div className={`flex-shrink-0 w-5 h-5 rounded-full bg-gradient-to-r ${scoreColor} flex items-center justify-center`}>
                                 <span className="text-[10px] text-white font-bold">AI</span>
                             </div>
-                            <p className="text-sm text-white/70 leading-relaxed line-clamp-3">{stay.resume}</p>
+                            <p className="text-sm text-white/70 leading-relaxed">{stay.resume}</p>
                         </div>
                     </div>
                 )}

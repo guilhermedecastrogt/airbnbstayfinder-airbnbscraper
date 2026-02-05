@@ -118,7 +118,7 @@ export default function AirbnbStayForm() {
                             />
                         </div>
 
-                        <input type="hidden" name="aiModel" value="gemini" />
+                        <input type="hidden" name="aiModel" value={process.env.NEXT_PUBLIC_AI_MODEL} />
 
                         <div className="flex items-center justify-between pt-2">
                             <div className="flex items-center gap-4 text-xs text-white/40">
