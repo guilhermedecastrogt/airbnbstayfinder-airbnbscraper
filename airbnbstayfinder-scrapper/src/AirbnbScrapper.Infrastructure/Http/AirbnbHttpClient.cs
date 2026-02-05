@@ -56,8 +56,12 @@ public sealed class AirbnbHttpClient : IAirbnbHttpClient
 
         var bundleMatch = Regex.Match(homeHtml,
             @"https://a0\.muscache\.com/airbnb/static/packages/web/[^/]+/frontend/airmetro/browser/asyncRequire\.[^""']+\.js");
+            
+        Console.WriteLine($"[DEBUG] Bundle URL regex match: {bundleMatch.Success}");
+        if (bundleMatch.Success) Console.WriteLine($"[DEBUG] Bundle URL: {bundleMatch.Value}");
+        
         if (!bundleMatch.Success)
-            throw new DataExtractionException("Could not find StaysSearch bundle URL");
+            throw new DataExtractionException("Could not find StaysSearch bundle URL. Home HTML length: " + homeHtml.Length);
 
         var bundleRequest = new HttpRequestMessage(HttpMethod.Get, bundleMatch.Value);
         AddBrowserHeaders(bundleRequest, BrowserHeaders.Chrome120);
@@ -68,10 +72,15 @@ public sealed class AirbnbHttpClient : IAirbnbHttpClient
 
         var moduleMatch = Regex.Match(bundleJs,
             @"common/frontend/stays-search/routes/StaysSearchRoute/StaysSearchRoute\.prepare\.[^""']+\.js");
+            
+        Console.WriteLine($"[DEBUG] Module regex match: {moduleMatch.Success}");
+        if (moduleMatch.Success) Console.WriteLine($"[DEBUG] Module JS path: {moduleMatch.Value}");
+
         if (!moduleMatch.Success)
-            throw new DataExtractionException("Could not find StaysSearchRoute module");
+            throw new DataExtractionException("Could not find StaysSearchRoute module. Bundle JS length: " + bundleJs.Length);
 
         var moduleUrl = $"https://a0.muscache.com/airbnb/static/packages/web/{moduleMatch.Value}";
+        Console.WriteLine($"[DEBUG] Fetching module: {moduleUrl}");
 
         var moduleRequest = new HttpRequestMessage(HttpMethod.Get, moduleUrl);
         AddBrowserHeaders(moduleRequest, BrowserHeaders.Chrome120);
@@ -81,8 +90,16 @@ public sealed class AirbnbHttpClient : IAirbnbHttpClient
         var moduleJs = await moduleResponse.Content.ReadAsStringAsync(ct);
 
         var hashMatch = Regex.Match(moduleJs, @"operationId:['""]([0-9a-f]{64})");
+        Console.WriteLine($"[DEBUG] Hash regex match: {hashMatch.Success}");
+        if (hashMatch.Success) Console.WriteLine($"[DEBUG] Hash found: {hashMatch.Groups[1].Value}");
+        
         if (!hashMatch.Success)
+        {
+            // Dump partial content for debugging
+            var sample = moduleJs.Length > 500 ? moduleJs.Substring(0, 500) : moduleJs;
+            Console.WriteLine($"[DEBUG] Module JS sample: {sample}...");
             throw new DataExtractionException("Could not extract StaysSearch operationId");
+        }
 
         return hashMatch.Groups[1].Value;
     }
@@ -288,7 +305,6 @@ public sealed class AirbnbHttpClient : IAirbnbHttpClient
         if (apiKeyMatch.Success)
         {
             var apiKey = apiKeyMatch.Groups[1].Value;
-            // Build product_id as base64 of "StayListing:{roomId}"
             var productId = Convert.ToBase64String(System.Text.Encoding.UTF8.GetBytes($"StayListing:{roomId}"));
             
             try
@@ -337,7 +353,6 @@ public sealed class AirbnbHttpClient : IAirbnbHttpClient
         string hash,
         CancellationToken ct)
     {
-        // URL must end with / like Python
         var baseUrl = $"https://www.airbnb.com/api/v3/StaysPdpReviewsQuery/{hash}/";
 
         var variablesData = new Dictionary<string, object>
