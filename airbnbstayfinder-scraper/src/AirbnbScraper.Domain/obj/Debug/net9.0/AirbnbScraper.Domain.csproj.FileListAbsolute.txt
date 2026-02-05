@@ -1,0 +1,12 @@
+/Users/guilhermedecastro/Documents/pyairbnb-main/airbnbstayfinder-scraper/src/AirbnbScraper.Domain/bin/Debug/net9.0/AirbnbScraper.Domain.deps.json
+/Users/guilhermedecastro/Documents/pyairbnb-main/airbnbstayfinder-scraper/src/AirbnbScraper.Domain/bin/Debug/net9.0/AirbnbScraper.Domain.dll
+/Users/guilhermedecastro/Documents/pyairbnb-main/airbnbstayfinder-scraper/src/AirbnbScraper.Domain/bin/Debug/net9.0/AirbnbScraper.Domain.pdb
+/Users/guilhermedecastro/Documents/pyairbnb-main/airbnbstayfinder-scraper/src/AirbnbScraper.Domain/obj/Debug/net9.0/AirbnbScraper.Domain.GeneratedMSBuildEditorConfig.editorconfig
+/Users/guilhermedecastro/Documents/pyairbnb-main/airbnbstayfinder-scraper/src/AirbnbScraper.Domain/obj/Debug/net9.0/AirbnbScraper.Domain.AssemblyInfoInputs.cache
+/Users/guilhermedecastro/Documents/pyairbnb-main/airbnbstayfinder-scraper/src/AirbnbScraper.Domain/obj/Debug/net9.0/AirbnbScraper.Domain.AssemblyInfo.cs
+/Users/guilhermedecastro/Documents/pyairbnb-main/airbnbstayfinder-scraper/src/AirbnbScraper.Domain/obj/Debug/net9.0/AirbnbScraper.Domain.csproj.CoreCompileInputs.cache
+/Users/guilhermedecastro/Documents/pyairbnb-main/airbnbstayfinder-scraper/src/AirbnbScraper.Domain/obj/Debug/net9.0/AirbnbScraper.Domain.sourcelink.json
+/Users/guilhermedecastro/Documents/pyairbnb-main/airbnbstayfinder-scraper/src/AirbnbScraper.Domain/obj/Debug/net9.0/AirbnbScraper.Domain.dll
+/Users/guilhermedecastro/Documents/pyairbnb-main/airbnbstayfinder-scraper/src/AirbnbScraper.Domain/obj/Debug/net9.0/refint/AirbnbScraper.Domain.dll
+/Users/guilhermedecastro/Documents/pyairbnb-main/airbnbstayfinder-scraper/src/AirbnbScraper.Domain/obj/Debug/net9.0/AirbnbScraper.Domain.pdb
+/Users/guilhermedecastro/Documents/pyairbnb-main/airbnbstayfinder-scraper/src/AirbnbScraper.Domain/obj/Debug/net9.0/ref/AirbnbScraper.Domain.dll

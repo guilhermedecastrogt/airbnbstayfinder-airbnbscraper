@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "RFgmwrPVTw0=",
+  "success": true,
+  "projectFilePath": "/Users/guilhermedecastro/Documents/pyairbnb-main/airbnbstayfinder-scraper/src/AirbnbScraper.Application/AirbnbScraper.Application.csproj",
+  "expectedPackageFiles": [
+    "/Users/guilhermedecastro/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/10.0.2/microsoft.extensions.dependencyinjection.abstractions.10.0.2.nupkg.sha512"
+  ],
+  "logs": []
+}
