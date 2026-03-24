@@ -2,6 +2,11 @@ import { AirbnbStay } from "@/features/airbnbstay/domain/airbnbstay";
 import prisma from "../../../lib/db/prisma"
 import { AirbnbStayRepo } from "@/features/airbnbstay/repo/airbnbstay.repo";
 
+function mapFromPrisma(row: any): AirbnbStay | null {
+  if (!row) return null
+  const { priceWithoutDiscount, ...rest } = row
+  return { ...rest, priceDiscount: priceWithoutDiscount ?? undefined }
+}
 
 class PrismaAirbnbStayRepo implements AirbnbStayRepo {
   async findAll(): Promise<AirbnbStay[]> {
@@ -9,14 +14,14 @@ class PrismaAirbnbStayRepo implements AirbnbStayRepo {
       orderBy: { createdAt: "desc" },
       include: { images: true }
     })
-    return stays as unknown as AirbnbStay[]
+    return stays.map(mapFromPrisma) as AirbnbStay[]
   }
-  async findOne(id: string): Promise<AirbnbStay> {
+  async findOne(id: string): Promise<AirbnbStay | null> {
     const stay = await prisma.airbnbStay.findUnique({
       where: { room_id: id },
       include: { images: true }
     })
-    return stay as unknown as AirbnbStay
+    return mapFromPrisma(stay)
   }
   async create(airbnbstay: AirbnbStay): Promise<AirbnbStay> {
     const { images, priceDiscount, tripId, ...data } = airbnbstay
@@ -32,7 +37,7 @@ class PrismaAirbnbStayRepo implements AirbnbStayRepo {
       },
       include: { images: true }
     })
-    return created as unknown as AirbnbStay
+    return mapFromPrisma(created) as AirbnbStay
   }
   async delete(id: string): Promise<void> {
     await prisma.airbnbStay.delete({ where: { id } })
@@ -49,7 +54,7 @@ class PrismaAirbnbStayRepo implements AirbnbStayRepo {
       orderBy: { createdAt: "desc" },
       include: { images: true }
     })
-    return stays as unknown as AirbnbStay[]
+    return stays.map(mapFromPrisma) as AirbnbStay[]
   }
   async findInterested(tripId?: string): Promise<AirbnbStay[]> {
     const stays = await prisma.airbnbStay.findMany({
@@ -57,7 +62,7 @@ class PrismaAirbnbStayRepo implements AirbnbStayRepo {
       orderBy: { createdAt: "desc" },
       include: { images: true }
     })
-    return stays as unknown as AirbnbStay[]
+    return stays.map(mapFromPrisma) as AirbnbStay[]
   }
   async findNotInterested(tripId?: string): Promise<AirbnbStay[]> {
     const stays = await prisma.airbnbStay.findMany({
@@ -65,7 +70,7 @@ class PrismaAirbnbStayRepo implements AirbnbStayRepo {
       orderBy: { createdAt: "desc" },
       include: { images: true }
     })
-    return stays as unknown as AirbnbStay[]
+    return stays.map(mapFromPrisma) as AirbnbStay[]
   }
 }
 

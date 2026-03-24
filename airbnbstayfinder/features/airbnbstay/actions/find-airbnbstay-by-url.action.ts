@@ -6,11 +6,12 @@ import { makeAirbnbStayAiRepoFromEnv } from "@/features/airbnbstay/repo/ai/ai.fa
 import { FindByUrlAction } from "@/features/airbnbstay/domain/airbnbstay.ia.raw"
 import { AirbnbStay } from "@/features/airbnbstay/domain/airbnbstay"
 import { revalidatePath } from "next/cache"
+import { createSearchHistory } from "@/features/search-history/search-history.repo"
 
 export async function findAirbnbStayByUrl(findByUrlAction: FindByUrlAction): Promise<AirbnbStay[]> {
     const { url, currency, userPrompt, aiModel, tripId } = findByUrlAction
 
-    const httpBaseUrl = process.env.AIRBNB_HTTP_BASE_URL ?? "http://localhost:8001"
+    const httpBaseUrl = process.env.AIRBNB_HTTP_BASE_URL ?? "http://localhost:8002"
     const httpRepo = makeHttpAirbnbStayRepo(httpBaseUrl)
     const aiRepo = makeAirbnbStayAiRepoFromEnv(process.env)
 
@@ -18,6 +19,16 @@ export async function findAirbnbStayByUrl(findByUrlAction: FindByUrlAction): Pro
         { httpRepo, aiRepo },
         { url, currency, userPrompt, aiModel, tripId }
     )
+
+    await createSearchHistory({
+        url,
+        currency,
+        userPrompt,
+        aiModel,
+        tripId: tripId || null,
+        resultCount: airbnbStayList.length,
+    })
+
     return airbnbStayList
 }
 

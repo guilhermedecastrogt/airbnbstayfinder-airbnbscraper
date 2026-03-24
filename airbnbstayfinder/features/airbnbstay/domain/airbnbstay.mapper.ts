@@ -38,8 +38,8 @@ export function mapRawToAiListingById(item: SearchByIdResponse) {
         message: item.message,
         data: (item.data ?? []).map(d => ({
             coordinates: {
-                latitude: d.coordinates.latitude,
-                longitude: d.coordinates.longitude
+                latitude: d.coordinates?.latitude ?? 0,
+                longitude: d.coordinates?.longitude ?? 0
             },
             room_type: d.room_type,
             is_super_host: d.is_super_host,
@@ -84,8 +84,8 @@ export function mapRawToAiListingById(item: SearchByIdResponse) {
             })),
             co_hosts: d.co_hosts,
             images: (d.images ?? []).map(img => ({
-                title: img.title,
-                url: img.url
+                url: img.url,
+                caption: img.caption
             })),
             location_descriptions: d.location_descriptions,
             highlights: (d.highlights ?? []).map(h => ({

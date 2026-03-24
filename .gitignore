@@ -6,6 +6,8 @@ env/
 pyairbnb-api/.venv/
 pyairbnb-api/venv/
 pyairbnb-api/env/
+pyairbnb-api/
+no-commit/
 
 airbnbstayfinder/.env
 
@@ -18,9 +20,10 @@ __pycache__
 .idea
 
 .venv
+.claude
 
-# airbnbstayfinder-scrapper
-airbnbstayfinder-scrapper/**/bin/
-airbnbstayfinder-scrapper/**/obj/
+# airbnbstayfinder-scraper
+airbnbstayfinder-scraper/**/bin/
+airbnbstayfinder-scraper/**/obj/
 *.user
 *.suo

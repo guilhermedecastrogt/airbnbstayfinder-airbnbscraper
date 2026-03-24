@@ -2,33 +2,33 @@ import { AirbnbStay, AirbnbStayImage } from "@/features/airbnbstay/domain/airbnb
 
 const prompt = `
     You are a strict Airbnb listing matcher and summarizer.
-    
+
     You will receive:
     1) A user request written in natural language.
     2) A single Airbnb listing JSON.
-    
+
     Your job:
     - Determine if the listing is compatible with the user request.
     - Extract key facts from the listing.
     - Produce a short resume that explicitly compares the listing with the user request.
     - Return ONLY valid JSON matching the schema below.
-    
+
     User request:
     {{USER_PROMPT}}
-    
+
     Listing JSON:
     {{LISTING_JSON1}}
     {{LISTING_JSON2}}
-    
+
     Return ONLY this JSON structure:
-    
+
     {
       "isCompatibleWithUserWants": boolean,
       "compatibilityScore": number,
       "resume": string,
       "reasons": string[]
     }
-    
+
     Rules:
     - Do not add extra keys.
     - Output must be valid JSON.
@@ -97,12 +97,12 @@ export async function findAirbnbStayByUrl(formData: FormData) {
 
 export async function getAirbnbStayByUrl(url: string, currency: string, userPrompt: string): Promise<AirbnbStay[]> {
     //const userPrompt = "I wanna a apartment, can be with a shared bathroom, the bedroom cant be shared, and need there is double bed"
-    const response = await fetch("http://localhost:8001/api/v1/search-by-url", {
+    const response = await fetch("http://localhost:8002/api/v1/search-by-url", {
         method: "POST",
         headers: {
             'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ url: url, currency: currency, lenguage: "en" })
+        body: JSON.stringify({ url: url, currency: currency, language: "en" })
     })
 
     if (!response.ok) {
@@ -136,14 +136,16 @@ export async function getAirbnbStayByUrl(url: string, currency: string, userProm
             images: imageList,
         }
 
-        const responseById = await fetch("http://localhost:8001/api/v1/search-by-id", {
+        const responseById = await fetch("http://localhost:8002/api/v1/search-by-id", {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ stay_id: item.room_id })
+            body: JSON.stringify({
+                stayId: String(item.room_id),
+                currency: currency
+            })
         })
-
         const byIdJson = await responseById.json()
 
         const systemContent = prompt;

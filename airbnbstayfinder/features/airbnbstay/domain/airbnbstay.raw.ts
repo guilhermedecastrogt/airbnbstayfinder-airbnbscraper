@@ -79,8 +79,8 @@ export type SearchByIdResponse = {
         }>
         co_hosts: []
         images: Array<{
-            title: string
             url: string
+            caption: string
         }>
         location_descriptions: []
         highlights: Array<{

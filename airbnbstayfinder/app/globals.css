@@ -22,87 +22,92 @@
 }
 
 .dark {
-  --color-bg: #000000;
-  --color-bg-secondary: #101012;
+  --color-bg: #050506;
+  --color-bg-secondary: #0c0c0e;
   --color-bg-secondary2: #686864;
-  --color-text: #e6e9f0;
+  --color-text: #eaecf0;
   --color-text-secondary: #a1a1aa;
 
   --color-primary: #ff5a5f;
   --color-secondary: #06b6d4;
   --color-accent: #f59e0b;
   --color-muted: #64748b;
-  --color-border-primary: #252525;
+  --color-border-primary: #1a1a1e;
 
   --color-bg-secondary-image: linear-gradient(180deg, rgba(26, 26, 22, 1)0%, rgba(16, 16, 18, 1)50%, rgba(51, 28, 28, 1)100%);
   --color-gradient: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.24) 100%);
   --primary-gradient: linear-gradient(90deg, rgba(48, 48, 48, 1) 0%, rgba(255, 56, 92, 1) 49%, rgba(48, 48, 48, 1) 100%);
 
-  --color-card-bg: rgba(16, 16, 18, 0.8);
+  --color-card-bg: rgba(12, 12, 14, 0.85);
   --color-overlay: rgba(0, 0, 0, 0.7);
 }
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.08) transparent;
+}
+
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.08); border-radius: 10px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(255, 255, 255, 0.15); }
 
 body {
   background-color: var(--color-bg);
   color: var(--color-text);
-  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
 
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(16px) scale(0.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes pulse-soft {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
 }
 
 .animate-fadeIn {
-  animation: fadeIn 0.5s ease-out;
+  animation: fadeIn 0.5s ease-out both;
 }
 
-.bg-primary {
-  background-color: var(--color-primary);
+.animate-slideUp {
+  animation: slideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
-.bg-secondary {
-  background-color: var(--color-bg-secondary);
+.animate-pulse-soft {
+  animation: pulse-soft 2s ease-in-out infinite;
 }
 
-.bg-secondary-image {
-  background-image: var(--color-bg-secondary-image);
+.glass {
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-.bg-secondary2 {
-  background-color: var(--color-bg-secondary2);
-}
-
-.bg-card {
-  background-color: var(--color-card-bg);
-}
-
-.text-primary {
-  color: var(--color-primary);
-}
-
-.text-secondary-color {
-  color: var(--color-text-secondary);
-}
+.bg-primary { background-color: var(--color-primary); }
+.bg-secondary { background-color: var(--color-bg-secondary); }
+.bg-secondary-image { background-image: var(--color-bg-secondary-image); }
+.bg-secondary2 { background-color: var(--color-bg-secondary2); }
+.bg-card { background-color: var(--color-card-bg); }
+.text-primary { color: var(--color-primary); }
+.text-secondary-color { color: var(--color-text-secondary); }
 
 .text-gradient {
-  background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.24) 100%);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.4) 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
   -webkit-text-fill-color: transparent;
 }
 
-.bg-border-primary {
-  border-color: var(--color-border-primary);
-}
+.bg-border-primary { border-color: var(--color-border-primary); }
 
 .border-primary-gradient {
   border: 1px solid transparent;
@@ -110,26 +115,9 @@ body {
   border-image-slice: 1;
 }
 
-.text-icons {
-  color: var(--color-muted);
-}
-
-.border-primary {
-  border-color: var(--color-border-primary);
-}
-
-.text-secondary {
-  color: var(--color-secondary);
-}
-
-.bg-accent {
-  background-color: var(--color-accent);
-}
-
-.text-accent {
-  color: var(--color-accent);
-}
-
-.text-muted {
-  color: var(--color-muted);
-}
+.text-icons { color: var(--color-muted); }
+.border-primary { border-color: var(--color-border-primary); }
+.text-secondary { color: var(--color-secondary); }
+.bg-accent { background-color: var(--color-accent); }
+.text-accent { color: var(--color-accent); }
+.text-muted { color: var(--color-muted); }

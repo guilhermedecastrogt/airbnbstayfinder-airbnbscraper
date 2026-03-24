@@ -17,8 +17,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-    title: "AirbnbStayFinder - Dashboard",
-    description: "Find your perfect Airbnb stay with AI",
+    title: "AirbnbStayFinder",
+    description: "AI-powered Airbnb stay matching",
 };
 
 export default async function DashboardLayout({
@@ -34,22 +34,31 @@ export default async function DashboardLayout({
                 className={`${geistSans.variable} ${geistMono.variable} antialiased`}
             >
                 <TripProvider initialTrips={trips}>
+                    {/* Background SVG */}
                     <Image
                         src="/images/hero2.svg"
                         alt=""
                         width={1024}
                         height={1024}
-                        className="absolute -inset-x-0 -top-[250px] w-full z-0 min-w-full opacity-80"
+                        className="fixed -inset-x-0 -top-[250px] w-full z-0 min-w-full opacity-60 pointer-events-none"
                     />
-                    <div className="flex flex-row p-8 w-full min-h-screen gap-8 relative">
-                        <div className="flex flex-col w-[110px] shrink-0 z-10">
+
+                    <div className="flex min-h-screen relative">
+                        {/* Sidebar */}
+                        <aside className="fixed left-0 top-0 bottom-0 w-[76px] z-20 glass">
                             <DashboardNavbar />
-                        </div>
-                        <div className="flex flex-col flex-1 z-10">
-                            {children}
-                        </div>
+                        </aside>
+
+                        {/* Main */}
+                        <main className="flex-1 ml-[76px] relative z-10">
+                            <div className="max-w-[1400px] mx-auto px-6 lg:px-10 py-8">
+                                {children}
+                            </div>
+                        </main>
                     </div>
-                    <div className="fixed z-0 -bottom-40 left-1/2 -translate-x-1/2 w-[800px] h-[400px] rounded-full blur-[120px] bg-[radial-gradient(circle,rgba(255,90,95,0.15)0%,transparent_70%)] pointer-events-none" />
+
+                    {/* Bottom glow */}
+                    <div className="fixed z-0 -bottom-32 left-1/2 -translate-x-1/2 w-[900px] h-[350px] rounded-full blur-[150px] bg-[radial-gradient(circle,rgba(255,90,95,0.12)0%,transparent_70%)] pointer-events-none" />
                 </TripProvider>
             </body>
         </html>

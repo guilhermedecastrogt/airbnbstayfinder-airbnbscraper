@@ -22,31 +22,27 @@ export default function InterestedAirbnbStayGrid({ stays }: Props) {
     return (
         <section className="w-full">
             <div className="flex items-center justify-between gap-4 mb-6">
-                <div className="flex flex-col gap-1">
-                    <h2 className="text-2xl font-bold text-gradient">Interested Stays</h2>
-                    <p className="text-sm text-white/60">
-                        Your favorites: <span className="font-semibold text-primary">{filteredStays.length}</span>
-                    </p>
+                <div className="flex items-baseline gap-3">
+                    <h2 className="text-xl font-semibold text-gradient">Saved Stays</h2>
+                    <span className="text-xs font-medium text-emerald-400/70 tabular-nums">{filteredStays.length} stays</span>
                 </div>
                 <TripSelector />
             </div>
 
             {filteredStays.length === 0 ? (
-                <div className="flex flex-col items-center justify-center py-20 border border-[var(--color-border-primary)] rounded-3xl bg-secondary/20 backdrop-blur-sm">
-                    <HiHeart size={48} className="text-primary/40 mb-4" />
-                    <h3 className="text-xl font-semibold text-white/90">No interested stays</h3>
-                    <p className="text-sm text-white/50 mt-2">
+                <div className="flex flex-col items-center justify-center py-24 rounded-2xl border border-white/[0.04] bg-white/[0.01]">
+                    <HiHeart size={40} className="text-primary/15 mb-4" />
+                    <h3 className="text-lg font-medium text-white/60">No saved stays yet</h3>
+                    <p className="text-sm text-white/25 mt-1.5">
                         {selectedTrip ? `No stays for "${selectedTrip.name}"` : "Mark stays as interested to see them here"}
                     </p>
                 </div>
             ) : (
-                <div className="grid gap-5 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
-                    {filteredStays.map((stay) => (
-                        <AirbnbStayCard
-                            key={stay.room_id}
-                            stay={stay}
-                            variant="interested"
-                        />
+                <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+                    {filteredStays.map((stay, i) => (
+                        <div key={stay.room_id} className="flex" style={{ animationDelay: `${i * 60}ms` }}>
+                            <AirbnbStayCard stay={stay} variant="interested" />
+                        </div>
                     ))}
                 </div>
             )}

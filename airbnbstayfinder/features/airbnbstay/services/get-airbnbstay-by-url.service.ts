@@ -118,6 +118,8 @@ export async function getAirbnbStayByUrlService(
         })
         console.log("  ✨ AI Score:", ai.compatibilityScore, "| Compatible:", ai.isCompatibleWithUserWants)
 
+        const personCapacity = byId.data?.[0]?.person_capacity
+
         const airbnbstay: AirbnbStay = {
             room_id: roomId,
             title: item.title,
@@ -127,6 +129,7 @@ export async function getAirbnbStayByUrlService(
             priceDiscount: item.price.unit.discount,
             rating: item.rating.value,
             ratingCount: item.passportData.ratingCount,
+            personCapacity: personCapacity ?? undefined,
             hostName: item.passportData.name,
             images,
             isCompatible: ai.isCompatibleWithUserWants,

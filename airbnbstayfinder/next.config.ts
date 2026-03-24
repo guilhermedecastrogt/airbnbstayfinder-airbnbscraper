@@ -3,6 +3,7 @@ import type { NextConfig } from "next";
 console.log("Next config loading...");
 
 const nextConfig: NextConfig = {
+  output: "standalone",
   images: {
     remotePatterns: [
       {

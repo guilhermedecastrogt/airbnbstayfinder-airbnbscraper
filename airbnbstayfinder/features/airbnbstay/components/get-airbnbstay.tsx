@@ -4,8 +4,14 @@ import NullInterestAirbnbStayGridForm from "@/features/airbnbstay/components/nul
 import {useState, useEffect} from "react";
 import {AirbnbStay} from "@/features/airbnbstay/domain/airbnbstay";
 import {setAirbnbStayInterestAction} from "@/features/airbnbstay/actions/set-airbnbstay-interest.action";
+import { SearchHistory } from "@/features/search-history/search-history";
 
-export default function GetAirbnbStay({ initialStays }: { initialStays: AirbnbStay[] }) {
+type Props = {
+    initialStays: AirbnbStay[]
+    initialHistory?: SearchHistory[]
+}
+
+export default function GetAirbnbStay({ initialStays, initialHistory = [] }: Props) {
 
     const [stays, setStays] = useState<AirbnbStay[]>(initialStays)
 
@@ -28,7 +34,7 @@ export default function GetAirbnbStay({ initialStays }: { initialStays: AirbnbSt
 
     return (
         <div>
-            <AirbnbStayForm/>
+            <AirbnbStayForm history={initialHistory} />
             <NullInterestAirbnbStayGridForm stays={stays} onSetInterest={onSetInterest} />
         </div>
     )

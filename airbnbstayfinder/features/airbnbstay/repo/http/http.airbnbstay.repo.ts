@@ -24,7 +24,7 @@ export function makeHttpAirbnbStayRepo(baseUrl: string): AirbnbStayHttpRepo {
                 body: JSON.stringify({
                     url: input.url,
                     currency: input.currency,
-                    lenguage: input.language
+                    language: input.language
                 })
             })
         },
@@ -32,7 +32,7 @@ export function makeHttpAirbnbStayRepo(baseUrl: string): AirbnbStayHttpRepo {
             return fetchJson<SearchByIdResponse>(baseUrl + "/api/v1/search-by-id", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ stay_id: input.stayId })
+                body: JSON.stringify({ stayId: input.stayId })
             })
         }
     }

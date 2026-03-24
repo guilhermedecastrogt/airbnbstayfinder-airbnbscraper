@@ -1,0 +1,52 @@
+services:
+  mysql:
+    image: mysql:8.0
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: airbnbstayfinder
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      timeout: 20s
+      retries: 10
+
+  scraper:
+    build:
+      context: ./airbnbstayfinder-scraper
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    ports:
+      - "8002:8002"
+    depends_on:
+      mysql:
+        condition: service_healthy
+
+  frontend:
+    build:
+      context: ./airbnbstayfinder
+      dockerfile: Dockerfile
+      args:
+        NEXT_PUBLIC_AI_MODEL: ${AI_MODEL:-deepseek-r1:1.5b}
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      DATABASE_URL: mysql://root:rootpassword@mysql:3306/airbnbstayfinder
+      AIRBNB_HTTP_BASE_URL: http://scraper:8002
+      AI_PROVIDER: ${AI_PROVIDER:-ollama}
+      AI_MODEL: ${AI_MODEL:-deepseek-r1:1.5b}
+      OLLAMA_BASE_URL: ${OLLAMA_BASE_URL:-http://host.docker.internal:11434}
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+      OPENAI_BASE_URL: ${OPENAI_BASE_URL:-https://api.openai.com/v1}
+    depends_on:
+      mysql:
+        condition: service_healthy
+      scraper:
+        condition: service_started
+
+volumes:
+  mysql_data:
