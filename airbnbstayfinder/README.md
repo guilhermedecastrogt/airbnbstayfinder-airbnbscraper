@@ -4,6 +4,10 @@ A **Next.js 16** web application that helps users find the best Airbnb stays usi
 
 > **Study Project** — Built for learning purposes, exploring Next.js 16 App Router, React 19 Server Components, Server Actions, feature-based architecture, Prisma ORM, and AI integration (Ollama/OpenAI).
 
+<p align="center">
+  <img src="../public/images/thumbnail.png" alt="AirbnbStayFinder" width="700" />
+</p>
+
 ---
 
 ## Table of Contents
@@ -45,6 +49,22 @@ A **Next.js 16** web application that helps users find the best Airbnb stays usi
 - **Search History** — Re-run previous searches with one click
 - **Saved & Skipped Views** — Separate pages for interested and not-interested stays
 - **Dark Premium UI** — Glass morphism design with the Airbnb primary color (#ff5a5f)
+
+### Screenshots
+
+| Search Form | Stays Grid |
+|:-----------:|:----------:|
+| <img src="../public/images/dashboard-find.png" width="400" /> | <img src="../public/images/to-review-stays-grid.png" width="400" /> |
+
+| Saved Stays | Skipped Stays |
+|:-----------:|:-------------:|
+| <img src="../public/images/saved-stays.png" width="400" /> | <img src="../public/images/skipped-stays.png" width="400" /> |
+
+<p align="center">
+  <img src="../public/images/console-output.png" alt="Processing output" width="400" />
+  <br/>
+  <em>Real-time console output during AI analysis</em>
+</p>
 
 ---
 

@@ -4,6 +4,12 @@ A **.NET 8 ASP.NET Core Minimal API** that scrapes Airbnb listings by reverse-en
 
 > **Study Project** — This project was built for learning purposes, exploring topics like Clean Architecture in .NET, TLS fingerprinting, GraphQL API reverse engineering, and multi-language interop (C# + Python).
 
+<p align="center">
+  <img src="../public/images/console-output.png" alt="Scraper processing listings" width="500" />
+  <br/>
+  <em>The scraper fetching and processing Airbnb listings in real-time</em>
+</p>
+
 ---
 
 ## Table of Contents
@@ -273,6 +279,12 @@ SearchFilters {
 ```
 
 The location `Query` is extracted from the URL **path** (`/s/{location}/homes`) while all other filters come from query parameters.
+
+<p align="center">
+  <img src="../public/images/airbnb-url.png" alt="Airbnb search URL with filters" width="600" />
+  <br/>
+  <em>The scraper parses all filters from a standard Airbnb search URL</em>
+</p>
 
 ---
 

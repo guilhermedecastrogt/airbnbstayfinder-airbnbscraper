@@ -5,7 +5,7 @@ An AI-powered Airbnb stay finder that scrapes listings from Airbnb, analyzes eac
 > **Study Project** — Built for learning purposes, covering full-stack development with modern technologies: React 19 Server Components, .NET Clean Architecture, GraphQL API reverse engineering, TLS fingerprinting, AI integration, Docker orchestration, and more.
 
 <p align="center">
-  <img src="airbnbstayfinder/public/images/hero.png" alt="AirbnbStayFinder Hero" width="600" />
+  <img src="public/images/thumbnail.png" alt="AirbnbStayFinder" width="700" />
 </p>
 
 ---
@@ -333,25 +333,63 @@ airbnbstayfinder-airbnbscraper/
 
 Paste any Airbnb search URL — the system extracts all search parameters (location, dates, price range, amenities, coordinates) and fetches **all** available listings, not just the first page.
 
+<p align="center">
+  <img src="public/images/airbnb-url.png" alt="Copy any Airbnb search URL" width="700" />
+  <br/>
+  <em>Copy any Airbnb search URL with your filters applied</em>
+</p>
+
+<p align="center">
+  <img src="public/images/dashboard-find.png" alt="Dashboard search form" width="700" />
+  <br/>
+  <em>Paste the URL, describe your preferences, and click Find Stays</em>
+</p>
+
 ### 2. AI-Powered Analysis
 
 Each listing is analyzed by an AI against your natural language description. The AI considers: listing description, amenities, house rules, reviews, location, price, and more.
 
-### 3. Trip Organization
+<p align="center">
+  <img src="public/images/console-output.png" alt="Console output during processing" width="500" />
+  <br/>
+  <em>Real-time processing: scraping, fetching details, and AI analysis for each listing</em>
+</p>
 
-Group your searches into trips. Switch between trips to see different sets of stays and search history.
+### 3. Tinder-like Review
 
-### 4. Tinder-like Review
+Review stays in a beautiful grid layout with AI compatibility scores. Save the ones you're interested in, skip the rest.
 
-Review stays in a beautiful grid layout. Save the ones you're interested in, skip the rest. Come back later to your saved stays.
+<p align="center">
+  <img src="public/images/to-review-stays-grid.png" alt="Stays grid with AI scores" width="700" />
+  <br/>
+  <em>Each stay shows price, rating, AI compatibility score, and AI-generated summary</em>
+</p>
 
-### 5. Search History
+### 4. Saved & Skipped Stays
 
-Every search is saved with its parameters. Click any previous search to pre-fill the form and run it again.
+Come back later to your saved stays or review the skipped ones.
 
-### 6. Premium Dark UI
+<p align="center">
+  <img src="public/images/saved-stays.png" alt="Saved stays" width="700" />
+  <br/>
+  <em>Saved stays — your shortlist of interesting accommodations</em>
+</p>
 
-Glass morphism design with the Airbnb primary color (#ff5a5f), subtle animations, and a responsive layout.
+<p align="center">
+  <img src="public/images/skipped-stays.png" alt="Skipped stays" width="700" />
+  <br/>
+  <em>Skipped stays — dismissed listings you can revisit</em>
+</p>
+
+### 5. Landing Page
+
+A complete marketing landing page showcasing the product features.
+
+<p align="center">
+  <img src="public/images/airbnbstayfinderlp.png" alt="Landing page" width="400" />
+  <br/>
+  <em>Full landing page with hero, features, demo, FAQ, and more</em>
+</p>
 
 ---
 
