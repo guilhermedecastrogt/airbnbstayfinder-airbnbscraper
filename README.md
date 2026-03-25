@@ -1,4 +1,4 @@
-# AirbnbStayFinder
+# AirbnbStayFinder AI
 
 An AI-powered Airbnb stay finder that scrapes listings from Airbnb, analyzes each one against your preferences using AI, and helps you find the perfect accommodation. Built with **Next.js 16**, **.NET 8**, **MySQL**, and **Ollama/OpenAI**.
 
